@@ -362,6 +362,8 @@ nav {
     padding: 5px 0;
     position: relative;
     z-index: 2;
+    display: none;
+    transition: .5s;
 }
 
 .discord-info::after {
@@ -374,6 +376,10 @@ nav {
     width: 25px;
     height: 25px;
     background-color: rgb(0, 0, 0);
+}
+
+.show-info {
+    display: block;
 }
 
 .fa-github,
