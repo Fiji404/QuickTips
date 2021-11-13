@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #222;
+    overflow-y: hidden;
+    /* animation: smoothmove 4s ease;  */
+}
+
+@keyframes smoothmove {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+nav {
+    position: relative;
+}
+
+.nav .inside-logo {
+    width: 10%;
+    height: 10%;
+    max-width: 300px;
+    min-width: 150px;
+}
+
+.nav {
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding-bottom: 3%;
+}
+
+
+.nav ul {
+    gap: 35px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    margin: 2%;
+    min-width: 260px;
+}
+
+.nav .basic-btn {
+    list-style: none;
+    cursor: pointer;
+    color: #fff;
+    height: 35px;
+}
+
+.nav .basic-btn a {
+    display: inline-block;
+    color: #fff;
+    width: 108px;
+    padding: 12px 0;
+    text-align: center;
+    transition: .5s;
+    border: 2px dashed white;
+    border-radius: 23px;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+.nav .basic-btn a:hover {
+    color: #000;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+#home {
+    width: 85px;
+    background-color: #fff;  
+    color: #000;
+}       
+
+.basic-btn:nth-child(3) a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: #fff;
+    transition: 1s;
+}
+
+ .basic-btn:nth-child(3):hover a::before {
+    width: 100%;
+}
+
+.basic-btn:nth-child(2) a::after,
+.basic-btn:nth-child(3) a::after {
+    content: "";
+    position: absolute;
+    height: 150%;
+    width: 0;
+    border-radius: 23px;
+    background-color: rgb(255, 255, 255);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -1;
+    transition: 0.65s;
+}
+
+.basic-btn:nth-child(3) a::after {
+    transition: 1s;
+}
+
+.basic-btn:hover a::after {
+    width: 100%;
+}
+
+.basic-btn:nth-child(4) a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    background-color: #fff;
+    height: 100%;
+    right: 0;
+    transition: .6s;
+    z-index: -1;
+}
+
+.basic-btn:nth-child(4):hover a::after {
+    width: 100%;
+}
+
+.login {
+    list-style: none;
+    cursor: pointer;
+    margin: 19px 28px 0px 45px;
+    transition: .5s;
+    height: 55px;
+}
+
+.login a {
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 3px;
+    border-radius: 25px;
+    transition: 0.5s;
+    overflow: hidden;
+    outline: none;
+}
+
+.login a:hover {
+    color: #000;
+    border: 2px solid rgba(255, 255, 255, 0)
+}
+
+.login a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    z-index: -1;
+    transition: .6s; 
+
+}
+
+.login a:hover::before {
+    height: 100%;
+}
+
+/* three card implementation */
+
+.three-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cards-wrapper > a {
+    color: initial;
+    text-decoration: none;
+}
+
+.cards-wrapper {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card__col {
+    background-color: #08AEEA;
+    background-image: linear-gradient(-45deg, #08AEEA 0%, #2AF598 100%);
+    border-radius: 20px;
+    padding: 5%;
+    width: 100%;
+    max-width: 300px;
+    min-width: 100px;
+    transition: .6s ease;
+    cursor: pointer;
+    box-shadow: 0 0 15px #08AEEA;
+    filter: blur(1%)
+}
+.card__col h1 {
+    text-transform: uppercase;
+    font-size: 1.9rem; 
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.card__col p {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.card__col:hover {
+    transform: translateY(-25px);
+    box-shadow: 0 0 15px 5px #08AEEA;
+    filter: blur(0);
+}
+
+.tips-content {
+    display: none;
+    margin-top: 100px;
+    padding: 3% 0;
+    background-color: rgb(76, 7, 133);
+    color: #fff;
+}
+
+.header-text {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-text > h1 {
+    font-size: 40px;
+    color: rgb(5, 214, 186);
+    font-family: 'Mochiy Pop P One', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.header-text > p {
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 0 0 15px #fff;
+ 
+}
+
+.tips-content.show {
+    display: block;
+    animation: showanim 1s linear;
+}
+
+@keyframes showanim {
+    from {
+        background-color: rgba(1, 0, 2, 0.377);
+        color: rgba(0, 0, 0, 0.336)
+    }
+    to {
+        background-color: rgb(76, 7, 133);
+        color: rgb(255, 255, 255)
+    }
+}
+
+.tips-content__container {
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container__tips-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 40%;
+}
+
+.tip-col {
+    flex-basis: 200px;
+    box-shadow: -20px -10px 10px 5px #000;
+}
+
+.tip-col button {
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.tip-col button:hover {
+    background-color: rgb(184, 184, 184);
+}
+
+.tip-col button:active {
+    background-color: rgb(78, 78, 78);
+}
+
+@media only screen and (max-width: 500px) {
+    .inside-logo {
+        display: none;
+    }
+}
+
+/* Na jutro ogarnac poprawne rozmieszcenie kategori czy tip-wrapper a w nim kategoie tip-col
+    Potem zrobic w javascript po kliknieciu kategori wszystkie sie chowaja po czym zostaje jedna a do niej caly
+    content rozwiniecie kategori plus przycisk back ktory powraca do wszystkich kategori */
