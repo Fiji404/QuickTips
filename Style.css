@@ -400,6 +400,10 @@ nav {
     
 }
 
+.social-link {
+    cursor: pointer;
+}
+
 .discord-info {
     position: absolute;
     top: 50%;
