@@ -22,10 +22,9 @@
     <div class="container">
       <nav>
         <div class="nav">
-          <img
-            class="inside-logo"
-            src="https://user-images.githubusercontent.com/87615863/138262003-6563c400-d63a-4518-9cad-66bc4599cdc4.png"
-          />
+         <div class="logo-wrapper">
+           <span class="title-logo">Quick Tips</span>
+         </div>
           <ul>
             <li class="basic-btn"><a id="home" href="index.html">Home</a></li>
             <li class="basic-btn"><a href="About/AboutMe.html">About Site</a></li>
@@ -35,28 +34,28 @@
           </ul>
         </div>
       </nav>
-      <div class="three-card">
-        <div class="cards-wrapper">
-          <a id="tip_abbr" href="#outer-tips">
-            <div class="card__col">
-              <h1>Tips for CSS language</h1>
-              <p>This section is about a very useful properties and tricks in CSS</p>
-            </div>
-          </a>
-          <a href="#Accesbility">
-            <div class="card__col accesbility">
-              <h1>Accesbility Informations</h1>
-              <p>Accesbility means which elements we can use on webiste and which is supported by browsers</p>
-            </div>
-          </a>
-          <a href="experimental">
-            <div class="card__col">
-              <h1>Experimental features</h1>
-              <p>This title cover an elements which are interesting and fun to use</p>
-            </div>
-          </a>
+        <div class="three-card">
+          <div class="cards-wrapper">
+            <a id="tip_abbr" href="#outer-tips">
+              <div class="card__col">
+                <h1>Tips for CSS language</h1>
+                <p>This section is about a very useful properties and tricks in CSS</p>
+              </div>
+            </a>
+            <a href="#Accesbility">
+              <div class="card__col accesbility">
+                <h1>Accesbility Informations</h1>
+                <p>Accesbility means which elements we can use on webiste and which is supported by browsers</p>
+              </div>
+            </a>
+            <a href="experimental">
+              <div class="card__col">
+                <h1>Experimental features</h1>
+                <p>This title cover an elements which are interesting and fun to use</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
       <div id="outer-tips">
         <div class="tips-content">
           <div class="header-text">
@@ -70,15 +69,16 @@
               </div>
               <div class="tip-col">
                 <button>Easy Methods for align content</button>
+                <p class="category-info" data-text >You can align items on your webpage using newest method like Grid and Flebox avoid using Floats Tables etc.</p>
               </div>
               <div class="tip-col">
                 <button>Simple accordation in HTML</button>
               </div>
               <div class="tip-col">
-                <button>Easy Methods for align content</button>
+                <button>Grid container explanation</button>
               </div>
               <div class="tip-col">
-                <button>Easy Methods for align content</button>
+                <button>FlexBox container explanation</button>
               </div>
               <div class="tip-col">
                 <button onclick="">Easy Methods for align content</button>
@@ -89,12 +89,12 @@
       </div>
       <footer class="footer">
         <div class="social-icons">
-          <p class="discord-info">Fiji #6692</p>
-          <div class="links-wrapper">
+          <div class="links-wrapper column">
             <a target="_blank" class="social-link" href="https://github.com/Fiji404"><i class="fab fa-github"></i></a>
-            <a class="social-link discord"><i class="fab fa-discord"></i></a>
+            <a class="social-link" id="discord" href="#"><i class="fab fa-discord"></i></a>
             <a target="_blank" class="social-link" href="https://stackoverflow.com/users/16585264/fiji"><i class="fab fa-stack-overflow"></i
             ></a>
+            <p class="discord-info">Fiji #6692</p>
           </div>
         </div>
       </footer>
