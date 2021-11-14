@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 * {
     margin: 0;
@@ -9,6 +10,15 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     text-decoration: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0.7vw;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgb(31, 168, 139);
+    border-radius: 10px;
 }
 
 .container {
@@ -33,11 +43,18 @@ nav {
     position: relative;
 }
 
-.nav .inside-logo {
-    width: 10%;
-    height: 10%;
-    max-width: 300px;
-    min-width: 150px;
+.nav .title-logo {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+    background: linear-gradient(#4CB8C4, #3CD3AD);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
 }
 
 .nav {
@@ -75,7 +92,7 @@ nav {
     padding: 12px 0;
     text-align: center;
     transition: 0.5s;
-    border: 2px dashed white;
+    border: 2px dashed #fff;
     border-radius: 23px;
     position: relative;
     overflow: hidden;
@@ -196,8 +213,11 @@ nav {
     height: 100%;
 }
 
-/* three card implementation */
-
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}   
 .three-card {
     display: flex;
     justify-content: center;
@@ -312,6 +332,7 @@ nav {
 .tip-col {
     width: 200px;
     box-shadow: -20px -10px 10px 5px #000;
+    cursor: pointer;
 }
 
 .tip-col button {
@@ -332,6 +353,14 @@ nav {
     background-color: rgb(78, 78, 78);
 }
 
+.category-info {
+    display: none;
+}
+
+.show-category {
+    display: block;
+}
+
 @media only screen and (max-width: 500px) {
     .inside-logo {
         display: none;
@@ -343,25 +372,45 @@ nav {
     content rozwiniecie kategori plus przycisk back ktory powraca do wszystkich kategori d */
 
 .footer {
-    margin: 50px 0;
-    width: 100%;
-    bottom: 0;
+    margin-left: 10px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    user-select: none;
+    
+}
+
+.alternate {
+    top: 40%;
+    left: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    margin-left: 10px;
+    
 }
 
 .discord-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100px;
     color: rgba(255, 255, 255, 0.603);
     text-align: center;
-    margin-bottom: 10px;
     text-transform: uppercase;
     background-color: #000;
     border-radius: 10px;
     padding: 5px 0;
-    position: relative;
-    z-index: 2;
     display: none;
     transition: .5s;
 }
@@ -369,12 +418,12 @@ nav {
 .discord-info::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%) rotate(45deg);
     z-index: -2;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background-color: rgb(0, 0, 0);
 }
 
@@ -387,14 +436,12 @@ nav {
 .fa-stack-overflow {
     font-size: 35px;
     color: #fff;
+    transition: .5s;
 }
 
 .fa-github:hover,
 .fa-discord:hover,
 .fa-stack-overflow:hover {
-    color: rgba(255, 255, 255, 0.664);
-}
-
-.social-link + .social-link {
-    margin-left: 20px;
+    color: rgba(12, 204, 211, 0.781);
+    transform: translateY(-8px);
 }
