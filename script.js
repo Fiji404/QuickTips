@@ -1,8 +1,11 @@
-var tips = document.getElementById('tip_abbr');
-var mutablecontent = document.querySelector('.tips-content');
-var contentshow = document.querySelector('.show');
-var discord = document.querySelector('.discord');
-var dcinfo = document.querySelector('.discord-info')
+let tips = document.getElementById('tip_abbr');
+let mutablecontent = document.querySelector('.tips-content');
+let contentshow = document.querySelector('.show');
+let discord = document.getElementById('discord');
+let dcinfo = document.querySelector('.discord-info');
+let infocat = document.querySelector('.category-info');
+let column = document.querySelector('.links-wrapper')
+let alternate = document.querySelector('.footer');
     tips.addEventListener('click', function() {
         mutablecontent.classList.toggle('show');
 });
@@ -10,3 +13,4 @@ var dcinfo = document.querySelector('.discord-info')
 discord.addEventListener('click', function() {
     dcinfo.classList.toggle('show-info')
 })
+
