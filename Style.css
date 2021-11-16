@@ -1,476 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    text-decoration: none;
-}
-
-:root {
-    --x-axis: -100%;
-    --y-axis: -50%;
-}
-
-html::-webkit-scrollbar {
-    width: 0.7vw;
-}
-
-html::-webkit-scrollbar-thumb {
-    background-color: rgb(31, 168, 139);
-    border-radius: 10px;
-}
-
-.container {
-    scroll-behavior: smooth;
-    min-height: 100vh;
-    width: 100vw;
-    overflow-y: hidden;
-    background-color: #222;
-    /* animation: smoothmove 4s ease;  */
-}
-
-@keyframes smoothmove {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-nav {
-    position: relative;
-}
-
-.nav .title-logo {
-    display: inline-block;
-    margin-left: 30px;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    letter-spacing: 5px;
-    background: linear-gradient(#4CB8C4, #3CD3AD);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent
-}
-
-.nav {
-    user-select: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    padding-bottom: 3%;
-}
-
-.nav ul {
-    gap: 35px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-self: flex-start;
-    margin: 2%;
-    min-width: 260px;
-}
-
-.nav .basic-btn {
-    list-style: none;
-    cursor: pointer;
-    color: #fff;
-    height: 35px;
-}
-
-.nav .basic-btn a {
-    display: inline-block;
-    color: #fff;
-    width: 108px;
-    padding: 12px 0;
-    text-align: center;
-    transition: 0.5s;
-    border: 2px dashed #fff;
-    border-radius: 23px;
-    position: relative;
-    overflow: hidden;
-    outline: none;
-}
-
-.nav .basic-btn a:hover {
-    color: #000;
-    border: 2px solid rgba(255, 255, 255, 0);
-}
-
-#home {
-    width: 85px;
-    background-color: #fff;
-    color: #000;
-}
-
-.basic-btn:nth-child(3) a::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 100%;
-    z-index: -1;
-    background-color: #fff;
-    transition: 1s;
-}
-
-.basic-btn:nth-child(3):hover a::before {
-    width: 100%;
-}
-
-.basic-btn:nth-child(2) a::after,
-.basic-btn:nth-child(3) a::after {
-    content: "";
-    position: absolute;
-    height: 150%;
-    width: 0;
-    border-radius: 23px;
-    background-color: rgb(255, 255, 255);
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: -1;
-    transition: 0.65s;
-}
-
-.basic-btn:nth-child(3) a::after {
-    transition: 1s;
-}
-
-.basic-btn:hover a::after {
-    width: 100%;
-}
-
-.basic-btn:nth-child(4) a::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    background-color: #fff;
-    height: 100%;
-    right: 0;
-    transition: 0.6s;
-    z-index: -1;
-}
-
-.basic-btn:nth-child(4):hover a::after {
-    width: 100%;
-}
-
-.login {
-    list-style: none;
-    cursor: pointer;
-    margin: 19px 28px 0px 45px;
-    transition: 0.5s;
-    height: 55px;
-}
-
-.login a {
-    position: relative;
-    border: 2px solid #fff;
-    border-radius: 25px;
-    color: #fff;
-    display: inline-block;
-    padding: 12px 28px;
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 3px;
-    border-radius: 25px;
-    transition: 0.5s;
-    overflow: hidden;
-    outline: none;
-}
-
-.login a:hover {
-    color: #000;
-    border: 2px solid rgba(255, 255, 255, 0);
-}
-
-.login a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 0;
-    background-color: #fff;
-    z-index: -1;
-    transition: 0.6s;
-}
-
-.login a:hover::before {
-    height: 100%;
-}
-
-.main-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}   
-.three-card {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    user-select: none;
-
-}
-
-.cards-wrapper > a {
-    color: initial;
-    text-decoration: none;
-}
-
-.cards-wrapper {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.card__col {
-    background-color: #08aeea;
-    background-image: linear-gradient(-45deg, #08aeea 0%, #2af598 100%);
-    border-radius: 20px;
-    padding: 5%;
-    width: 100%;
-    max-width: 300px;
-    min-width: 100px;
-    transition: 0.6s ease;
-    cursor: pointer;
-    box-shadow: 0 0 15px #08aeea;
-    filter: blur(1%);
-}
-.card__col h1 {
-    text-transform: uppercase;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.card__col p {
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.card__col:hover {
-    transform: translateY(-25px);
-    box-shadow: 0 0 15px 5px #08aeea;
-    filter: blur(0);
-}
-
-.tips-content {
-    display: none;
-    margin-top: 100px;
-    padding: 3% 0;
-    background-color: rgb(76, 7, 133);
-    color: #fff;
-}
-
-.header-text {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.header-text > h1 {
-    font-size: 40px;
-    color: rgb(5, 214, 186);
-    font-family: "Mochiy Pop P One", sans-serif;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.header-text > p {
-    margin-top: 30px;
-    font-size: 30px;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    text-shadow: 0 0 15px #fff;
-}
-
-.show {
-    display: block;
-    animation: showanim 1s  ;
-}
-
-@keyframes showanim {
-    from {
-        background-color: rgba(1, 0, 2, 0.377);
-        color: rgba(0, 0, 0, 0.336);
-    }
-    to {
-        background-color: rgb(76, 7, 133);
-        color: rgb(255, 255, 255);
-    }
-}
-
-.tips-content__container {
-    margin-top: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container__tips-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    width: 40%;
-}
-
-.tip-col {
-    width: 200px;
-    box-shadow: -20px -10px 10px 5px #000;
-    cursor: pointer;
-}
-
-.tip-col button {
-    padding: 0.9rem 2rem;
-    cursor: pointer;
-    background-color: #222;
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.tip-col button:hover {
-    background-color: rgb(184, 184, 184);
-}
-
-.tip-col button:active {
-    background-color: rgb(78, 78, 78);
-}
-
-.category-info {
-    display: none;
-}
-
-.show-category {
-    display: block;
-}
-
-@media only screen and (max-width: 500px) {
-    .inside-logo {
-        display: none;
-    }
-}
-
-.aside {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateX(var(--x-axis)) translateY(var(--y-axis));
-    user-select: none;
-    background-color: rgb(121, 122, 122);
-    border-radius: 0px 10px 10px 0px;
-    /* animation: aside-show 1.5s linear; */
-    transition: .5s ease-in-out;
-}
-
-@keyframes aside-show {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1
-
-    }
-}
-
-.aside-toggle {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    outline: none;
-    height: 50px;
-    width: 20px;
-    background-color:rgb(121, 122, 122);
-    cursor: pointer;
-    border-radius: 0px 10px 10px 0px;
-    font-size: 22px;
-}
-
-.active {
-    transform: translate(0, -50%);
-    animation: aside-show 1.5s linear
-}
-
-.links-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 8px 10px;
-    position: relative;
-}
-
-.social-link {
-    cursor: pointer;
-}
-
-.discord-info {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -100px;
-    color: rgba(255, 255, 255, 0.603);
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #000;
-    border-radius: 10px;
-    padding: 5px 0;
-    display: none;
-    transition: .5s;
-}
-
-.discord-info::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -4px;
-    transform: translateY(-50%) rotate(45deg);
-    z-index: -2;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(0, 0, 0);
-}
-
-.show-info {
-    display: block;
-}
-
-.fa-github,
-.fa-discord,
-.fa-stack-overflow {
-    font-size: 35px;
-    color: #fff;
-    transition: .5s;
-}
-
-.fa-github:hover,
-.fa-discord:hover,
-.fa-stack-overflow:hover {
-    color: rgba(12, 204, 211, 0.781);
-    transform: translateY(-6px);
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet" />
+    <link rel="icon" href="Images/favicon.ico" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3574570708287151"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="script.js"></script>
+    <title>Quick Tips</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="nav">
+         <div class="logo-wrapper">
+           <span class="title-logo">Quick Tips</span>
+         </div>
+          <ul>
+            <li class="basic-btn"><a id="home" href="index.html">Home</a></li>
+            <li class="basic-btn"><a href="About/AboutMe.html">About Site</a></li>
+            <li class="basic-btn"><a class="different" href="#">Portfolio</a></li>
+            <li class="basic-btn"><a href="#">More</a></li>
+            <li class="login"><a href="LoginForm.html">LOG IN</a></li>
+          </ul>
+        </div>
+      </nav>
+        <div class="three-card">
+          <div class="cards-wrapper">
+            <a id="tip_abbr" href="#outer-tips">
+              <div class="card__col">
+                <h1>Tips for CSS language</h1>
+                <p>This section is about a very useful properties and tricks in CSS</p>
+              </div>
+            </a>
+            <a href="#Accesbility">
+              <div class="card__col accesbility">
+                <h1>Accesbility Informations</h1>
+                <p>Accesbility means which elements we can use on webiste and which is supported by browsers</p>
+              </div>
+            </a>
+            <a href="experimental">
+              <div class="card__col">
+                <h1>Experimental features</h1>
+                <p>This title cover an elements which are interesting and fun to use</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <div id="outer-tips">
+        <div class="tips-content">
+          <div class="header-text">
+            <h1>Hello you choose a tips for css language, good choice here you are !</h1>
+            <p>Now select your category from which you want to get a Tip</p>
+          </div>
+          <div class="tips-content__container">
+            <div class="container__tips-wrapper">
+              <div class="tip-col">
+                <button>Responsive units for font and more</button>
+              </div>
+              <div class="tip-col">
+                <button>Easy Methods for align content</button>
+                <p class="category-info" data-text >You can align items on your webpage using newest method like Grid and Flebox avoid using Floats Tables etc.</p>
+              </div>
+              <div class="tip-col">
+                <button>Simple accordation in HTML</button>
+              </div>
+              <div class="tip-col">
+                <button>Grid container explanation</button>
+              </div>
+              <div class="tip-col">
+                <button>FlexBox container explanation</button>
+              </div>
+              <div class="tip-col">
+                <button onclick="">Easy Methods for align content</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="aside">
+        <div class="root-links">
+          <div class="links-wrapper">
+            <a target="_blank" class="social-link" href="https://github.com/Fiji404"><i class="fab fa-github"></i></a>
+            <a class="social-link" id="discord"><i class="fab fa-discord"></i></a>
+            <a target="_blank" class="social-link" href="https://stackoverflow.com/users/16585264/fiji"><i class="fab fa-stack-overflow"></i
+            ></a>
+            <p class="discord-info">Fiji #6692</p>
+          </div>
+          <button class="aside-toggle">></button>
+        </div>
+      </aside>
+    </div>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+  </body>
+</html>
