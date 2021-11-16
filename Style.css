@@ -12,6 +12,11 @@
     text-decoration: none;
 }
 
+:root {
+    --x-axis: -100%;
+    --y-axis: -50%;
+}
+
 html::-webkit-scrollbar {
     width: 0.7vw;
 }
@@ -222,6 +227,8 @@ nav {
     display: flex;
     justify-content: center;
     width: 100%;
+    user-select: none;
+
 }
 
 .cards-wrapper > a {
@@ -298,9 +305,9 @@ nav {
     text-shadow: 0 0 15px #fff;
 }
 
-.tips-content.show {
+.show {
     display: block;
-    animation: showanim 1s linear;
+    animation: showanim 1s  ;
 }
 
 @keyframes showanim {
@@ -367,27 +374,46 @@ nav {
     }
 }
 
-/* Na jutro ogarnac poprawne rozmieszcenie kategori czy tip-wrapper a w nim kategoie tip-col
-    Potem zrobic w javascript po kliknieciu kategori wszystkie sie chowaja po czym zostaje jedna a do niej caly
-    content rozwiniecie kategori plus przycisk back ktory powraca do wszystkich kategori d */
-
-.footer {
-    margin-left: 10px;
+.aside {
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
     left: 0;
-    display: flex;
-    align-items: center;
+    transform: translateX(var(--x-axis)) translateY(var(--y-axis));
     user-select: none;
-    
+    background-color: rgb(121, 122, 122);
+    border-radius: 0px 10px 10px 0px;
+    /* animation: aside-show 1.5s linear; */
+    transition: .5s ease-in-out;
 }
 
-.alternate {
-    top: 40%;
-    left: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
+@keyframes aside-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+
+    }
+}
+
+.aside-toggle {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 20px;
+    background-color:rgb(121, 122, 122);
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0px;
+    font-size: 22px;
+}
+
+.active {
+    transform: translate(0, -50%);
+    animation: aside-show 1.5s linear
 }
 
 .links-wrapper {
@@ -395,9 +421,8 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    padding: 8px 10px;
     position: relative;
-    margin-left: 10px;
-    
 }
 
 .social-link {
@@ -447,5 +472,5 @@ nav {
 .fa-discord:hover,
 .fa-stack-overflow:hover {
     color: rgba(12, 204, 211, 0.781);
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 }
