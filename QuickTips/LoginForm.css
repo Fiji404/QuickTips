@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
 .container {
@@ -14,61 +15,102 @@
   background-image: linear-gradient(45deg, #1f1c2c, #928dab);
 }
 
-nav {
-  position: relative;
-}
-
-.nav .inside-logo {
-  width: 10%;
-  height: 10%;
-  max-width: 300px;
-  min-width: 150px;
+.nav .title-logo {
+  display: inline-block;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  letter-spacing: 5px;
+  background: linear-gradient(#4CB8C4, #3CD3AD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent
 }
 
 .nav {
   user-select: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   position: sticky;
   top: 0;
-  padding-bottom: 3%;
-  
+  padding: 3% 0;
+  opacity: 0;
+  animation: navhiding 3s ease 3s forwards;
+}
+
+@keyframes navhiding {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .nav ul {
-  display: none;
   gap: 35px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  align-self: flex-start;
-  margin: 2%;
   min-width: 260px;
 }
+
+#nav-active {
+  transform: translateX(1px);
+}
+
+.menu-icon {
+  display: none;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.menu-prop {
+  height: 6px;
+  width: 38px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.menu-prop ~ .menu-prop {
+  margin-top: 7px;
+}
+
+.prop1 {
+  transform: rotate(-45deg) translate(-19px, 13px);
+}
+
+.prop2 {
+  opacity: 0;
+} 
+
+.prop3 {
+  transform: rotate(45deg) translate(-5px, 1px);
+}
+
 
 .nav .basic-btn {
   list-style: none;
   cursor: pointer;
   color: #fff;
-  height: 35px;
 }
 
 .nav .basic-btn a {
   display: inline-block;
   color: #fff;
   width: 108px;
-  padding: 12px 1px;
+  padding: 12px 0;
   text-align: center;
   transition: 0.5s;
-  border: 2px dashed white;
-  text-decoration: none;
+  border: 2px dashed #fff;
   border-radius: 23px;
   position: relative;
   overflow: hidden;
   outline: none;
-  font-size: 17px;
 }
 
 .nav .basic-btn a:hover {
@@ -78,8 +120,10 @@ nav {
 
 #home {
   width: 85px;
-  background-color: #fff;
-  color: #000;
+}
+
+#home:hover {
+  background-color: rgba(50, 205, 50, 0.651);
 }
 
 .basic-btn:nth-child(3) a::before {
@@ -142,9 +186,8 @@ nav {
 .login {
   list-style: none;
   cursor: pointer;
-  margin: 19px 28px 0px 45px;
+  margin-left: 50px;
   transition: 0.5s;
-  height: 55px;
 }
 
 .login a {
@@ -161,7 +204,6 @@ nav {
   transition: 0.5s;
   overflow: hidden;
   outline: none;
-  text-decoration: none;
 }
 
 .login a:hover {
@@ -190,8 +232,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
+} 
 
 .wrapper-form {
   width: 30%;
@@ -432,5 +473,74 @@ nav {
 @media screen and (max-width: 1100px) {
   .wrapper-form {
     width: 70%
+  }
+}
+/* Implement mobile navigation */
+@media screen and (max-width: 700px) {
+  .container {
+      overflow-x: hidden;
+  }
+
+  .nav ul {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      right: 0;
+      top: 0;
+      background-color: rgb(76, 7, 133);
+      height: 60vh;
+      width: 100vw;
+      justify-content: space-around;
+      transition: .5s ease;
+      z-index: 5;
+  }
+
+  .nav .basic-btn {
+      width: 50%;
+  }
+
+  .nav .basic-btn a {
+      border: none;
+      width: 100%;
+      padding: 20px 0;
+      border-radius: 0;
+      transition: .5s;
+  }
+
+  #home {
+      width: 100%;
+  }
+
+  .login {
+      margin: 0
+  }
+
+  .nav {
+      padding: 40px 0;
+  }
+
+  .login {
+      width: 50%;
+  }
+
+  .login a {
+      width: 100%;
+      border-radius: 0;
+      border: none;
+      text-align: center;
+  }
+
+  .menu-icon {
+      display: block;
+      z-index: 10;
+  }
+
+  ul.active {
+      transform: translateX(0);
+      display: flex;
+  }
+
+  ul.active a {
+      animation: linkanim 1s;
   }
 }

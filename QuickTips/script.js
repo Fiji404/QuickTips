@@ -40,21 +40,14 @@ menubtn.addEventListener('click', function() {
     prop1.classList.toggle('prop1');
     prop2.classList.toggle('prop2');
     prop3.classList.toggle('prop3');
-    //To Change
 });
 
 tipcol.addEventListener('click', function() {
-    tipshow.classList.toggle('tip-show');
-    tipcol.classList.toggle('active')
+    tipcol.classList.add('active');
+    tipcols.classList.add('active')
 });
 
 // $(".tip-col").click(function(){
-//     $(".tip-col").filter((i, e) => e !== this).addClass("hidden");
+//     $(".tip-cols").filter((i, e) => e !== this).addClass("active");
 //     $(this).addClass("active");
 //  });
-
-footerbtn.addEventListener('click', function() {
-    footer.classList.toggle('active');
-    footerbtn.innerHTML = footer.classList.contains('active') ? '&#8964' : '&#94';
-
-})

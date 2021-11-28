@@ -398,20 +398,15 @@ html::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
-.tip-col.active .tip__hidden {
-    display: block;
-}
-
 .tip-col.active button {
     display: none;
 }
 
 .tip-col.active {
-    display: none;
+    box-shadow: none
 }
-
-.tip-show {
-    display: block;
+.tip-col.active .tip__hidden {
+    display: block
 }
 
 @media only screen and (max-width: 500px) {
@@ -457,7 +452,7 @@ html::-webkit-scrollbar-thumb {
     font-size: 22px;
 }
 
-.active {
+.aside.active {
     transform: translate(0, -50%);
     animation: aside-show 1s ease-in alternate;
 }
@@ -605,42 +600,56 @@ html::-webkit-scrollbar-thumb {
 
 footer {
     position: fixed;
-    bottom: -120px;
+    top: 100vh;
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, .25);
-    backdrop-filter: blur(40px);
-    padding: 10px 0;
+    backdrop-filter: blur(20px);
+    padding: 20px 30px;
 }
 
 .footer__toggle {
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 50%;
     font-size: 22px;
+    color: rgb(255, 255, 255);
     transform: translate(-50%, -29px);
     width: 110px;
     height: 30px;
     cursor: pointer;
+    outline: none;
     z-index: -1;
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(134, 134, 134);
     border: none;
     border-radius: 8px 8px 0 0;
     user-select: none;
 }
 
 footer.active {
-    bottom: -60px
+    bottom: 0;
+    top: auto;
+    animation: footeranim 1.5s;
+}
+
+@keyframes footeranim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .footer__content {
     display: flex;
     justify-content: space-around;
+    gap: 5%;
 }
 
 .content__left p {
     font-size: 20px;
-    color: rgb(199, 216, 190);
+    color: rgb(255, 255, 255);
     max-width: 70%;
 }
 

@@ -10,21 +10,33 @@
   </head>
   <body>
     <div class="container">
-      <nav>
-        <div class="nav">
-          <img
-            class="inside-logo"
-            src="https://user-images.githubusercontent.com/87615863/138262003-6563c400-d63a-4518-9cad-66bc4599cdc4.png"
-          />
-          <ul>
-            <li class="basic-btn"><a id="home" href="index.html">Home</a></li>
-            <li class="basic-btn"><a href="About/AboutMe.html">About Site</a></li>
-            <li class="basic-btn"><a class="different" href="#">Portfolio</a></li>
-            <li class="basic-btn"><a href="#">More</a></li>
-            <li class="login"><a href="LoginForm.html">LOG IN</a></li>
-          </ul>
+      <nav class="nav">
+        <div class="logo-wrapper">
+          <span class="title-logo">Quick Tips</span>
         </div>
-      </nav>
+        <div class="menu-icon">
+         <div class="menu-prop first"></div>
+         <div class="menu-prop two"></div>
+         <div class="menu-prop three"></div>
+       </div>
+         <ul>
+           <li class="basic-btn">
+             <a id="home" href="index.html">Home</a>
+           </li>
+           <li class="basic-btn">
+             <a href="About/AboutMe.html">About Site</a>
+           </li>
+           <li class="basic-btn">
+             <a class="different" href="#">Portfolio</a>
+           </li>
+           <li class="basic-btn">
+             <a href="#">More</a>
+           </li>
+           <li class="login">
+             <a href="LoginForm.html">LOG IN</a>
+           </li>
+         </ul>
+     </nav>
       <main class="main-content">
         <div class="wrapper-form">
             <form data-netlify="true" name="form" class="input-form" method="post" action="index.html">
@@ -51,13 +63,19 @@
     data-auto-a11y="true"
   ></script>
       <script>
-        var username = document.getElementById('username');
-        var password = document.getElementById('password');
-        var label = document.querySelector('.label');
-        var focused = document.getElementById('focused');
-        var label2 = document.querySelector('.label2');
-        var static = document.querySelector('.static');
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+        let label = document.querySelector('.label');
+        let focused = document.getElementById('focused');
+        let label2 = document.querySelector('.label2');
+        const static = document.querySelector('.static');
         const eye = document.querySelector('.eye-wrapper');
+        let menubtn = document.querySelector('.menu-icon');
+        let nav = document.querySelector('nav > ul');
+        let prop1 = document.querySelector('.first');
+        let prop2 = document.querySelector('.two');
+        let prop3 = document.querySelector('.three');
+
         username.addEventListener('blur', (event) => {
           username.classList.add("touched")
         }, true);
@@ -89,7 +107,13 @@
             eye.classList.toggle('visible', !!value);
             //Input stay focused when inside have words
             password.classList.toggle('focused', !!value)
-          })
+          });
+          menubtn.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        prop1.classList.toggle('prop1');
+        prop2.classList.toggle('prop2');
+        prop3.classList.toggle('prop3');
+});
       </script>   
   </body>
 </html>
