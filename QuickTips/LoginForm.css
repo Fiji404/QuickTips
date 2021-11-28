@@ -236,7 +236,7 @@
 
 .wrapper-form {
   width: 30%;
-  max-width: 420px;
+  max-width: 450px;
   min-width: 400px;
   animation: Dropdown 3s ease-in-out;  
 }
@@ -255,7 +255,7 @@
   }
 
   100% {
-    transform: translateY(0); 
+    transform: translateY(-50px); 
   }
 }
 
@@ -269,7 +269,8 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  border-radius: 18px
+  border-radius: 18px;
+  font-size: 20px
 }
 
 .input-form h1 {
@@ -470,11 +471,6 @@
   margin-right: 5px;
 }
 
-@media screen and (max-width: 1100px) {
-  .wrapper-form {
-    width: 70%
-  }
-}
 /* Implement mobile navigation */
 @media screen and (max-width: 700px) {
   .container {
