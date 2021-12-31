@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="LoginForm.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="/Pictures/favicon.ico">
+    <script defer src="login.js"></script>
+    <title>Log In</title>
+    <!-- Netlify widget for authentication like login, passwords and register functionality -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <div class="root">
+      <nav class="main__navigation">
+        <div>
+          <span class="main__header">Quick Tips</span>
+        </div>
+        <div class="menu-icon">
+         <div class="menu-prop line1"></div>
+         <div class="menu-prop line2"></div>
+         <div class="menu-prop line3"></div>
+       </div>
+         <ul>
+           <li class="list__item">
+             <a style="--link-delay: 0.2s" class="home" href="index.html">Home</a>
+           </li>
+           <li class="list__item">
+             <a style="--link-delay: 0.4s" href="About/AboutMe.html">About Site</a>
+           </li>
+           <li class="list__item">
+             <a style="--link-delay: 0.6s" href="#">Portfolio</a>
+           </li>
+           <li class="list__item">
+             <a style="--link-delay: 0.8s" href="#">More</a>
+           </li>
+           <li class="list__item login">
+             <a style="--link-delay: 1s" href="LoginForm.html">LOG IN</a>
+           </li>
+         </ul>
+     </nav>
+      <main class="main__forms-container select-off">
+            <form autocomplete="off" data-netlify="true" name="form-login" class="form--login" method="post" action="index.html">
+              <div class="login-content--hide">
+                <h1>LOG IN</h1>
+                <div class="user-data--user">
+                    <input pattern="[A-z 0-9]{6,12}" class="login__input user-input" type="username" name="username" required>
+                    <label class="user-label" for="username"><i class="fas fa-user"></i>Username</label>
+                </div>
+                <div class="user-data--password">
+                    <input pattern="[A-z 0-9]{8,16}" class="login__input password-input" type="password" name="password" required>
+                    <label class="password-label" for="password"><i class="fas fa-lock"></i>Password</label>
+                    <button type="button" onclick="change();" class="password-toggle"></button>
+                </div>
+                <div class="login__fill-section">
+                  <button class="login__button--submit" type="submit">SUBMIT</button>
+                  <div class="login__other-options">
+                    <a class="login-method forgot" href="#">Forgot Password ?</a>
+                    <a class="login-method register-option" href="#">Register Now</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <form autocomplete="off" class="form--register" method="post" action="Index.html">
+            <input pattern="[A-z]{0, 18}" placeholder="Name" class="main__text-field" type="text" name="Name" required>
+            <input pattern="[A-z]{0,18}" placeholder="Last Name" class="main__text-field" type="text" name="LastName" required>
+            <input pattern="[A-z 0-9]{0,18}" placeholder="Email" class="main__text-field" type="email" required>
+            <input class="data-age" type="date" required>
+            <div class="register__gender-field">
+              <div>
+                <input class="radio-field" id="male" name="gender" type="radio">
+                <label class="radio-caption" for="male">Male</label>
+              </div>
+              <div>
+                <input class="radio-field" id="female" name="gender" type="radio">
+                <label class="radio-caption" for="female">Female</label>
+              </div>
+            </div>
+            <button class="register__submit-button" type="submit">SUBMIT</button>
+          </form>
+      </main>
+      </div>
+    <script
+    src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    data-auto-a11y="true"
+  ></script>
+  </body>
+</html>
