@@ -273,6 +273,19 @@ html::-webkit-scrollbar-track {
     }
 }
 
+@keyframes linkappear {
+    0% {
+        transform: translateX(30px);
+    }
+    50% {
+        opacity: .5;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .cards-container {
     margin-top: 100px;
     display: flex;

@@ -10,16 +10,10 @@ let tipBtn = document.querySelector('.category-tip > button');
 const footerBtn = document.querySelector('.footer__toggle');
 const footer = document.querySelector('footer');
 const containerCategory = document.querySelector('.content__wrapper-categories');
-const tipshideBtn = document.querySelector('.btn__tips--hide');  
+const tipCancelBtn = document.querySelector('.btn__tips--hide');  
 
 tipsIO.addEventListener('click', function() {
-    tipsContent.classList.add('show');
-});
-
-tipshideBtn.addEventListener('click', function() {
-    if (tipsContent.classList.contains('show')) {
-        tipsContent.classList.remove('show');
-    }
+    tipsContent.classList.toggle('show');
 });
 
 asidebtn.addEventListener('click', function() {
@@ -52,10 +46,27 @@ containerCategory.addEventListener('click', (e) => {
       el.classList.add('hide');
     });
 });
-tipshideBtn.addEventListener('click', function() {
-  const categoryTip = e.target.closest('.category-tip');
-    categoryTip.forEach((el) => {
-        el.classList.remove('active');
+
+tipsCategories.forEach((el) => {
+  el.addEventListener('click', (e) => {
+    el.classList.add('active');
+
+    tipsCategories.forEach((element) => {
+      if (element.classList.contains('active')) {
+        return;
+      }
+      element.classList.add('hide');
     });
+
+    tipCancelBtn.classList.remove('hide');
+  });
+});
+
+tipCancelBtn.addEventListener('click', () => {
+  tipsCategories.forEach((el) => {
+    el.classList.remove('hide');
+    el.classList.remove('active');
+    tipCancelBtn.classList.add('hide');
+  });
 });
 

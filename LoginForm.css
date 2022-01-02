@@ -57,12 +57,12 @@
   gap: 35px
 }
 
-.menu-icon {
+.hamburger {
   display: none;
   cursor: pointer;
 }
 
-.menu-prop {
+.hamburger__prop {
   height: 6px;
   width: 38px;
   background-color: #fff;
@@ -70,19 +70,19 @@
   transition: .5s;
 }
 
-.menu-prop ~ .menu-prop {
+.hamburger__prop ~ .hamburger__prop {
   margin-top: 7px;
 }
 
-.prop1 {
+.hamburger.active .prop1 {
   transform: rotate(-45deg) translate(-19px, 13px);
 }
 
-.prop2 {
+.hamburger.active .prop2 {
   opacity: 0;
 } 
 
-.prop3 {
+.hamburger.active .prop3 {
   transform: rotate(45deg) translate(-5px, 1px);
 }
 
@@ -203,19 +203,21 @@
   align-items: center;
   flex-direction: column;
   margin-top: 90px;
+  position: relative;
 }
 
 .select-off {
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .form--login {
-  position: relative;
   width: 70%;
   max-width: 500px;
-  min-width: 360px;
+  min-width: 300px;
   animation: loginappear 2.2s ease;
   padding: 15px 0 10px 0;
   background-color: #222;
@@ -223,7 +225,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0 0 35px 5px rgb(173, 173, 173);
+  box-shadow: 0 0 120px -35px rgb(173, 173, 173);
   border-radius: 20px;
 }
 
@@ -240,11 +242,12 @@
 
 .form--login.hide {
   animation: loginhide 2s ease forwards;
+  position: absolute;
+  top: 0;
 }
 
 @keyframes loginhide {
   to {
-    position: absolute;
     transform: translateX(100vw);
   }
 }
@@ -284,7 +287,7 @@
 .form--login h1 {
   text-align: center;
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 5px rgb(179, 179, 179);
+  text-shadow: 0 0 10px rgb(160, 160, 160);
   font-size: 33px;
   letter-spacing: 7px;
   animation: hidecomponents 5s ease;
@@ -300,7 +303,7 @@
 }
 
 .login__input {
-  width: 55%;
+  width: 65%;
   font-size: 35px;
   border: 2px solid #9e8787;
   background-color: transparent;
@@ -323,7 +326,6 @@
   top: 10px;
   font-size: 24px;
 }
-
 
 .user-input:valid ~ .user-label,
 .password-input:valid ~ .password-label {
@@ -422,6 +424,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0 5px;
 }
 
 .login-method {
@@ -466,7 +469,7 @@
     border: none;
     width: 100%;
     padding: 20px 0;
-    border-radius: 0;
+    border-radius: 15px;
     transition: .5s;
   }
   
@@ -476,14 +479,14 @@
   }
   
   .home {
-    box-shadow: 0 0 10px 0 #fff;
+    box-shadow: 0 0 30px -10px #fff;
   }
   
   .login {
     margin: 0;
   }
   
-  .menu-icon {
+  .hamburger {
     display: block;
     z-index: 5;
   }
@@ -502,15 +505,12 @@
   }
 }
 
-/* to minification */
 .form--register {
-  width: 90%;
-  min-width: 350px;
-  max-width: 550px;
-  height: 550px;
-  background-color: rgb(0, 117, 102);
-  border-radius: 10px;
-  padding: 10px;
+  width: min(90%, 550px);
+  min-width: 300px;
+  min-height: 550px;
+  background-color: rgba(180, 179, 179, 0.425);
+  border-radius: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -524,51 +524,101 @@
 }
 
 @keyframes registerappear {
-  from {
-    transform: translateY(100vh);
-    display: block;
-  }
   to {
     transform: translateY(0);
-    display: none;
+    display: flex;
   }
 }
 
-.main__text-field {
-  border: 3px solid rgb(224, 224, 224);
-  outline: none;
-  border-radius: 10px;
-  padding: 0 10px;
+.input-container {
   width: 50%;
+  position: relative;
+}
+.main__input-field {
+  border: none;
+  border-bottom: 3px solid rgb(167, 167, 167);
+  box-shadow: inset 0 4px 2px rgba(180, 179, 179, 0.425);
+  outline: none;
+  padding: 0 10px;
+  width: 100%;
   height: 45px;
-  font-size: 22px;
+  font-size: 26px;
   background-color: #222;
   color: #fff;
   text-align: center;
-  transition: border .3s ease;
+  transition: box-shadow .4s ease;
 }
 
-.main__text-field:focus {
-  border: 3px solid grey
+.main__input-field:focus {
+  box-shadow: none;
 }
 
-.data-age {
+.main__input-idicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: rgb(0, 183, 255);
+  transition: .4s ease;
+}
+
+.main__input-field:focus + .main__input-idicator {
+  width: 100%;
+}
+/* TODO */
+.main__input-field:invalid {
+  /* border-bottom: 3px solid rgb(255, 0, 0); */
+}
+
+.input__date {
   width: 40%;
+  min-width: 200px;
   height: 40px;
   padding: 10px;
   outline: none;
   border: none;
-  border-radius: 5px;
+  background-color: rgb(212, 212, 212);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.input__date::-webkit-calendar-picker-indicator {
+  cursor: pointer
+}
+
+.register__gender-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 }
 
 .radio-field {
-  cursor: pointer;
+  -webkit-appearance: none;
   width: 20px;
   height: 20px;
+  background-color: #222;
+  border-radius: 50%;
   vertical-align: middle;
   margin: 0 3px 5px 0;
   outline: none;
-  
+  position: relative;
+}
+
+.radio-field:checked::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 12px;
+  height: 12px;
+  background-color: rgb(0, 183, 255);
 }
 
 .radio-caption {
@@ -577,10 +627,12 @@
   cursor: pointer;
 }
 
-.register__gender-field {
+.submit-section {
+  width: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 25px
+  align-items: center;
 }
 
 .register__submit-button {
@@ -588,17 +640,29 @@
   height: 50px;
   background-color: #222;
   color: #fff;
-  font-size: 18px;
-  letter-spacing: 3px;
+  font-size: 20px;
+  letter-spacing: 2px;
   border: 2px solid #222;
   outline: none;
   box-shadow: 0 0 10px 0 #000;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: .2s;
+
 }
 
 .register__submit-button:active {
-  transform: scale(.80);
-  box-shadow: 0 0 5px 0 #000
+  transform: scale(.9);
+}
+
+.register__btn--back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50px;
+  border-bottom: 2px solid rgb(184, 22, 22);
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
 }

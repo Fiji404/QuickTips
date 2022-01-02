@@ -324,6 +324,11 @@ html::-webkit-scrollbar-track {
     color: #fff;
 }
 
+.tips-container.show {
+    display: block;
+    animation: textappear .7s linear;
+}
+
 .tips__header {
     max-width: 75%;
     margin: 0 auto;
@@ -343,11 +348,6 @@ html::-webkit-scrollbar-track {
     text-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
-.show {
-    display: block;
-    animation: textappear .7s linear;
-}
-
 @keyframes textappear {
     from {
         background-color: rgba(223, 221, 224, 0.377);
@@ -365,17 +365,14 @@ html::-webkit-scrollbar-track {
     display: flex;
     justify-content: center;
     align-items: center;
+    row-gap: 50px;
     flex-direction: column;
-}
-
-.btn__tips--hide {
-    margin-bottom: 50px;
-    cursor: pointer;
 }
 
 .fa-arrow-circle-left {
     font-size: 50px;
     transition: .4s ease;
+    cursor: pointer;
 }
 
 .fa-arrow-circle-left.hide {

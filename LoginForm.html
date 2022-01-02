@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" href="/Pictures/favicon.ico">
+    <link rel="icon" href="./Pictures/login.ico">
     <script defer src="login.js"></script>
     <title>Log In</title>
-    <!-- Netlify widget for authentication like login, passwords and register functionality -->
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <div class="root">
@@ -17,10 +15,10 @@
         <div>
           <span class="main__header">Quick Tips</span>
         </div>
-        <div class="menu-icon">
-         <div class="menu-prop line1"></div>
-         <div class="menu-prop line2"></div>
-         <div class="menu-prop line3"></div>
+        <div class="hamburger">
+         <div class="hamburger__prop prop1"></div>
+         <div class="hamburger__prop prop2"></div>
+         <div class="hamburger__prop prop3"></div>
        </div>
          <ul>
            <li class="list__item">
@@ -45,11 +43,11 @@
               <div class="login-content--hide">
                 <h1>LOG IN</h1>
                 <div class="user-data--user">
-                    <input pattern="[A-z 0-9]{6,12}" class="login__input user-input" type="username" name="username" required>
+                    <input pattern="[A-z]" min-length="6" maxlength="12" class="login__input user-input" type="text" name="username" required>
                     <label class="user-label" for="username"><i class="fas fa-user"></i>Username</label>
                 </div>
                 <div class="user-data--password">
-                    <input pattern="[A-z 0-9]{8,16}" class="login__input password-input" type="password" name="password" required>
+                    <input pattern="[A-z]" class="login__input password-input" type="password" name="password" required>
                     <label class="password-label" for="password"><i class="fas fa-lock"></i>Password</label>
                     <button type="button" onclick="change();" class="password-toggle"></button>
                 </div>
@@ -63,10 +61,19 @@
               </div>
             </form>
           <form autocomplete="off" class="form--register" method="post" action="Index.html">
-            <input pattern="[A-z]{0, 18}" placeholder="Name" class="main__text-field" type="text" name="Name" required>
-            <input pattern="[A-z]{0,18}" placeholder="Last Name" class="main__text-field" type="text" name="LastName" required>
-            <input pattern="[A-z 0-9]{0,18}" placeholder="Email" class="main__text-field" type="email" required>
-            <input class="data-age" type="date" required>
+            <div class="input-container">
+              <input pattern="[A-Za-z0-9]" maxlength="15" type="text" placeholder="Name" class="main__input-field" type="text" name="Name" required>
+              <span class="main__input-idicator"></span>
+            </div>
+            <div class="input-container">
+              <input pattern="[A-Za-z0-9]{15}" maxlength="15" placeholder="Last Name" class="main__input-field" type="text" name="LastName" required>
+              <span class="main__input-idicator"></span>
+            </div>
+            <div class="input-container">
+              <input pattern="[A-z, 0-9]" maxlength="15" placeholder="Email" class="main__input-field" type="email" required>
+              <span class="main__input-idicator"></span>
+            </div>
+            <input class="input__date" type="date" required>
             <div class="register__gender-field">
               <div>
                 <input class="radio-field" id="male" name="gender" type="radio">
@@ -77,7 +84,10 @@
                 <label class="radio-caption" for="female">Female</label>
               </div>
             </div>
-            <button class="register__submit-button" type="submit">SUBMIT</button>
+            <div class="submit-section">
+              <button class="register__submit-button" type="submit">SUBMIT</button>
+              <a class="register__btn--back">Back</a>
+            </div>
           </form>
       </main>
       </div>
