@@ -218,7 +218,7 @@
   width: 70%;
   max-width: 500px;
   min-width: 300px;
-  animation: loginappear 2.2s ease;
+  /* animation: loginappear 2.2s ease; */
   padding: 15px 0 10px 0;
   background-color: #222;
   display: flex;
@@ -230,8 +230,8 @@
 }
 
 .login-content--hide {
-  opacity: 0;
-  animation: contenthide 1.2s ease 1.6s forwards;
+  /* opacity: 0; */
+  /* animation: contenthide 1.2s ease 1.6s forwards; */
 } 
 
 @keyframes contenthide {
@@ -515,7 +515,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  transform: translateY(100vh);
+  /* transform: translateY(100vh); */
   transition: .5s;
 }
 
@@ -568,8 +568,8 @@
   width: 100%;
 }
 /* TODO */
-.main__input-field:invalid {
-  /* border-bottom: 3px solid rgb(255, 0, 0); */
+.main__input-field:invalid + .main__input-idicator  {
+  background-color: red;
 }
 
 .input__date {
@@ -648,7 +648,6 @@
   cursor: pointer;
   border-radius: 10px;
   transition: .2s;
-
 }
 
 .register__submit-button:active {
@@ -659,7 +658,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 50px;
+  right: 10px;
   border-bottom: 2px solid rgb(184, 22, 22);
   text-transform: uppercase;
   cursor: pointer;
