@@ -218,7 +218,7 @@
   width: 70%;
   max-width: 500px;
   min-width: 300px;
-  /* animation: loginappear 2.2s ease; */
+  animation: loginappear 2.2s ease;
   padding: 15px 0 10px 0;
   background-color: #222;
   display: flex;
@@ -230,8 +230,8 @@
 }
 
 .login-content--hide {
-  /* opacity: 0; */
-  /* animation: contenthide 1.2s ease 1.6s forwards; */
+  opacity: 0;
+  animation: contenthide 1.2s ease 1.6s forwards;
 } 
 
 @keyframes contenthide {
@@ -350,26 +350,36 @@
 
 .password-toggle {
   display: none;
-  background: url(/Pictures/CrossedEye.png);
-  background-size: cover;
   position: absolute;
   top: 50%;
   right: 5px;
   outline: none;
   border: none;
+  height: 45px;
+  aspect-ratio: 1 / 1;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
   cursor: pointer;
+  background: transparent;
 }
 
 .password-toggle.visible {
   display: inline-block;
 }
 
-.password-toggle.icon {
-  background: url(/Pictures/Eye.png);
-  background-size: cover;
+.password-toggle .eye {
+  width: 45px;
+}
+
+.password-toggle .eye.hidden {
+  display: none;
+}
+
+.password-toggle.active .eye.hidden {
+  display: inline-block;
+}
+
+.password-toggle.active .eye {
+  display: none;
 }
 
 .user-label,
@@ -567,7 +577,7 @@
 .main__input-field:focus + .main__input-idicator {
   width: 100%;
 }
-/* TODO */
+
 .main__input-field:invalid + .main__input-idicator  {
   background-color: red;
 }

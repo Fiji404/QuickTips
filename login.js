@@ -4,7 +4,8 @@ let userlabel = document.querySelector(".user-label");
 let focused = document.getElementById("focused");
 let passwordlabel = document.querySelector(".password-label");
 const static = document.querySelector(".static");
-const passwordbtn = document.querySelector(".password-toggle");
+const iconHolder = document.querySelector(".password-toggle")
+const passwordicon = document.querySelector(".eye");
 const hamburger = document.querySelector(".hamburger");
 let nav = document.querySelector("nav > ul");
 let registeropt = document.querySelector(".register-option");
@@ -42,18 +43,18 @@ password.addEventListener(
     true
 );
 
-function change() {
-    if (password.type === "password") {
-        password.setAttribute("type", "text");
-        passwordbtn.classList.add("icon");
-    } else {
-        password.setAttribute("type", "password");
-        passwordbtn.classList.remove("icon");
-    }
-}
+iconHolder.addEventListener('click', () => {
+if (password.type === "password") {
+    password.setAttribute("type", "text");
+     iconHolder.classList.add("active");
+} else {
+    password.setAttribute("type", "password");
+    iconHolder.classList.remove("active");
+    };
+});
 
 password.addEventListener("input", ({ target: { value } }) => {
-    passwordbtn.classList.toggle("visible", !!value);
+    iconHolder.classList.toggle("visible", !!value);
     password.classList.toggle("focused", !!value);
 });
 
@@ -73,7 +74,3 @@ registerbackBtn.addEventListener('click', () => {
     formlogin.classList.remove('hide');
   }
 });
-
-// autocomplete off
-
-
