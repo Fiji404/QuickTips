@@ -232,7 +232,11 @@
 .login-content--hide {
   opacity: 0;
   animation: contenthide 1.2s ease 1.6s forwards;
-} 
+}
+/* TODO important */
+.login-content--hide.back {
+  display: none;
+}
 
 @keyframes contenthide {
   to {

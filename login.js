@@ -12,6 +12,7 @@ let registeropt = document.querySelector(".register-option");
 let formregister = document.querySelector(".form--register");
 let formlogin = document.querySelector(".form--login");
 const registerbackBtn = document.querySelector('.register__btn--back');
+const reverseContentanim = document.querySelector('.login-content--hide');
 
 username.addEventListener(
     "blur",
@@ -72,5 +73,6 @@ registerbackBtn.addEventListener('click', () => {
   if (formlogin.classList.contains('hide')) {
     formregister.classList.remove('active');
     formlogin.classList.remove('hide');
+    reverseContentanim.classList.add('back')
   }
 });
