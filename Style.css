@@ -86,15 +86,15 @@ html::-webkit-scrollbar-track {
 }
 
 .hamburger__prop {
-    height: 6px;
-    width: 38px;
+    height: 4px;
+    width: 36px;
     background-color: #fff;
     border-radius: 5px;
     transition: .5s;
 }
 
 .hamburger__prop ~ .hamburger__prop {
-    margin-top: 7px;
+    margin-top: 9px;
 }
 
 .hamburger.active .prop1 {
@@ -106,7 +106,7 @@ html::-webkit-scrollbar-track {
 } 
 
 .hamburger.active .prop3 {
-    transform: rotate(45deg) translate(-5px, 1px);
+    transform: rotate(45deg) translate(-5px, 0);
 }
 
 .main__navigation .list__item {
@@ -199,7 +199,7 @@ html::-webkit-scrollbar-track {
 }
 
 .login a:hover {
-    border: 2px solid transparent; /* to check */
+    border: 2px solid transparent;
 }
 
 .login a::before {
@@ -601,12 +601,14 @@ html::-webkit-scrollbar-track {
     }
     
     ul.active a {
+        animation: linkappear .8s ease var(--link-delay) forwards;
+        transform: translateX(50px);
         opacity: 0;
-        animation: 1s ease var(--link-delay) linkappear forwards;
     }
 
     .home {
-        box-shadow: 0 0 10px 0 #fff;
+        box-shadow: 0 0 30px -10px rgb(226, 226, 226);
+        border-radius: 15px !important;
     }
 
     .login {
@@ -620,14 +622,8 @@ html::-webkit-scrollbar-track {
 }
 
 @keyframes linkappear {
-    0% {
-        transform: translateX(30px);
-    }
-    50% {
-        opacity: .5;
-        transform: translateX(-30px);
-    }
-    100% {
+    to {
+        transform: translateX(0);
         opacity: 1;
     }
 }

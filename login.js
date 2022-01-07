@@ -60,8 +60,8 @@ password.addEventListener("input", ({ target: { value } }) => {
 });
 
 hamburger.addEventListener("click", function (el) {
-    hamburger.classList.toggle("active");
     nav.classList.toggle("active");
+    hamburger.classList.toggle("active");
 });
 
 registeropt.addEventListener("click", function () {
@@ -71,8 +71,8 @@ registeropt.addEventListener("click", function () {
 
 registerbackBtn.addEventListener('click', () => {
   if (formlogin.classList.contains('hide')) {
+    reverseContentanim.classList.toggle('back')
     formregister.classList.remove('active');
     formlogin.classList.remove('hide');
-    reverseContentanim.classList.add('back')
   }
 });

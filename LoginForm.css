@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-* {
+*, ::after, ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 .root {
@@ -63,15 +63,15 @@
 }
 
 .hamburger__prop {
-  height: 6px;
-  width: 38px;
+  height: 4px;
+  width: 36px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: .5s;
 }
 
 .hamburger__prop ~ .hamburger__prop {
-  margin-top: 7px;
+  margin-top: 9px;
 }
 
 .hamburger.active .prop1 {
@@ -83,7 +83,7 @@
 } 
 
 .hamburger.active .prop3 {
-  transform: rotate(45deg) translate(-5px, 1px);
+  transform: rotate(45deg) translate(-5px, 0px);
 }
 
 .main__navigation .list__item {
@@ -176,7 +176,7 @@
 }
 
 .login a:hover {
-  border: 2px solid transparent; /* to check */
+  border: 2px solid transparent;
 }
 
 .login a::before {
@@ -196,7 +196,6 @@
   height: 100%;
 }
 
-
 .main__forms-container {
   display: flex;
   justify-content: center;
@@ -215,10 +214,11 @@
 }
 
 .form--login {
-  width: 70%;
+  width: 90%;
   max-width: 500px;
   min-width: 300px;
   animation: loginappear 2.2s ease;
+  animation-iteration-count: 1;
   padding: 15px 0 10px 0;
   background-color: #222;
   display: flex;
@@ -232,10 +232,17 @@
 .login-content--hide {
   opacity: 0;
   animation: contenthide 1.2s ease 1.6s forwards;
+  animation-iteration-count: 1;
 }
 /* TODO important */
 .login-content--hide.back {
-  display: none;
+  animation: ShowReverse 1.2s ease 1.6s forwards;
+}
+
+@keyframes ShowReverse {
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes contenthide {
@@ -248,6 +255,10 @@
   animation: loginhide 2s ease forwards;
   position: absolute;
   top: 0;
+}
+
+.form--login.back {
+  opacity: 1;
 }
 
 @keyframes loginhide {
@@ -275,7 +286,7 @@
     border-radius: 15px;
   }
   80% {
-    width: 70%;
+    width: 90%;
   }
   100% {
     height: 470px;
@@ -370,10 +381,6 @@
   display: inline-block;
 }
 
-.password-toggle .eye {
-  width: 45px;
-}
-
 .password-toggle .eye.hidden {
   display: none;
 }
@@ -464,7 +471,7 @@
     right: -100vw;
     top: 0;
     background-color: rgb(32, 32, 32);
-    height: 60vh;
+    height: 55vh;
     width: 100vw;
     justify-content: space-around;
     transition: .8s ease;
@@ -488,12 +495,13 @@
   }
   
   ul.active a {
+    animation: linkappear .8s ease var(--link-delay) forwards;
+    transform: translateX(50px);
     opacity: 0;
-    animation: 1s ease var(--link-delay) linkappear forwards;
   }
   
   .home {
-    box-shadow: 0 0 30px -10px #fff;
+    box-shadow: 0 0 30px -10px rgb(226, 226, 226);
   }
   
   .login {
@@ -502,19 +510,13 @@
   
   .hamburger {
     display: block;
-    z-index: 5;
+    z-index: 1;
   }
 }
 
 @keyframes linkappear {
-  0% {
-    transform: translateX(30px);
-  }
-  50% {
-    opacity: .5;
-    transform: translateX(-30px);
-  }
-  100% {
+  to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -534,7 +536,7 @@
 }
 
 .form--register.active {
-  animation: registerappear 2s ease 1s forwards;
+  animation: registerappear 1.8s ease-in-out 1s forwards;
 }
 
 @keyframes registerappear {
