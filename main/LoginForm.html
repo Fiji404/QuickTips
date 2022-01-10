@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="LoginForm.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="../Pictures/login.png">
+    <script defer src="login.js"></script>
+    <title>Log In</title>
+  </head>
+  <body>
+    <div class="root">
+      <nav class="main__navigation">
+        <div>
+          <span class="main__header">Quick Tips</span>
+        </div>
+        <div class="hamburger">
+         <div class="hamburger__prop prop1"></div>
+         <div class="hamburger__prop prop2"></div>
+         <div class="hamburger__prop prop3"></div>
+       </div>
+         <ul>
+           <li class="list__item">
+             <a style="--link-delay: 0.7s" class="home" href="index.html">Home</a>
+           </li>
+           <li class="list__item">
+             <a style="--link-delay: 1.1s" href="#">About Site</a>
+           </li>
+           <li class="list__item">
+             <a style="--link-delay: 1.3s" href="Portfolio.html">Portfolio</a>
+           </li>
+           <li class="list__item">
+             <a style="--link-delay: 1.6s" href="#">More</a>
+           </li>
+           <li class="list__item login">
+             <a style="--link-delay: 2s" href="LoginForm.html">LOG IN</a>
+           </li>
+         </ul>
+     </nav>
+      <main class="main__forms-container select-off">
+            <form autocomplete="__away" name="form-login" class="form--login" method="post" action="index.html">
+              <div class="login-content--hide">
+                <h1>LOG IN</h1>
+                <div class="user-data--user">
+                    <input pattern="[A-Za-z]{4,12}" title="Field must contains 4 to 12 letters length and lower or uppercase characters, exlude numbers" class="login__input user-input" type="username" name="username" required>
+                    <label class="user-label" for="username"><i class="fas fa-user"></i>Username</label>
+                </div>
+                <div class="user-data--password">
+                    <input pattern="[A-z 0-9]{5,16}" title="field must contains 5 to 16 letters length and allow to use numbers" class="login__input password-input" type="password" name="password" required>
+                    <label class="password-label" for="password"><i class="fas fa-lock"></i>Password</label>
+                    <button type="button" class="password-toggle">
+                      <img class="eye" src="./Pictures/eye-crossed-out.svg">
+                      <img class="eye hidden" src="./Pictures/eye.svg">
+                    </button>
+                </div>
+                <div class="login__fill-section">
+                  <button class="login__button--submit" type="submit">SUBMIT</button>
+                  <div class="login__other-options">
+                    <a class="login-method forgot" href="forgot-password.html">Forgot Password ?</a>
+                    <a class="login-method register-option" href="#">Register Now</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <form autocomplete="dummy-no-auto-complete-fix" class="form--register" method="post" action="Index.html">
+            <div class="input-container">
+              <input autocomplete="dummy-no-auto-complete-fix" pattern="[A-Za-z]{3,15}" title="You can use only characters from 3 to 15, exluding numbers" type="text" placeholder="Name" class="main__input-field" type="text" name="Name" required>
+              <span class="main__input-idicator"></span>
+            </div>
+            <div class="input-container">
+              <input pattern="[A-Za-z]{3,15}" title="You can use characters from 3 to 15, exluding numbers"placeholder="Last Name" class="main__input-field" type="text" name="LastName" required>
+              <span class="main__input-idicator"></span>
+            </div>
+            <div class="input-container">
+              <input autocomplete="dummy-no-auto-complete-fix" placeholder="Email" class="main__input-field" type="email" required>
+              <span class="main__input-idicator"></span>
+            </div>
+            <input class="input__date" type="date" required>
+            <div class="register__gender-field">
+              <div>
+                <input class="radio-field" id="male" name="gender" type="radio">
+                <label class="radio-caption" for="male">Male</label>
+              </div>
+              <div>
+                <input class="radio-field" id="female" name="gender" type="radio">
+                <label class="radio-caption" for="female">Female</label>
+              </div>
+            </div>
+            <div class="submit-section">
+              <button class="register__submit-button" type="submit">SUBMIT</button>
+              <a class="register__btn--back">Back</a>
+            </div>
+          </form>
+      </main>
+      </div>
+    <script
+    src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    data-auto-a11y="true"
+  ></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

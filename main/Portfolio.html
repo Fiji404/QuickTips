@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="Portfolio.css" />
+        <link rel="icon" href="../Pictures/portfolio.svg" />
+        <script defer src="funcionality.js"></script>
+        <title>My Projects</title>
+    </head>
+    <body>
+        <div class="root">
+            <nav class="main__navigation">
+                <div>
+                    <span class="main__header">Quick Tips</span>
+                </div>
+                <div class="hamburger">
+                    <div class="hamburger__prop prop1"></div>
+                    <div class="hamburger__prop prop2"></div>
+                    <div class="hamburger__prop prop3"></div>
+                </div>
+                <ul>
+                    <li class="list__item">
+                        <a style="--link-delay: 0.8s" class="home" href="index.html">Home</a>
+                    </li>
+                    <li class="list__item">
+                        <a style="--link-delay: 1.1s" href="About/AboutMe.html">About Site</a>
+                    </li>
+                    <li class="list__item">
+                        <a style="--link-delay: 1.3s" href="#">Portfolio</a>
+                    </li>
+                    <li class="list__item">
+                        <a style="--link-delay: 1.6s" href="#">More</a>
+                    </li>
+                    <li class="list__item login">
+                        <a style="--link-delay: 2s" href="LoginForm.html">LOG IN</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="cards-container">
+                <div class="cards-wrapper">
+                    <a href="https://quicktips4you.netlify.app">
+                        <div class="card-project">
+                            <h1 class="card-project__header">Quick Tips Project</h1>
+                            <img class="card-project__img" src="../Pictures/Quick-tips.png" alt="Quick Tips.png">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="card-project">
+                            <h1 class="card-project__header">Random Person App</h1>
+                            <img class="card-project__img" src="../Pictures/Person-app.png" alt="Random Person App.png">
+                        </div>
+                    </a>
+                </div>
+            </main>
+            <footer class="footer">
+                <button class="footer__toggle">&#94</button>
+                  <div class="content-left">
+                    <p>Hi, it's nice that you have looked here, so far there is not much here ... but take a look, maybe something will encourage you</p>
+                  </div>
+                  <div class="content--separator"></div>
+                  <div class="content-right">
+                      <a target="_blank" href="https://tipply.pl/u/fijiwater">
+                        <img src="../Pictures/tipply.svg" alt="Tipply-logo">
+                      </a>
+                      <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
+                        <img class="discord-logo" src="../Pictures/Discord-logo.png" alt="Discord">
+                      </a>
+                  </div>
+              </footer>
+        </div>
+    </body>
+</html>
