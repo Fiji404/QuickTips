@@ -1,3 +1,5 @@
+/*! this webiste do not include RWD */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -21,7 +23,7 @@ html::-webkit-scrollbar-track {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
     position: relative;
-    background-image: url('../Pictures/galaxy-bg.svg');
+    background-image: url('/Pictures/galaxy-bg.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -252,6 +254,8 @@ html::-webkit-scrollbar-track {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.2px);
+    min-width: 250px;
+    aspect-ratio: 1;
     -webkit-backdrop-filter: blur(6.2px);
     border: 1px solid rgba(255, 255, 255, 0.404);
     padding: 20px;

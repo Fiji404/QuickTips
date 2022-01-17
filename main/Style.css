@@ -44,8 +44,8 @@ html::-webkit-scrollbar-track {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 5px;
-    background: linear-gradient(to right,#00aeff, #00ffbf);
-    background-size: 200%;
+    background: linear-gradient(to right,#1299d8, #06dba6);
+    background-size: 200% auto;
     background-position: left;
     -webkit-background-clip: text;
     background-clip: text;
