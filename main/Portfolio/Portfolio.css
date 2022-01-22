@@ -23,7 +23,7 @@ html::-webkit-scrollbar-track {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
     position: relative;
-    background-image: url('/Pictures/galaxy-bg.svg');
+    background-image: url('../Pictures/galaxy-bg.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -253,9 +253,9 @@ html::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.16);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.2px);
+    backdrop-filter: blur(6px);
     min-width: 250px;
-    aspect-ratio: 1;
+    aspect-ratio: 16 / 9;
     -webkit-backdrop-filter: blur(6.2px);
     border: 1px solid rgba(255, 255, 255, 0.404);
     padding: 20px;
@@ -280,9 +280,9 @@ html::-webkit-scrollbar-track {
 
 .card-project__img {
     max-width: 100%;
-    min-height: 250px;
     border-radius: 13px;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
     filter: brightness(1.2);
 }
 
@@ -303,6 +303,7 @@ html::-webkit-scrollbar-track {
     top: -30px;
     left: 30px;
     font-size: 24px;
+    font-weight: 700;
     color: rgb(0, 0, 0);
     width: 80px;
     height: 30px;
@@ -331,7 +332,8 @@ html::-webkit-scrollbar-track {
 }
 
 .content-left p {
-    font-size: 24px;
+    font-size: 25px;
+    font-weight: 400;
     color: rgb(255, 255, 255);
     max-width: 70%;
 }

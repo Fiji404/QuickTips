@@ -1,0 +1,1 @@
+Hi, it's nice that you looked here :). if you were wondering why this project was created, this file is for this.Namely it was created in order to provide quick tips on web dev. incorrectly provided information or bugs please report on issues section for reporting things like this. The project will be supported until 02/30/2022. Thanks and bye !

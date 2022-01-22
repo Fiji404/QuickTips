@@ -380,7 +380,7 @@ html::-webkit-scrollbar-track {
 }
 
 .fa-arrow-circle-left:hover {
-    color: rgb(103, 216, 10);
+    color: rgb(184, 184, 184);
 }
 
 .content__wrapper-categories {
@@ -451,7 +451,6 @@ html::-webkit-scrollbar-track {
     min-width: 300px;
     min-height: 500px;
 }
-/* do sprawdzenia klasa active */
 
 .category-tip.active button {
     display: none;
