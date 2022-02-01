@@ -1,5 +1,5 @@
-/*! this webiste do not include RWD */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('/main/header.css');
 
 *, *::before, *::after {
@@ -25,26 +25,54 @@ html::-webkit-scrollbar-track {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
     position: relative;
-    background-image: url('../Pictures/galaxy-bg.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    z-index: 1;
+    background-image: linear-gradient(-45deg, #222, #444);
     overflow-x: hidden;
     user-select: none;
 }
 
+.root::before {
+    content: '';
+    position: fixed;
+    bottom: 20vh;
+    left: 2%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.274);
+    -webkit-clip-path: ellipse(21% 20% at 40% 51%);;
+    clip-path: ellipse(51% 40% at 50% 51%);
+    filter: blur(200px);
+    animation: bouncing 8s 1s infinite alternate ease;
+}
+
 .root::after {
     content: '';
-    position: absolute;
-    top: 50vh;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(20px);
-    -webkit-clip-path: ellipse(37% 42% at 55% 52%);
-    clip-path: ellipse(37% 42% at 55% 52%);
+    position: fixed;
+    top: 20vh;
+    right: 2%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.274);
+    filter: blur(200px);
+    -webkit-clip-path: circle(49.4% at 50% 51%);
+    clip-path: circle(49.4% at 50% 51%);
     z-index: -1;
+    animation: bouncing 8s infinite alternate ease;
+}
+
+@keyframes bouncing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20vh);
+    background: rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        transform: translateY(20vh);
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
 }
 
 @keyframes linkappear {
@@ -54,56 +82,82 @@ html::-webkit-scrollbar-track {
     }
 }
 
-.cards-container {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cards-wrapper {
-    width: 70%;
+.card-container {
+    margin: 70px auto 0 auto;
+    width: min(85%, 1500px);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 45px;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
-.card-project {
+.card__item {
     background: rgba(255, 255, 255, 0.16);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
-    min-width: 250px;
-    aspect-ratio: 16 / 9;
     -webkit-backdrop-filter: blur(6.2px);
     border: 1px solid rgba(255, 255, 255, 0.404);
     padding: 20px;
-    position: relative;
-    transition: .3s;
+    transition: .23s;
+    cursor: pointer;
 }
 
-.card-project:hover {
+.card__item:hover {
     background: rgba(255, 255, 255, 0.295);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(0);
 }
 
-.card-project__header {
+.card__header {
     text-align: center;
-    color: rgb(0, 0, 0);
     margin-bottom: 18px;
-    background: rgba(255, 255, 255, 0.418);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
     border: 1px solid rgba(255, 255, 255, 0.568);
     border-radius: 10px;
-    padding: 15px 0
+    padding: 15px 0;
 }
 
-.card-project__img {
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 18px;
+    padding: 10px;
+}
+
+.progress-status {
+    font-size: clamp(20px, 2vw, 28px);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.completed {
+    color: #0f0;
+}
+
+.non-completed {
+    color: rgb(238, 255, 0)
+}
+
+.card__img {
     max-width: 100%;
     border-radius: 13px;
     object-fit: cover;
     aspect-ratio: 16 / 9;
-    filter: brightness(1.2);
+}
+
+.fa-sync-alt,
+.fa-check {
+    margin-left: 15px;
+    display: inline;
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
 }
 
 .footer {

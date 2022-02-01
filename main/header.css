@@ -81,6 +81,7 @@
     font-size: 17px;
     width: 108px;
     padding: 12px 0;
+    white-space: nowrap;
     text-align: center;
     transition: 0.5s;
     border: 2px dashed #fff;

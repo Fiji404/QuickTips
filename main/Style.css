@@ -310,7 +310,7 @@ html::-webkit-scrollbar-track {
 
 .aside.active {
     transform: translate(0, -50%);
-    animation: aside-show 1s ease-in;
+    animation: aside-show .7s ease-in-out;
 }
 
 @keyframes aside-show {

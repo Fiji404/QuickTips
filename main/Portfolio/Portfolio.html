@@ -37,21 +37,25 @@
                     </li>
                 </ul>
             </nav>
-            <main class="cards-container">
-                <div class="cards-wrapper">
-                    <a href="https://quicktips4you.netlify.app">
-                        <div class="card-project">
-                            <h1 class="card-project__header">Quick Tips Project</h1>
-                            <img class="card-project__img" src="../Pictures/Quick-tips.png" alt="Quick Tips.png">
+            <main class="card-container">
+                <a href="https://quicktips4you.netlify.app">
+                    <div class="card__item">
+                        <h1 class="card__header">Quick Tips Project</h1>
+                        <div class="progress-bar">
+                            <h3 class="progress-status completed">status: Completed<i class="fas fa-check"></i> </h3>
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="card-project">
-                            <h1 class="card-project__header">Random Person App</h1>
-                            <img class="card-project__img" src="../Pictures/Person-app.png" alt="Random Person App.png">
+                        <img class="card__img" src="../Pictures/Quick-tips.png" alt="Quick Tips.png">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="card__item">
+                        <h1 class="card__header">Random Person App</h1>
+                        <div class="progress-bar">
+                            <h3 class="progress-status non-completed">status: progress<i class="fas fa-sync-alt"></i></h3>
                         </div>
-                    </a>
-                </div>
+                        <img class="card__img" src="../Pictures/Comunication-app.png" alt="Random Person App.png">
+                    </div>
+                </a>
             </main>
             <footer class="footer">
                 <button class="footer__toggle">&#94</button>
@@ -87,5 +91,6 @@
                 footerBtn.innerHTML = footer.classList.contains("active") ? "&#8744" : "&#8743";
         });
         </script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
     </body>
 </html>
