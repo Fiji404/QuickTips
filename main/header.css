@@ -10,6 +10,7 @@
     background-clip: text;
     color: transparent;
     animation: header-glow 2s linear infinite;
+    text-align: center;
 }
 
 @keyframes header-glow {
@@ -42,6 +43,7 @@
 .hamburger {
     display: none;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .hamburger__prop {

@@ -192,7 +192,7 @@
   outline: none;
   border: none;
   height: 45px;
-  aspect-ratio: 1 / 1;
+  width: 45px;
   transform: translateY(-50%);
   cursor: pointer;
   background: transparent;
@@ -263,10 +263,11 @@
 }
 
 .login__other-options {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  padding: 0 5px;
+  gap: 5px;
+  white-space: nowrap;
 }
 
 .login-method {
@@ -313,7 +314,7 @@
 }
 
 .input-container {
-  width: 50%;
+  width: min(80%, 400px);
   position: relative;
 }
 .main__input-field {
@@ -346,7 +347,8 @@
   transition: .4s ease;
 }
 
-.main__input-field:focus + .main__input-idicator {
+.main__input-field:focus + .main__input-idicator,
+.main__input-field:valid + .main__input-idicator {
   width: 100%;
 }
 
@@ -355,7 +357,7 @@
 }
 
 .input__date {
-  width: 40%;
+  width: min(65%, 340px);
   min-width: 200px;
   height: 40px;
   padding: 10px;
@@ -366,6 +368,8 @@
   letter-spacing: 1px;
   font-size: 18px;
   border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .input__date::-webkit-calendar-picker-indicator {

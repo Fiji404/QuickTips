@@ -28,47 +28,27 @@ html::-webkit-scrollbar-track {
     overflow-x: hidden;
     background-color: #222;
     position: relative;
-    /* animation: rootslide 2s ease-in;  */
 }
 
-@keyframes rootslide {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-.main-wrapper {
+.main__content {
+    max-width: 90%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}   
-.main__content{
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 25px;
     user-select: none;
     margin-top: 100px;
 }
 
-.content__category-wrapper > a {
+.main__content > a {
     color: initial;
     text-decoration: none;
     height: fit-content;
 }
 
-.content__category-wrapper {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    user-select: none;
-}
-
 .category__card {
-    background-image: linear-gradient(-45deg,#717c9b, #98adb4);
+    background-image: linear-gradient(-45deg,#000000, rgb(255, 255, 255));
     background-size: 200% auto;
     border-radius: 20px;
     padding: 5%;
@@ -76,12 +56,8 @@ html::-webkit-scrollbar-track {
     min-width: 305px;
     transition: 0.6s ease;
     cursor: pointer;
-    box-shadow: 0 0 15px 0 rgb(82, 82, 82);
+    box-shadow: 0 0 15px 0 rgb(70, 70, 70);
     position: relative;
-}
-
-.accesbility {
-    padding: 20px 5%;
 }
 
 .category__card:hover,
@@ -425,10 +401,28 @@ html::-webkit-scrollbar-track {
     user-select: none;
 }
 
+.fa-arrow-up,
+.fa-arrow-down {
+    color: rgb(48, 48, 48);
+    font-size: 22px;
+}
+
+.arrow-down {
+    display: none;
+}
+
+.arrow-up.active {
+    display: none;
+}
+
+.arrow-up.active + .arrow-down {
+    display: inline;
+}
+
 .footer.active {
     bottom: 0;
     top: auto;
-    animation: footerappear 1s ease;
+    animation: footerappear .7s ease;
 }
 
 @keyframes footerappear {

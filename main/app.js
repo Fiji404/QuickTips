@@ -1,18 +1,19 @@
-let tipsIO = document.querySelector('.tips--toggle');
-let tipsContent = document.querySelector('.tips-container');
-let aside = document.querySelector('.aside');
-let nav = document.querySelector('nav > ul');
-let asidebtn = document.querySelector('.aside-toggle');
+const tipsToggle = document.querySelector('.tips--toggle');
+const tipsContent = document.querySelector('.tips-container');
+const aside = document.querySelector('.aside');
+const nav = document.querySelector('nav > ul');
+const asidebtn = document.querySelector('.aside-toggle');
 const hamburger = document.querySelector('.hamburger');
-let tipHeader = document.querySelector('.category-tip');
-let tipsCategories = document.querySelectorAll('.category-tip')
-let tipBtn = document.querySelector('.category-tip > button');
+const tipHeader = document.querySelector('.category-tip');
+const tipsCategories = document.querySelectorAll('.category-tip')
+const tipBtn = document.querySelector('.category-tip > button');
 const footerBtn = document.querySelector('.footer__toggle');
 const footer = document.querySelector('footer');
 const containerCategory = document.querySelector('.content__wrapper-categories');
-const tipCancelBtn = document.querySelector('.btn__tips--hide');  
+const tipCancelBtn = document.querySelector('.btn__tips--hide');
+const HideArrowFooter = document.querySelector('.arrow-up')  
 
-tipsIO.addEventListener('click', function() {
+tipsToggle.addEventListener('click', function() {
     tipsContent.classList.toggle('show');
 });
 
@@ -31,9 +32,13 @@ tipHeader.addEventListener('click', function() {
     tipsCategories.classList.add('active');
 });
 
-footerBtn.addEventListener('click', function() {
+footerBtn.addEventListener('click', () => {
     footer.classList.toggle('active');
-    footerBtn.innerHTML = footer.classList.contains('active') ? '&#8744' : '&#8743';
+    if (footer.classList.contains('active')) {
+      HideArrowFooter.classList.add('active');
+    } else {
+      HideArrowFooter.classList.remove('active');
+    }
 });
 
 containerCategory.addEventListener('click', (e) => {
@@ -48,7 +53,7 @@ containerCategory.addEventListener('click', (e) => {
 });
 
 tipsCategories.forEach((el) => {
-  el.addEventListener('click', (e) => {
+  el.addEventListener('click', () => {
     el.classList.add('active');
 
     tipsCategories.forEach((element) => {

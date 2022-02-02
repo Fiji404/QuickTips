@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Fiji404/NewProject-QuickTips/issues"
   },
-  "homepage": "https://github.com/Fiji404/NewProject-QuickTips#readme"
+  "homepage": "https://github.com/Fiji404/NewProject-QuickTips#readme",
+  "dependencies": {
+    "firebase": "^9.6.5"
+  }
 }

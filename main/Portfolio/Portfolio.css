@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('/main/header.css');
+@import url('../header.css');
 
 *, *::before, *::after {
     margin: 0;
@@ -24,6 +24,7 @@ html::-webkit-scrollbar-track {
 .root {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
+    width: 100vw;
     position: relative;
     z-index: 1;
     background-image: linear-gradient(-45deg, #222, #444);
@@ -39,8 +40,8 @@ html::-webkit-scrollbar-track {
     width: 150px;
     height: 150px;
     background: rgba(255, 255, 255, 0.274);
-    -webkit-clip-path: ellipse(21% 20% at 40% 51%);;
-    clip-path: ellipse(51% 40% at 50% 51%);
+    -webkit-clip-path: circle(49.4% at 50% 51%);
+    clip-path: circle(49.4% at 50% 51%);
     filter: blur(200px);
     animation: bouncing 8s 1s infinite alternate ease;
 }
