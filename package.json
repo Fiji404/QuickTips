@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Fiji404/NewProject-QuickTips#readme",
   "dependencies": {
+    "type": "module",
     "firebase": "^9.6.5"
   }
 }

@@ -3,7 +3,6 @@ let password = document.querySelector(".password-input");
 let userlabel = document.querySelector(".user-label");
 let focused = document.getElementById("focused");
 let passwordlabel = document.querySelector(".password-label");
-const static = document.querySelector(".static");
 const iconHolder = document.querySelector(".password-toggle")
 const passwordicon = document.querySelector(".eye");
 const hamburger = document.querySelector(".hamburger");
