@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 @import url('../header.css');
+@import url('../footer.css');
 
 *, ::after, ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
 }
 
 .root {
-  width: 100%;
   height: 100vh;
-  position: relative;
   overflow: hidden;
   background-color: rgb(61, 61, 61);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .main__forms-container {
@@ -22,16 +22,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 90px;
   position: relative;
-}
-
-.select-off {
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
+  margin-top: 50px;
+  flex-grow: 1;
 }
 
 .form--login {
@@ -110,7 +103,7 @@
     width: 90%;
   }
   100% {
-    height: 470px;
+    height: 480px;
   }
 } 
 
@@ -139,7 +132,7 @@
 }
 
 .login__input {
-  width: 65%;
+  width: 70%;
   font-size: 35px;
   border: 2px solid #9e8787;
   background-color: transparent;
@@ -149,10 +142,11 @@
   text-align: center;
   border-radius: 25px;
   transition: .5s;
+  min-height: 60px;
 }
 
 .login__input:focus {
-  width: 70%;
+  width: 80%;
   border: 2px solid #fff;
 }
 
@@ -243,17 +237,17 @@
 
 .login__button--submit {
   width: 180px;
-  height: 50px;
+  height: 55px;
   margin-bottom: 35px; 
   font-size: 20px;
   outline: none;
-  letter-spacing: 2px;
   background: #5c5c5c;
   border: none;
   color: #fff;
   border-radius: 22px;
   transition: 0.4s ease;
   cursor: pointer;
+  letter-spacing: 3px;
 }
 
 .login__button--submit:hover {
@@ -292,7 +286,7 @@
   width: min(90%, 550px);
   min-width: 300px;
   min-height: 550px;
-  background-color: rgba(180, 179, 179, 0.425);
+  background-color: rgb(36, 36, 36);
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
@@ -317,19 +311,28 @@
   width: min(80%, 400px);
   position: relative;
 }
+
 .main__input-field {
   border: none;
-  border-bottom: 3px solid rgb(167, 167, 167);
-  box-shadow: inset 0 4px 2px rgba(180, 179, 179, 0.425);
+  border-bottom: 3px solid rgb(255, 255, 255);
+  box-shadow: inset 0 3px 0 rgb(36, 36, 36);
   outline: none;
   padding: 0 10px;
   width: 100%;
   height: 45px;
   font-size: 26px;
-  background-color: #222;
+  background-color: rgb(17, 17, 17);
   color: #fff;
   text-align: center;
   transition: box-shadow .4s ease;
+  border-radius: 5px;
+}
+
+.main__input-field::placeholder {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 21px;
+  letter-spacing: 2px;
 }
 
 .main__input-field:focus {
@@ -345,6 +348,7 @@
   height: 3px;
   background-color: rgb(0, 183, 255);
   transition: .4s ease;
+  border-radius: 0 0 5px 5px;
 }
 
 .main__input-field:focus + .main__input-idicator,
@@ -353,27 +357,26 @@
 }
 
 .main__input-field:invalid + .main__input-idicator  {
-  background-color: red;
+  background-color: #f00;
 }
 
 .input__date {
-  width: min(65%, 340px);
+  width: min(65%, 400px);
   min-width: 200px;
-  height: 40px;
+  min-height: 45px;
   padding: 10px;
   outline: none;
   border: none;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(255, 255, 255);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 18px;
-  border-radius: 20px;
+  font-size: 20px;
+  border-radius: 16px;
   text-align: center;
   cursor: pointer;
 }
 
 .input__date::-webkit-calendar-picker-indicator {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .register__gender-field {
@@ -387,7 +390,7 @@
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background-color: #222;
+  background-color: rgb(0, 0, 0);
   border-radius: 50%;
   vertical-align: middle;
   margin: 0 3px 5px 0;
@@ -409,7 +412,8 @@
 
 .radio-caption {
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
+  letter-spacing: 1px;
   cursor: pointer;
 }
 
@@ -424,13 +428,13 @@
 .register__submit-button {
   width: 170px;
   height: 50px;
-  background-color: #222;
+  background-color: rgb(26, 26, 26);
   color: #fff;
   font-size: 20px;
   letter-spacing: 2px;
-  border: 2px solid #222;
+  border: 2px solid rgb(0, 0, 0);
   outline: none;
-  box-shadow: 0 0 10px 0 #000;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   border-radius: 10px;
   transition: .2s;
@@ -445,7 +449,7 @@
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
-  border-bottom: 2px solid rgb(184, 22, 22);
+  border-bottom: 2px solid rgb(255, 255, 255);
   text-transform: uppercase;
   cursor: pointer;
   color: #fff;

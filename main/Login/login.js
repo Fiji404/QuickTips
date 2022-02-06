@@ -5,13 +5,17 @@ let focused = document.getElementById("focused");
 let passwordlabel = document.querySelector(".password-label");
 const iconHolder = document.querySelector(".password-toggle")
 const passwordicon = document.querySelector(".eye");
-const hamburger = document.querySelector(".hamburger");
-let nav = document.querySelector("nav > ul");
 let registeropt = document.querySelector(".register-option");
 let formregister = document.querySelector(".form--register");
 let formlogin = document.querySelector(".form--login");
 const registerbackBtn = document.querySelector('.register__btn--back');
 const reverseContentanim = document.querySelector('.login-content--hide');
+const nav = document.querySelector("nav > ul");
+const asidebtn = document.querySelector(".aside-toggle");
+const hamburger = document.querySelector(".hamburger");
+const footerBtn = document.querySelector(".footer__toggle");
+const footer = document.querySelector(".footer");
+const HideArrowFooter = document.querySelector(".arrow-up");
 
 username.addEventListener(
     "blur",
@@ -61,6 +65,15 @@ password.addEventListener("input", ({ target: { value } }) => {
 hamburger.addEventListener("click", function (el) {
     nav.classList.toggle("active");
     hamburger.classList.toggle("active");
+});
+
+footerBtn.addEventListener("click", () => {
+    footer.classList.toggle("active");
+    if (footer.classList.contains("active")) {
+        HideArrowFooter.classList.add("active");
+    } else {
+        HideArrowFooter.classList.remove("active");
+    }
 });
 
 registeropt.addEventListener("click", function () {

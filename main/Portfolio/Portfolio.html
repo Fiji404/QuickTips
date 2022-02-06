@@ -22,19 +22,19 @@
                 <ul>
                     <li class="list__item">
                         <a style="--link-delay: 0.2s" class="home" href="../index.html">Home</a>
-                      </li>
-                      <li class="list__item">
+                    </li>
+                    <li class="list__item">
                         <a style="--link-delay: 0.4s" href="About/AboutMe.html">About Site</a>
-                      </li>
-                      <li class="list__item">
+                    </li>
+                    <li class="list__item">
                         <a style="--link-delay: 0.7s" href="../Portfolio/Portfolio.html">Portfolio</a>
-                      </li>
-                      <li class="list__item">
+                    </li>
+                    <li class="list__item">
                         <a style="--link-delay: 1s" href="#">More</a>
-                      </li>
-                      <li class="list__item login">
+                    </li>
+                    <li class="list__item login">
                         <a style="--link-delay: 1.2s" href="../Login/LoginForm.html">LOG IN</a>
-                      </li>
+                    </li>
                 </ul>
             </nav>
             <main class="card-container">
@@ -42,55 +42,64 @@
                     <div class="card__item">
                         <h1 class="card__header">Quick Tips Project</h1>
                         <div class="progress-bar">
-                            <h3 class="progress-status completed">status: Completed<i class="fas fa-check"></i> </h3>
+                            <h3 class="progress-status completed">status: Completed<i class="fas fa-check"></i></h3>
                         </div>
-                        <img class="card__img" src="../Pictures/Quick-tips.png" alt="Quick Tips.png">
+                        <img class="card__img" src="../Pictures/Quick-tips.png" alt="Quick Tips.png" />
                     </div>
                 </a>
                 <a href="#">
                     <div class="card__item">
                         <h1 class="card__header">Random Person App</h1>
                         <div class="progress-bar">
-                            <h3 class="progress-status non-completed">status: progress<i class="fas fa-sync-alt"></i></h3>
+                            <h3 class="progress-status non-completed">
+                                status: progress<i class="fas fa-sync-alt"></i>
+                            </h3>
                         </div>
-                        <img class="card__img" src="../Pictures/Comunication-app.png" alt="Random Person App.png">
+                        <img class="card__img" src="../Pictures/Comunication-app.png" alt="Random Person App.png" />
                     </div>
                 </a>
             </main>
             <footer class="footer">
-                <button class="footer__toggle">&#94</button>
-                  <div class="content-left">
-                    <p>Hi, it's nice that you have looked here, so far there is not much here ... but take a look, maybe something will encourage you</p>
-                  </div>
-                  <div class="content--separator"></div>
-                  <div class="content-right">
-                      <a target="_blank" href="https://tipply.pl/u/fijiwater">
-                        <img src="../Pictures/tipply.svg" alt="Tipply">
-                      </a>
-                      <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
-                        <img class="discord-logo" src="../Pictures/Discord-logo.png" alt="Discord">
-                      </a>
-                  </div>
-              </footer>
+                <button class="footer__toggle">
+                    <span class="arrow-up"><i class="fas fa-arrow-up"></i></span>
+                    <span class="arrow-down"><i class="fas fa-arrow-down"></i></span>
+                </button>
+                <div class="content-left">
+                </div>
+                <div class="content-right">
+                    <a target="_blank" href="https://tipply.pl/u/fijiwater">
+                        <img src="../Pictures/tipply.svg" alt="Tipply" />
+                    </a>
+                    <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
+                        <img class="discord-logo" src="../Pictures/Discord-logo.png" alt="Discord" />
+                    </a>
+                </div>
+            </footer>
         </div>
         <script>
-        const aside = document.querySelector(".aside");
-        const nav = document.querySelector("nav > ul");
-        const asidebtn = document.querySelector(".aside-toggle");
-        const hamburger = document.querySelector(".hamburger");
-        const footerBtn = document.querySelector(".footer__toggle");
-        const footer = document.querySelector(".footer");
+            const aside = document.querySelector(".aside");
+            const nav = document.querySelector("nav > ul");
+            const asidebtn = document.querySelector(".aside-toggle");
+            const hamburger = document.querySelector(".hamburger");
+            const footerBtn = document.querySelector(".footer__toggle");
+            const footer = document.querySelector(".footer");
+            const HideArrowFooter = document.querySelector('.arrow-up')  
+
 
             hamburger.addEventListener("click", function () {
                 nav.classList.toggle("active");
                 hamburger.classList.toggle("active");
-        });
+            });
 
-            footerBtn.addEventListener("click", function () {
+            footerBtn.addEventListener("click", () => {
                 footer.classList.toggle("active");
-                footerBtn.innerHTML = footer.classList.contains("active") ? "&#8744" : "&#8743";
-        });
+                if (footer.classList.contains("active")) {
+                    HideArrowFooter.classList.add("active");
+                } else {
+                    HideArrowFooter.classList.remove("active");
+                }
+            });
         </script>
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
     </body>
 </html>

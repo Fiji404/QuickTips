@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('../header.css');
+@import url('../footer.css');
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -32,46 +32,49 @@ html::-webkit-scrollbar-track {
     user-select: none;
 }
 
-.root::before {
-    content: '';
-    position: fixed;
-    bottom: 20vh;
-    left: 2%;
-    width: 150px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.274);
-    -webkit-clip-path: circle(49.4% at 50% 51%);
-    clip-path: circle(49.4% at 50% 51%);
-    filter: blur(200px);
-    animation: bouncing 8s 1s infinite alternate ease;
-}
-
+.root::before,
 .root::after {
     content: '';
     position: fixed;
-    top: 20vh;
-    right: 2%;
     width: 150px;
     height: 150px;
-    background: rgba(255, 255, 255, 0.274);
-    filter: blur(200px);
     -webkit-clip-path: circle(49.4% at 50% 51%);
     clip-path: circle(49.4% at 50% 51%);
-    z-index: -1;
-    animation: bouncing 8s infinite alternate ease;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    animation: bouncing 10s infinite alternate ease;
+}
+
+.root::before {
+    bottom: 20vh;
+    left: 2%;
+    animation: originate 2s 1s forwards, bouncing 10s 1.5s infinite alternate ease ;
+    background: rgba(255, 255, 255, 0);
+    
+}
+
+@keyframes originate {
+    to {
+        background: rgba( 255, 255, 255, 0.15 );
+    }
+}
+
+.root::after {
+    top: 20vh;
+    right: 2%;
+    animation: bouncing 10s infinite alternate ease;
 }
 
 @keyframes bouncing {
-    0% {
-        transform: translateY(0);
+    33% {
+        transform: translateY(30vh);
     }
-    50% {
+    66% {
         transform: translateY(-20vh);
-    background: rgba(255, 255, 255, 0.7);
     }
     100% {
         transform: translateY(20vh);
-        background: rgba(255, 255, 255, 0.2);
     }
     
 }
@@ -92,6 +95,10 @@ html::-webkit-scrollbar-track {
     font-family: 'Press Start 2P', sans-serif;
 }
 
+.card-container > a {
+    text-decoration: none;
+}
+
 .card__item {
     background: rgba(255, 255, 255, 0.16);
     border-radius: 16px;
@@ -102,6 +109,9 @@ html::-webkit-scrollbar-track {
     padding: 20px;
     transition: .23s;
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card__item:hover {
@@ -119,6 +129,7 @@ html::-webkit-scrollbar-track {
     border: 1px solid rgba(255, 255, 255, 0.568);
     border-radius: 10px;
     padding: 15px 0;
+    line-height: 1.3;
 }
 
 .progress-bar {
@@ -134,8 +145,14 @@ html::-webkit-scrollbar-track {
 .progress-status {
     font-size: clamp(20px, 2vw, 28px);
     text-transform: uppercase;
+    text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    gap: 10px;
 }
 
 .completed {
@@ -151,6 +168,7 @@ html::-webkit-scrollbar-track {
     border-radius: 13px;
     object-fit: cover;
     aspect-ratio: 16 / 9;
+    flex-grow: 1;
 }
 
 .fa-sync-alt,
@@ -158,101 +176,5 @@ html::-webkit-scrollbar-track {
     margin-left: 15px;
     display: inline;
     color: rgb(255, 255, 255);
-    vertical-align: middle;
-}
-
-.footer {
-    top: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    left: 0;
-    z-index: 2;
-    background-color: rgb(39, 39, 39);
-    padding: 20px 30px;
-}
-
-.footer__toggle {
-    position: absolute;
-    top: -30px;
-    left: 30px;
-    font-size: 24px;
-    font-weight: 700;
-    color: rgb(0, 0, 0);
-    width: 80px;
-    height: 30px;
-    cursor: pointer;
-    outline: none;
-    z-index: -1;
-    background-color: rgb(199, 199, 199);
-    border: none;
-    border-radius: 8px 8px 0 0;
-    user-select: none;
-}
-
-.footer.active {
-    bottom: 0;
-    top: auto;
-    animation: footerappear 1s ease;
-}
-
-@keyframes footerappear {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.content-left p {
-    font-size: 25px;
-    font-weight: 400;
-    color: rgb(255, 255, 255);
-    max-width: 70%;
-}
-
-.content--separator {
-    width: 3px;
-    height: 100px;
-    background-color: #fff;
-}
-
-.content-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.content-right a:first-child img {
-    width: 145px;
-    transition: .4s ease;
-}
-
-.content-right img:hover:not(.discord-logo) {
-    filter: invert(1);
-}
-
-.discord-logo {
-    width: 200px;
-}
-
-@media screen and (max-width: 700px) {
-    .footer {
-        flex-direction: column;
-        row-gap: 25px;
-    }
-
-    .content--separator {
-        display: none;
-    }
-
-    .content-left p {
-        max-width: 90%;
-        margin: 0 auto;
-        text-align: center;
-    }
+    font-size: 35px;
 }

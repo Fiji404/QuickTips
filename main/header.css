@@ -34,10 +34,8 @@
 .main__navigation ul {
     min-width: 260px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 35px
+    gap: 35px;
 }
 
 .hamburger {
@@ -91,17 +89,25 @@
     position: relative;
     overflow: hidden;
     outline: none;
+    text-decoration: none;
 }
 
-.list__item a:hover {
+.list__item a:not(.home):hover {
     color: #000;
     border: 2px solid transparent;
 }
 
 .home {
     width: 85px;
-    background-color: #fff;
-    color: #000 !important;
+    background-color: rgb(0, 0, 0);
+    border-style: solid !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 23px;
+}
+
+.home:hover {
+    transform: translateY(-5px);
 }
 
 .list__item:nth-child(3) a::before,
