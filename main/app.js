@@ -1,4 +1,6 @@
 const tipsToggle = document.querySelector('.tips--toggle');
+const accesbilityToggle = document.querySelector('.accesbility--toggle');
+const accesbilityContent = document.querySelector('.accesbility-section');
 const tipsContent = document.querySelector('.tips-container');
 const aside = document.querySelector('.aside');
 const nav = document.querySelector('nav > ul');
@@ -11,15 +13,21 @@ const footerBtn = document.querySelector('.footer__toggle');
 const footer = document.querySelector('footer');
 const containerCategory = document.querySelector('.content__wrapper-categories');
 const tipCancelBtn = document.querySelector('.btn__tips--hide');
-const HideArrowFooter = document.querySelector('.arrow-up')  
+const HideArrowFooter = document.querySelector('.arrow-up');
+const infoBoxExpander = document.querySelector('.info-box__header > span');
+const infoBoxContent = document.querySelector('.info-box__content');
 
-tipsToggle.addEventListener('click', function() {
-    tipsContent.classList.toggle('show');
+tipsToggle.addEventListener('click', () => {
+    tipsContent.classList.toggle('active');
 });
+
+accesbilityToggle.addEventListener('click', () => {
+  accesbilityContent.classList.toggle('active')
+})
 
 asidebtn.addEventListener('click', function() {
     aside.classList.toggle('active');
-    asidebtn.textContent = aside.classList.contains('active') ? '<' : '>';
+    asidebtn.classList.toggle('active')
 });
 
 hamburger.addEventListener('click', function() {
@@ -74,4 +82,9 @@ tipCancelBtn.addEventListener('click', () => {
     tipCancelBtn.classList.add('hide');
   });
 });
+
+infoBoxExpander.addEventListener('click', () => {
+  infoBoxContent.classList.toggle('active');
+  infoBoxExpander.classList.toggle('active');
+})
 

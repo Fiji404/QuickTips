@@ -34,6 +34,7 @@
 .main__navigation ul {
     min-width: 260px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 35px;
 }
@@ -201,6 +202,7 @@
         height: 60vh;
         width: 100vw;
         justify-content: space-around;
+        align-items: center;
     }
 
     ul.active {

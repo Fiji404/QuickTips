@@ -7,9 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
 html::-webkit-scrollbar {
@@ -27,8 +24,9 @@ html::-webkit-scrollbar-track {
     scroll-behavior: smooth;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #222;
+    background-color: rgb(36, 36, 36);
     position: relative;
+    font-family: "Poppins", sans-serif;
 }
 
 .main__content {
@@ -45,11 +43,10 @@ html::-webkit-scrollbar-track {
 .main__content > a {
     color: initial;
     text-decoration: none;
-    height: fit-content;
 }
 
 .category__card {
-    background-image: linear-gradient(-45deg,#000000, rgb(255, 255, 255));
+    background-color: rgb(0, 0, 0);
     background-size: 200% auto;
     border-radius: 20px;
     padding: 5%;
@@ -57,8 +54,9 @@ html::-webkit-scrollbar-track {
     min-width: 305px;
     transition: 0.6s ease;
     cursor: pointer;
-    box-shadow: 0 0 15px 0 rgb(70, 70, 70);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.589);
     position: relative;
+    height: 100%;
 }
 
 .category__card:hover,
@@ -76,10 +74,11 @@ html::-webkit-scrollbar-track {
     font-size: 2.1rem;
     letter-spacing: 2px;
     font-weight: 500;
+    color: #fff
 }
 
 .category__card p {
-    color: rgb(29, 33, 56);
+    color: rgb(170, 170, 170);
     font-size: 1.3rem;
 }
 
@@ -89,12 +88,12 @@ html::-webkit-scrollbar-track {
     right: 5px;
     top: 5px;
     font-size: 45px;
-    color: rgb(40, 32, 158);
+    color: rgb(211, 210, 210);
     transition: .5s;
 }
 
 .fa-flask {
-    color: rgba(80, 28, 177, 0.801);
+    color: rgba(89, 0, 255, 0.801);
     top: 10px;
     right: 10px;
 }
@@ -121,7 +120,7 @@ html::-webkit-scrollbar-track {
     color: #fff;
 }
 
-.tips-container.show {
+.tips-container.active {
     display: block;
     animation: textappear .7s linear;
 }
@@ -181,39 +180,36 @@ html::-webkit-scrollbar-track {
 }
 
 .content__wrapper-categories {
-    display: flex;
+    width: min(90%, 1400px);
+    display: grid;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1000px;
-    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 45px 30px;
 }
 
-.category-tip {
-    flex-basis: 300px;
-}
-.category-tip.active {
-    flex-grow: 1;
-}
 .category-tip.hide {
     display: none;
 }
 
 .category-tip button {
-    padding: 0.9rem 2rem;
+    padding: .5rem 1.5rem;
     cursor: pointer;
     background-color: #222;
-    color: #fff;
+    border-radius: 5px;
+    color: rgb(224, 224, 224);
     border: none;
     font-size: 20px;
-    transition: 0.3s;
+    transition: .3s ease;
     cursor: pointer;
-    width: 100%;
     height: 100%;
-    box-shadow: 0 0 20px 0 rgb(128, 128, 128);
+    width: 100%;
+    box-shadow: 0 0 20px 0   rgba(255, 255, 255, 0.568);
     min-height: 100px;
     max-width: 350px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .category-tip button:hover {
@@ -222,6 +218,7 @@ html::-webkit-scrollbar-track {
     transform: translateY(-5px) scale(1.05);
     border-radius: 10px;
 }
+
 
 .category-tip button:active {
     background-color: rgb(0, 0, 0);
@@ -234,7 +231,7 @@ html::-webkit-scrollbar-track {
 .tip__text {
     background-color: rgb(221, 221, 221);
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 5px;
     width: 100%;
     min-width: 300px;
     color: rgb(0, 0, 0);
@@ -245,6 +242,7 @@ html::-webkit-scrollbar-track {
 
 .tip__iframe {
     width: 100%;
+    flex-grow: 1;
     min-width: 300px;
     min-height: 500px;
 }
@@ -253,10 +251,168 @@ html::-webkit-scrollbar-track {
     display: none;
 }
 
+.category-tip.active {
+    width: 100%;
+}
+
 .category-tip.active .tip__hidden {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.accesbility-section {
+    margin-top: 100px;
+    display: none;
+    min-height: 400px;
+    background-color: rgb(156, 156, 156);
+    padding: 50px 0;
+}
+
+.accesbility-section.active {
+    display: block;
+}
+
+.accesbility-section.active .info-box-wrapper .info-box {
+    animation: ShowUp 2s ease forwards;
+    animation-delay: calc(var(--info-box-delay) * 1);
+}
+
+@keyframes ShowUp{
+    from {
+        transform: translateY(40px);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.info-box-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 50px;
+}
+
+.info-box {
+    opacity: 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    width: 100%;
+    transition: transform .3s;
+    box-shadow: 0 0 20px 0 rgb(97, 97, 97)
+}
+
+.info-box:hover,
+.info-box:active {
+    transform: scale(.98);
+}
+
+.info-box__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.info-box__header h1 {
+    font-size: 33px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.info-box__header span {
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+}
+
+.fa-sort-down,
+.fa-sort-up {
+    cursor: pointer;
+    font-size: 35px;
+    color: #444
+}
+
+.fa-sort-up {
+    display: none;
+}
+
+.info-box__header span.active .fa-sort-up {
+    display: inline;
+} 
+
+.info-box__header span.active .fa-sort-down {
+    display: none;
+}
+
+.info-box__content {
+    display: none;
+    border-radius: 15px;
+    margin-top: 40px;
+    background-color: rgb(39, 39, 39);
+    padding: 30px 10px;
+}
+
+.info-box__content.active {
+    display: block;
+    animation: ContentExpand .4s;
+    transform-origin: top;
+}
+
+@keyframes ContentExpand {
+    from {
+        transform: scaleY(.1);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.info-box__content > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+    border-bottom: 2px solid rgb(146, 146, 146);
+}
+
+.content-supported-browsers {
+    margin: 40px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+.browser-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.browser-cell h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 4px rgb(219, 219, 219);
+    letter-spacing: 2px;
+}
+
+.fa-firefox-browser,
+.fa-chrome,
+.fa-edge,
+.fa-internet-explorer,
+.fa-opera,
+.fa-safari {
+    font-size: 45px;
+    margin: 0 auto;
 }
 
 .aside {
@@ -264,25 +420,41 @@ html::-webkit-scrollbar-track {
     top: 50%;
     left: 0;
     transform: translateX(-101%) translateY(-50%);
-    user-select: none;
-    background-color: rgb(121, 122, 122);
+    background-color: rgb(70, 70, 70);
     border-radius: 0px 10px 10px 0px;
     transition: .4s ease-in;
 }
 
 .aside-toggle {
-    position: absolute;
-    right: -20px;
+    position: fixed;
+    right: -25px;
     top: 50%;
     transform: translateY(-50%);
     border: none;
     outline: none;
     height: 60px;
-    width: 20px;
-    background-color:rgb(121, 122, 122);
+    width: 25px;
+    background-color: rgb(12, 12, 12);
     cursor: pointer;
     border-radius: 0px 10px 10px 0px;
     font-size: 22px;
+}
+
+.fa-chevron-right,
+.fa-chevron-left {
+    color: #fff
+}
+
+.aside__back--arrow {
+    display: none;
+}
+
+.aside-toggle.active .aside__forward--arrow {
+    display: none;
+}
+
+.aside-toggle.active .aside__back--arrow {
+    display: inline;
 }
 
 .aside.active {
@@ -353,7 +525,7 @@ html::-webkit-scrollbar-track {
 
 .fa-reddit-alien {
     font-size: 40px;
-    color: rgb(150, 49, 12)
+    color: rgb(241, 67, 3)
 }       
 
 .fa-github:hover,
