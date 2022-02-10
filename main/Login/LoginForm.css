@@ -23,7 +23,6 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin-top: 50px;
   flex-grow: 1;
 }
 
@@ -288,12 +287,13 @@
   min-height: 550px;
   background-color: rgb(36, 36, 36);
   border-radius: 20px;
-  display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   transform: translateY(100vh);
   transition: .5s;
+  display: flex;
+  top: 50%;
 }
 
 .form--register.active {
@@ -303,7 +303,6 @@
 @keyframes registerappear {
   to {
     transform: translateY(0);
-    display: flex;
   }
 }
 
@@ -325,7 +324,7 @@
   color: #fff;
   text-align: center;
   transition: box-shadow .4s ease;
-  border-radius: 5px;
+  border-radius: 5px 5px 2px 2px;
 }
 
 .main__input-field::placeholder {
@@ -348,7 +347,7 @@
   height: 3px;
   background-color: rgb(0, 183, 255);
   transition: .4s ease;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 2px 2px;
 }
 
 .main__input-field:focus + .main__input-idicator,

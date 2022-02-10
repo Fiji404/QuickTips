@@ -11,9 +11,7 @@
     <body>
         <div class="root">
             <nav class="main__navigation">
-                <div>
-                    <span class="main__header">Quick Tips</span>
-                </div>
+                <img class="main__logo" src="../Pictures/main__logo.svg" />
                 <div class="hamburger">
                     <div class="hamburger__prop prop1"></div>
                     <div class="hamburger__prop prop2"></div>
@@ -24,7 +22,7 @@
                         <a style="--link-delay: 0.2s" class="home" href="../index.html">Home</a>
                     </li>
                     <li class="list__item">
-                        <a style="--link-delay: 0.4s" href="About/AboutMe.html">About Site</a>
+                        <a style="--link-delay: 0.4s" class="aboutMe-link" href="#">About Site</a>
                     </li>
                     <li class="list__item">
                         <a style="--link-delay: 0.7s" href="../Portfolio/Portfolio.html">Portfolio</a>
@@ -64,14 +62,22 @@
                     <span class="arrow-up"><i class="fas fa-arrow-up"></i></span>
                     <span class="arrow-down"><i class="fas fa-arrow-down"></i></span>
                 </button>
-                <div class="content-left">
+                <div class="footer__credentials">
+                    <div class="credential-info about-site">
+                        <h1>Project Repositiory</h1>
+                        <a target="_blank" href="https://github.com/Fiji404/Quick-Tips">Quick-Tips: Github</a>
+                    </div>
+                    <div class="credential-info">
+                        <h1>Codepen Examples</h1>
+                        <a target="_blank" href="https://codepen.io/collection/kNEQWm">CodePen</a>
+                    </div>
                 </div>
                 <div class="content-right">
                     <a target="_blank" href="https://tipply.pl/u/fijiwater">
-                        <img src="../Pictures/tipply.svg" alt="Tipply" />
+                        <img src="../Pictures/tipply.svg" alt="Tipply-logo" />
                     </a>
                     <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
-                        <img class="discord-logo" src="../Pictures/Discord-logo.png" alt="Discord" />
+                        <img class="discord-logo" src="../Pictures/discord-logo.png" alt="Discord" />
                     </a>
                 </div>
             </footer>
@@ -83,8 +89,9 @@
             const hamburger = document.querySelector(".hamburger");
             const footerBtn = document.querySelector(".footer__toggle");
             const footer = document.querySelector(".footer");
-            const HideArrowFooter = document.querySelector('.arrow-up')  
-
+            const HideArrowFooter = document.querySelector(".arrow-up");
+            const AboutSiteLink = document.querySelector(".aboutMe-link");
+            const AboutSiteBtn = document.querySelector(".about-site");
 
             hamburger.addEventListener("click", function () {
                 nav.classList.toggle("active");
@@ -93,6 +100,15 @@
 
             footerBtn.addEventListener("click", () => {
                 footer.classList.toggle("active");
+                if (footer.classList.contains("active")) {
+                    HideArrowFooter.classList.add("active");
+                } else {
+                    HideArrowFooter.classList.remove("active");
+                }
+            });
+            AboutSiteLink.addEventListener("click", () => {
+                footer.classList.toggle("active");
+                AboutSiteBtn.classList.add("active");
                 if (footer.classList.contains("active")) {
                     HideArrowFooter.classList.add("active");
                 } else {

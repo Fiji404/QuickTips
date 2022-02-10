@@ -1,21 +1,20 @@
-.main__header {
-    font-size: 45px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 5px;
-    background: linear-gradient(to right,#1299d8, #06dba6);
-    background-size: 200% auto;
-    background-position: left;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: header-glow 2s linear infinite;
-    text-align: center;
+.main__logo {
+    max-width: 100%;
+    height: 150px;
+    fill: #fff;
+    stroke: #fff;
+    animation: bounce 3s ease-in-out alternate infinite;
 }
 
-@keyframes header-glow {
-    to {
-        background-position: 200% center;
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+    66% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
 
@@ -25,10 +24,9 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    position: sticky;
-    top: 0;
     padding: 3% 0;
     z-index: 1;
+    position: relative;
 }
 
 .main__navigation ul {

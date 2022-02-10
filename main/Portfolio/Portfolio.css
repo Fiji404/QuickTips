@@ -24,12 +24,10 @@ html::-webkit-scrollbar-track {
 .root {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
-    width: 100vw;
     position: relative;
     z-index: 1;
     background-image: linear-gradient(-45deg, #222, #444);
-    overflow-x: hidden;
-    user-select: none;
+    overflow: hidden;
 }
 
 .root::before,
@@ -87,7 +85,7 @@ html::-webkit-scrollbar-track {
 }
 
 .card-container {
-    margin: 70px auto 0 auto;
+    margin: 0 auto;
     width: min(85%, 1500px);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -140,6 +138,7 @@ html::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.2);
     margin-bottom: 18px;
     padding: 10px;
+    border-radius: 7px;
 }
 
 .progress-status {

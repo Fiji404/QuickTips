@@ -16,6 +16,8 @@ const hamburger = document.querySelector(".hamburger");
 const footerBtn = document.querySelector(".footer__toggle");
 const footer = document.querySelector(".footer");
 const HideArrowFooter = document.querySelector(".arrow-up");
+const AboutSiteLink = document.querySelector('.aboutMe-link');
+const AboutSiteBtn = document.querySelector('.about-site');
 
 username.addEventListener(
     "blur",
@@ -87,4 +89,14 @@ registerbackBtn.addEventListener('click', () => {
     formregister.classList.remove('active');
     formlogin.classList.remove('hide');
   }
+});
+
+AboutSiteLink.addEventListener("click", () => {
+    footer.classList.toggle("active");
+    AboutSiteBtn.classList.add("active");
+    if (footer.classList.contains("active")) {
+        HideArrowFooter.classList.add("active");
+    } else {
+        HideArrowFooter.classList.remove("active");
+    }
 });

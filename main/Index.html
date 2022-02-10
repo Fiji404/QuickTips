@@ -1,317 +1,583 @@
 <!DOCTYPE html>
 <html translate="no" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#636363" />
-    <meta name="keywords" content="web site language,languages on the web,web languages,css language, learning">
-    <meta name="description" content="This website is about learning quick tips for web languages">
-    <link rel="stylesheet" type="text/css" href="Style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet" />
-    <link rel="icon" href="./Pictures/main-logo.png" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3574570708287151" crossorigin="anonymous"></script>
-    <script defer src="app.js"></script>
-    <script type="module" defer src="/auth.js"></script>
-    <title>Quick Tips for Web languages</title>
-  </head>
-  <body>
-    <div class="root">
-      <nav class="main__navigation">
-         <div>
-           <span class="main__header">Quick Tips</span>
-         </div>
-         <div class="hamburger">
-          <div class="hamburger__prop prop1"></div>
-          <div class="hamburger__prop prop2"></div>
-          <div class="hamburger__prop prop3"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#636363" />
+        <meta name="keywords" content="web site language,languages on the web,web languages,css language, learning" />
+        <meta name="description" content="This website is about learning quick tips for web languages" />
+        <link rel="stylesheet" type="text/css" href="Style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet" />
+        <link rel="icon" href="./Pictures/main-logo.png" />
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3574570708287151"
+            crossorigin="anonymous"
+        ></script>
+        <script defer src="app.js"></script>
+        <title>Quick Tips for Web languages</title>
+    </head>
+    <body>
+        <div class="root">
+            <nav class="main__navigation">
+                <img class="main__logo" src="./Pictures/main__logo.svg" />
+                <div class="hamburger">
+                    <div class="hamburger__prop prop1"></div>
+                    <div class="hamburger__prop prop2"></div>
+                    <div class="hamburger__prop prop3"></div>
+                </div>
+                <ul>
+                    <li class="list__item">
+                        <a style="--link-delay: 0.2s" class="home" href="index.html">Home</a>
+                    </li>
+                    <li class="list__item">
+                        <a style="--link-delay: 0.4s" class="aboutMe-link" href="#">About Site</a>
+                    </li>
+                    <li class="list__item">
+                        <a style="--link-delay: 0.7s" href="./Portfolio/Portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="list__item">
+                        <a style="--link-delay: 1s" href="#">More</a>
+                    </li>
+                    <li class="list__item login">
+                        <a style="--link-delay: 1.2s" href="./Login/LoginForm.html">LOG IN</a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="main__content">
+                <a class="tips--toggle" href="#tips-section">
+                    <div class="category__card">
+                        <img class="light-bulb" src="./Pictures/LightBulb.svg" alt="LightBulb.svg" />
+                        <h1>Tips for CSS language</h1>
+                        <p>
+                            This section provides a lot of useful properties and tricks in CSS which we can use on own
+                            webiste
+                        </p>
+                    </div>
+                </a>
+                <a class="accesbility--toggle" href="#accesbility-section">
+                    <div class="category__card accesbility">
+                        <i class="fas fa-universal-access"></i>
+                        <h1>Accesbility Informations</h1>
+                        <p>Accesbility provides which properties we can use on webiste its support by browsers</p>
+                    </div>
+                </a>
+                <a class="experimental--toggle" href="#experimental">
+                    <div class="category__card">
+                        <i class="fas fa-flask"></i>
+                        <h1>Experimental features</h1>
+                        <p>This section provides properties which is experimental and which are not yet introduced</p>
+                    </div>
+                </a>
+            </main>
+            <section id="tips-section">
+                <div class="tips-container">
+                    <div class="tips__header">
+                        <h1>Hello you choose a tips for css language, good choice here you are !</h1>
+                        <p>Now select your category from you want to get a tip</p>
+                    </div>
+                    <div class="tips-content">
+                        <span class="btn__tips--hide hide"><i class="fas fa-arrow-circle-left"></i></span>
+                        <div class="content__wrapper-categories">
+                            <div class="category-tip">
+                                <button>Setting font-sizes with Rem and Em</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">REM and EM units explanation</p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/KKXQJze?default-tab=html%2Cresult&editable=true&theme-id=dark"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>Easy Methods for align Items</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        You can align items on your webpage using newest method like Grid
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        title="Untitled"
+                                        src="https://codepen.io/Fiji08/embed/xxXYMYG?default-tab=html%2Cresult&theme-id=dark"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>Simple accordation in HTML</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        If you want to do a simple accordation without building complex structure and
+                                        styling it, look for example
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/dyVmYGz?default-tab=html%2Cresult&theme-id=dark"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>Pseudo-elements in CSS, How it works</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        Pseudo-elements allow to user adding a content via CSS and this is their
+                                        assumption, but not only
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/LYzdGWX?default-tab=html%2Cresult&theme-id=dark"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>Diffrent elements and its own box-model</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        Pseudo-elements allow to user adding a content via CSS and this is their
+                                        assumption, but not only
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/zYEWqrb?default-tab=html%2Cresult&theme-id=dark"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>vh and vw units for responsives stuff</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        This units is very useful in specific cases and it helps holding RWD and prevent
+                                        overflow elements
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/yLzKQXB?default-tab=html%2Cresult"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>How to hold aspect-ratio for any objects</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        aspect-ratio property helps us to hold given aspect for any object in HTML like
+                                        images or other elements
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/ExbZNpX?default-tab=html%2Cresult"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>how easly create any shape for elements in CSS</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        clip-path property allow users to create any hexagon, circle or square figures
+                                        only using CSS
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/MWOJpGx?default-tab=html%2Cresult"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>How to add 360 degres pallete inside an element easily</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        Conic-gradient function of background-image property creates an image with
+                                        colors rotated around 360 degres from the center
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        title="conic-gradient()"
+                                        src="https://codepen.io/Fiji08/embed/YzENoyR?default-tab=html%2Cresult"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="category-tip">
+                                <button>how determinate a dimension from animation get started</button>
+                                <div class="tip__hidden">
+                                    <p class="tip__text">
+                                        Transform-origin this is a property that helps determine the starting point
+                                        (origin) from transformations get started
+                                    </p>
+                                    <iframe
+                                        class="tip__iframe"
+                                        scrolling="no"
+                                        src="https://codepen.io/Fiji08/embed/XWzRgzR?default-tab=html%2Cresult"
+                                        frameborder="no"
+                                        loading="lazy"
+                                        allowtransparency="true"
+                                        allowfullscreen="true"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="accesbility-section" id="accesbility-section">
+                <div class="info-box-wrapper">
+                    <div style="--info-box-delay: 0.5s" class="info-box">
+                        <div class="info-box__header">
+                            <h1>aspect-ratio Property</h1>
+                            <span class="content-expander">
+                                <i class="fas fa-sort-down"></i>
+                                <i class="fas fa-sort-up"></i>
+                            </span>
+                        </div>
+                        <div class="info-box__content">
+                            <h1>Supported browsers and their version</h1>
+                            <div class="content-supported-browsers">
+                                <div class="browser-cell">
+                                    <h1>Firefox</h1>
+                                    <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
+                                    <h3 class="browser-version">89</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Chrome</h1>
+                                    <i style="color: yellow" class="fab fa-chrome"></i>
+                                    <h3 class="browser-version">88</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Edge</h1>
+
+                                    <i style="color: #0d559e" class="fab fa-edge"></i>
+                                    <h3 class="browser-version">88</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Internet Explorer</h1>
+
+                                    <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
+                                    <h3 class="browser-version not-support">Not Supported</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Opera</h1>
+                                    <i style="color: #ff1429" class="fab fa-opera"></i>
+                                    <h3 class="browser-version">74</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Safari</h1>
+                                    <i style="color: #2290ee" class="fab fa-safari"></i>
+                                    <h3 class="browser-version">15</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--info-box-delay: 1s" class="info-box">
+                        <div class="info-box__header">
+                            <span class="content-expander"><i class="fas fa-sort-down"></i></span>
+                            <h1>Flexbox tool</h1>
+                        </div>
+                        <div class="info-box__content">
+                            <h1>Supported browsers and their version</h1>
+                            <div class="content-supported-browsers">
+                                <div class="browser-cell">
+                                    <h1>Firefox</h1>
+                                    <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
+                                    <h3 class="browser-version">28</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Chrome</h1>
+                                    <i style="color: yellow" class="fab fa-chrome"></i>
+                                    <h3 class="browser-version">29</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Edge</h1>
+                                    <i style="color: #0d559e" class="fab fa-edge"></i>
+                                    <h3 class="browser-version">12</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Internet Explorer</h1>
+                                    <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
+                                    <h3 class="browser-version not-support">Not Supported</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Opera</h1>
+                                    <i style="color: #ff1429" class="fab fa-opera"></i>
+                                    <h3 class="browser-version">17</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Safari</h1>
+                                    <i style="color: #2290ee" class="fab fa-safari"></i>
+                                    <h3 class="browser-version">9</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--info-box-delay: 1.5s" class="info-box">
+                        <div class="info-box__header">
+                            <span class="content-expander"><i class="fas fa-sort-down"></i></span>
+                            <h1>GRID tool</h1>
+                        </div>
+                        <div class="info-box__content">
+                            <h1>Supported browsers and their version without prefixes</h1>
+                            <div class="content-supported-browsers">
+                                <div class="browser-cell">
+                                    <h1>Firefox</h1>
+                                    <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
+                                    <h3 class="browser-version">54</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Chrome</h1>
+                                    <i style="color: yellow" class="fab fa-chrome"></i>
+                                    <h3 class="browser-version">58</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Edge</h1>
+                                    <i style="color: #0d559e" class="fab fa-edge"></i>
+                                    <h3 class="browser-version">16</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Internet Explorer</h1>
+                                    <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
+                                    <h3 class="browser-version not-support">Not Supported</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Opera</h1>
+                                    <i style="color: #ff1429" class="fab fa-opera"></i>
+                                    <h3 class="browser-version">44</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Safari</h1>
+                                    <i style="color: #2290ee" class="fab fa-safari"></i>
+                                    <h3 class="browser-version">10.1</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--info-box-delay: 2s" class="info-box">
+                        <div class="info-box__header">
+                            <span><i class="fas fa-sort-down"></i></span>
+                            <h1>conic-gradient() function</h1>
+                        </div>
+                        <div class="info-box__content">
+                            <h1>Supported browsers and their version without prefixes</h1>
+                            <div class="content-supported-browsers">
+                                <div class="browser-cell">
+                                    <h1>Firefox</h1>
+                                    <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
+                                    <h3 class="browser-version">83</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Chrome</h1>
+
+                                    <i style="color: yellow" class="fab fa-chrome"></i>
+                                    <h3 class="browser-version">69</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Edge</h1>
+
+                                    <i style="color: #0d559e" class="fab fa-edge"></i>
+                                    <h3 class="browser-version">79</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Internet Explorer</h1>
+
+                                    <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
+                                    <h3 class="browser-version not-support">Not Supported</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Opera</h1>
+                                    <i style="color: #ff1429" class="fab fa-opera"></i>
+                                    <h3 class="browser-version">56</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Safari</h1>
+                                    <i style="color: #2290ee" class="fab fa-safari"></i>
+                                    <h3 class="browser-version">12.1</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--info-box-delay: 2.5s" class="info-box">
+                        <div class="info-box__header">
+                            <span><i class="fas fa-sort-down"></i></span>
+                            <h1>Transform-origin support</h1>
+                        </div>
+                        <div class="info-box__content">
+                            <h1>Supported browsers and their version without prefixes</h1>
+                            <div class="content-supported-browsers">
+                                <div class="browser-cell">
+                                    <h1>Firefox</h1>
+                                    <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
+                                    <h3 class="browser-version">16</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Chrome</h1>
+                                    <i style="color: yellow" class="fab fa-chrome"></i>
+                                    <h3 class="browser-version">36</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Edge</h1>
+                                    <i style="color: #0d559e" class="fab fa-edge"></i>
+                                    <h3 class="browser-version">12</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Internet Explorer</h1>
+                                    <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
+                                    <h3 class="browser-version">10</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Opera</h1>
+                                    <i style="color: #ff1429" class="fab fa-opera"></i>
+                                    <h3 class="browser-version">23</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Safari</h1>
+                                    <i style="color: #2290ee" class="fab fa-safari"></i>
+                                    <h3 class="browser-version">9</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--info-box-delay: 3s" class="info-box">
+                        <div class="info-box__header">
+                            <span><i class="fas fa-sort-down"></i></span>
+                            <h1>gap for GRID</h1>
+                        </div>
+                        <div class="info-box__content">
+                            <h1>Supported browsers and their version without prefixes</h1>
+                            <div class="content-supported-browsers">
+                                <div class="browser-cell">
+                                    <h1>Firefox</h1>
+                                    <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
+                                    <h3 class="browser-version">61</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Chrome</h1>
+                                    <i style="color: yellow" class="fab fa-chrome"></i>
+                                    <h3 class="browser-version">66</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Edge</h1>
+                                    <i style="color: #0d559e" class="fab fa-edge"></i>
+                                    <h3 class="browser-version">16</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Internet Explorer</h1>
+                                    <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
+                                    <h3 class="browser-version not-support">Not Supported</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Opera</h1>
+                                    <i style="color: #ff1429" class="fab fa-opera"></i>
+                                    <h3 class="browser-version">53</h3>
+                                </div>
+                                <div class="browser-cell">
+                                    <h1>Safari</h1>
+                                    <i style="color: #2290ee" class="fab fa-safari"></i>
+                                    <h3 class="browser-version">12</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside class="aside">
+                <div class="aside__links">
+                    <a target="_blank" class="social-link" href="https://stackoverflow.com/users/16585264/fiji"
+                        ><i class="fab fa-stack-overflow"></i
+                    ></a>
+                    <a target="_blank" class="social-link" href="https://github.com/Fiji404"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                        target="_blank"
+                        class="social-link"
+                        href="https://www.reddit.com/u/Fiji990?utm_medium=android_app&utm_source=share"
+                        ><i class="fab fa-reddit-alien"></i
+                    ></a>
+                </div>
+                <button class="aside-toggle">
+                    <span class="aside__forward--arrow"><i class="fas fa-chevron-right"></i></span>
+                    <span class="aside__back--arrow"><i class="fas fa-chevron-left"></i></span>
+                </button>
+            </aside>
+            <footer class="footer">
+                <button class="footer__toggle">
+                    <span class="arrow-up"><i class="fas fa-arrow-up"></i></span>
+                    <span class="arrow-down"><i class="fas fa-arrow-down"></i></span>
+                </button>
+                <div class="footer__credentials">
+                    <div class="credential-info about-site">
+                        <h1>Project Repositiory</h1>
+                        <a target="_blank" href="https://github.com/Fiji404/Quick-Tips">Quick-Tips: Github</a>
+                    </div>
+                    <div class="credential-info">
+                        <h1>Codepen Examples</h1>
+                        <a target="_blank" href="https://codepen.io/collection/kNEQWm">CodePen</a>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <a target="_blank" href="https://tipply.pl/u/fijiwater">
+                        <img src="./Pictures/tipply.svg" alt="Tipply-logo" />
+                    </a>
+                    <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
+                        <img class="discord-logo" src="./Pictures/discord-logo.png" alt="Discord" />
+                    </a>
+                </div>
+            </footer>
         </div>
-          <ul>
-            <li class="list__item">
-              <a style="--link-delay: 0.2s" class="home" href="index.html">Home</a>
-            </li>
-            <li class="list__item">
-              <a style="--link-delay: 0.4s" href="About/AboutMe.html">About Site</a>
-            </li>
-            <li class="list__item">
-              <a style="--link-delay: 0.7s" href="./Portfolio/Portfolio.html">Portfolio</a>
-            </li>
-            <li class="list__item">
-              <a style="--link-delay: 1s" href="#">More</a>
-            </li>
-            <li class="list__item login">
-              <a style="--link-delay: 1.2s" href="./Login/LoginForm.html">LOG IN</a>
-            </li>
-          </ul>
-      </nav>
-        <main class="main__content">
-            <a class="tips--toggle" href="#tips-section">
-              <div class="category__card">
-                <img class="light-bulb" src="./Pictures/LightBulb.svg" alt="LightBulb.svg">
-                <h1>Tips for CSS language</h1>
-                <p>This section provides a lot of useful properties and tricks in CSS which we can use on own webiste</p>
-              </div>
-            </a>
-            <a class="accesbility--toggle" href="#accesbility-section">
-              <div class="category__card accesbility">
-                <i class="fas fa-universal-access"></i>
-                <h1>Accesbility Informations</h1>
-                <p>Accesbility provides which properties we can use on webiste its support by browsers</p>
-              </div>
-            </a>
-            <a class="experimental--toggle" href="#experimental">
-              <div class="category__card">
-                <i class="fas fa-flask"></i>
-                <h1>Experimental features</h1>
-                <p>This section provides properties which is experimental and which are not yet introduced</p>
-              </div>
-            </a>
-        </main>
-      <section id="tips-section">
-        <div class="tips-container">
-          <div class="tips__header">
-            <h1>Hello you choose a tips for css language, good choice here you are !</h1>
-            <p>Now select your category from which you want to get a Tip</p>
-          </div>
-          <div class="tips-content">
-            <span class="btn__tips--hide hide"><i class="fas fa-arrow-circle-left"></i></span>
-            <div class="content__wrapper-categories">
-              <div class="category-tip">
-                <button>Setting font-sizes with Rem and Em</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">REM and EM units explanation</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/KKXQJze?default-tab=html%2Cresult&editable=true&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>Easy Methods for align Items</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">You can align items on your webpage using newest method like Grid</p>
-                  <iframe class="tip__iframe"scrolling="no" title="Untitled" src="https://codepen.io/Fiji08/embed/xxXYMYG?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>Simple accordation in HTML</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">If you want to do a simple accordation without building complex structure and styling it, look for example</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/dyVmYGz?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>Pseudo-elements in CSS, How it works</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">Pseudo-elements allow to user adding a content via CSS and this is their assumption, but not only</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/LYzdGWX?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>Diffrent elements and its own box-model</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">Pseudo-elements allow to user adding a content via CSS and this is their assumption, but not only</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/zYEWqrb?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>vh and vw units for responsives stuff</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">This units is very useful in specific cases and it helps holding RWD and prevent overflow elements</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/yLzKQXB?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>How to hold aspect-ratio for any objects</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">aspect-ratio property helps us to hold given aspect for any object in HTML like images or other elements</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/ExbZNpX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>how easly create any shape for elements in CSS</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">clip-path property allow users to create any hexagon, circle or square figures only using CSS </p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/MWOJpGx?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>How to add 360 degres pallete inside an element easily</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">Conic-gradient function of background-image property creates an image with colors rotated around 360 degres from the center</p>
-                  <iframe class="tip__iframe" scrolling="no" title="conic-gradient()" src="https://codepen.io/Fiji08/embed/YzENoyR?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>
-              <div class="category-tip">
-                <button>how determinate a dimension from animation get started</button>
-                <div class="tip__hidden">
-                  <p class="tip__text">Pseudo-elements allow to user adding a content via CSS and this is their assumption, but not only</p>
-                  <iframe class="tip__iframe" scrolling="no" src="https://codepen.io/Fiji08/embed/LYzdGWX?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  </iframe>
-                </div>
-              </div>  
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="accesbility-section" id="accesbility-section">
-        <div class="info-box-wrapper">
-          <div style="--info-box-delay: 0.5s" class="info-box">
-            <div class="info-box__header">
-              <span>
-                <i class="fas fa-sort-down"></i>
-                <i class="fas fa-sort-up"></i>
-              </span>
-              <h1>aspect-ratio Property</h1>
-            </div>
-            <div class="info-box__content">
-              <h1>Supported browsers and their version</h1>
-              <div class="content-supported-browsers">
-                <div class="browser-cell">
-                  <h1>Firefox</h1>
-                  <i style="color: #FF5233" class="fab fa-firefox-browser"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Chrome</h1>
-
-                  <i style="color: yellow" class="fab fa-chrome"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Edge</h1>
-
-                  <i style="color: #0D559E" class="fab fa-edge"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Internet Explorer</h1>
-
-                  <i style="color: #18BCEE" class="fab fa-internet-explorer"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Opera</h1>
-                  <i style="color: #FF1429" class="fab fa-opera"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Safari</h1>
-                  <i style="color: #2290EE" class="fab fa-safari"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="--info-box-delay: 1s" class="info-box">
-            <div class="info-box__header">
-              <span><i class="fas fa-sort-down"></i></span>
-              <h1>clip-path Property</h1>
-            </div>
-            <div class="info-box__content">
-              <h1>Supported browsers and their version</h1>
-              <div class="content-supported-browsers">
-                <div class="browser-cell">
-                  <h1>Firefox</h1>
-                  <i style="color: #FF5233" class="fab fa-firefox-browser"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Chrome</h1>
-
-                  <i style="color: yellow" class="fab fa-chrome"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Edge</h1>
-
-                  <i style="color: #0D559E" class="fab fa-edge"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Internet Explorer</h1>
-
-                  <i style="color: #18BCEE" class="fab fa-internet-explorer"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Opera</h1>
-                  <i style="color: #FF1429" class="fab fa-opera"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Safari</h1>
-                  <i style="color: #2290EE" class="fab fa-safari"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="--info-box-delay: 1.5s" class="info-box">
-            <div class="info-box__header">
-              <span><i class="fas fa-sort-down"></i></span>
-              <h1>aspect-ratio Property</h1>
-            </div>
-            <div class="info-box__content">
-              <h1>Supported browsers and their version without prefixes</h1>
-              <div class="content-supported-browsers">
-                <div class="browser-cell">
-                  <h1>Firefox</h1>
-                  <i style="color: #FF5233" class="fab fa-firefox-browser"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Chrome</h1>
-
-                  <i style="color: yellow" class="fab fa-chrome"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Edge</h1>
-
-                  <i style="color: #0D559E" class="fab fa-edge"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Internet Explorer</h1>
-
-                  <i style="color: #18BCEE" class="fab fa-internet-explorer"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Opera</h1>
-                  <i style="color: #FF1429" class="fab fa-opera"></i>
-                </div>
-                <div class="browser-cell">
-                  <h1>Safari</h1>
-                  <i style="color: #2290EE" class="fab fa-safari"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <aside class="aside">
-          <div class="aside__links">
-            <a target="_blank" class="social-link" href="https://stackoverflow.com/users/16585264/fiji"><i class="fab fa-stack-overflow"></i></a>
-            <a target="_blank" class="social-link" href="https://github.com/Fiji404"><i class="fab fa-github"></i></a>
-            <a target="_blank" class="social-link" href="https://www.reddit.com/u/Fiji990?utm_medium=android_app&utm_source=share"><i class="fab fa-reddit-alien"></i></a>
-          </div>
-          <button class="aside-toggle">
-            <span class="aside__forward--arrow"><i class="fas fa-chevron-right"></i></span>
-            <span class="aside__back--arrow"><i class="fas fa-chevron-left"></i></span>
-          </button>
-      </aside>
-      <footer class="footer">
-        <button class="footer__toggle">
-          <span class="arrow-up"><i class="fas fa-arrow-up"></i></span>
-          <span class="arrow-down"><i class="fas fa-arrow-down"></i></span>
-        </button>
-          <div class="content-left">
-          </div>
-          <div class="content-right">
-              <a target="_blank" href="https://tipply.pl/u/fijiwater">
-                <img src="./Pictures/tipply.svg" alt="Tipply-logo">
-              </a>
-              <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
-                <img class="discord-logo" src="./Pictures/discord-logo.png" alt="Discord">
-              </a>
-          </div>
-      </footer>
-    </div>
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
-  </body>
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+    </body>
 </html>

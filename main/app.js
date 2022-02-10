@@ -14,8 +14,9 @@ const footer = document.querySelector('footer');
 const containerCategory = document.querySelector('.content__wrapper-categories');
 const tipCancelBtn = document.querySelector('.btn__tips--hide');
 const HideArrowFooter = document.querySelector('.arrow-up');
-const infoBoxExpander = document.querySelector('.info-box__header > span');
-const infoBoxContent = document.querySelector('.info-box__content');
+const AboutSiteLink = document.querySelector('.aboutMe-link');
+const AboutSiteBtn = document.querySelector('.about-site');
+const infoBoxExpander = document.getElementsByClassName('content-expander')
 
 tipsToggle.addEventListener('click', () => {
     tipsContent.classList.toggle('active');
@@ -41,6 +42,7 @@ tipHeader.addEventListener('click', function() {
 });
 
 footerBtn.addEventListener('click', () => {
+    AboutSiteBtn.classList.remove('active');
     footer.classList.toggle('active');
     if (footer.classList.contains('active')) {
       HideArrowFooter.classList.add('active');
@@ -83,8 +85,25 @@ tipCancelBtn.addEventListener('click', () => {
   });
 });
 
-infoBoxExpander.addEventListener('click', () => {
-  infoBoxContent.classList.toggle('active');
-  infoBoxExpander.classList.toggle('active');
-})
 
+AboutSiteLink.addEventListener('click', () => {
+  footer.classList.toggle('active');
+  AboutSiteBtn.classList.add('active');
+  if (footer.classList.contains('active')) {
+    HideArrowFooter.classList.add('active');
+  } else {
+    HideArrowFooter.classList.remove('active');
+  }
+});
+
+for (let i = 0; i < infoBoxExpander.length; i++) {
+  infoBoxExpander[i].addEventListener('click', function(el) {
+    this.classList.toggle('active');
+    let contentBox = this.nextElementSibling;
+    if (contentBox.style.maxHeight) {
+      contentBox.style.maxHeight = null;
+    } else {
+      contentBox.style.maxHeight = contentBox.scrollHeight + "px";
+    }
+  })
+}
