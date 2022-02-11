@@ -1,0 +1,72 @@
+.dark {
+    --bg: #242424;
+    --card: rgb(0, 0, 0); 
+    --typography_header: #fff;
+    --fade-white: rgb(138, 138, 138);
+    --typography_desc: rgb(190, 190, 190);
+    --nav-link: rgb(255, 255, 255);
+    --nav-link-contrast: #000;
+    --alpha: 0.3;
+    --card-portfolio: rgba(255, 255, 255, 0.16);
+    --card-alpha: .2;
+    --content-mutable: rgb(88, 88, 88);
+    --buttons: rgba(0, 0, 0, 0.76);
+    --position: left;
+    --info: rgba(0, 0, 0, 0.4);
+    --info-header: #fff;
+    --info-content: rgb(39, 39, 39);
+}
+
+.light {
+    --bg: #fff;
+    --card: rgb(255, 255, 255);
+    --fade-white: rgb(134, 134, 134);
+    --typography_header: rgb(0, 0, 0);
+    --typography_desc: rgb(66, 66, 66);
+    --nav-link: #000;
+    --nav-link-contrast: #fff;
+    --alpha: 0.3;
+    --card-portfolio: rgba(46, 46, 46, 0.973);
+    --card-alpha: .4;
+    --content-mutable: rgb(219, 219, 219);
+    --buttons: #222;
+    --position: center;
+    --info: rgba(255, 255, 255, 0.7);
+    --info-header: #000;
+    --info-content: rgb(109, 109, 109);
+}
+
+.theme-toggle {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+
+ion-icon[name="sunny-outline"] {
+    font-size: 45px;
+    color: rgb(0, 0, 0)
+}
+
+ion-icon[name="moon-outline"] {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+}
+
+.light-icon {
+    display: none;
+}
+
+.theme-toggle.active .dark-icon {
+    display: none;
+}
+
+.theme-toggle.active .light-icon {
+    display: inline;
+}

@@ -16,7 +16,7 @@ const tipCancelBtn = document.querySelector('.btn__tips--hide');
 const HideArrowFooter = document.querySelector('.arrow-up');
 const AboutSiteLink = document.querySelector('.aboutMe-link');
 const AboutSiteBtn = document.querySelector('.about-site');
-const infoBoxExpander = document.getElementsByClassName('content-expander')
+const infoBoxExpander = document.getElementsByClassName('content-expander');
 
 tipsToggle.addEventListener('click', () => {
     tipsContent.classList.toggle('active');
@@ -97,13 +97,17 @@ AboutSiteLink.addEventListener('click', () => {
 });
 
 for (let i = 0; i < infoBoxExpander.length; i++) {
-  infoBoxExpander[i].addEventListener('click', function(el) {
+  infoBoxExpander[i].addEventListener('click', function() {
     this.classList.toggle('active');
     let contentBox = this.nextElementSibling;
     if (contentBox.style.maxHeight) {
       contentBox.style.maxHeight = null;
+      contentBox.style.margin = "0 0 0 0"
+      contentBox.style.padding = "0 20px 0 20px"
     } else {
       contentBox.style.maxHeight = contentBox.scrollHeight + "px";
+      contentBox.style.margin = "0 0 20px 0";
+      contentBox.style.padding = "0 20px 20px 20px"
     }
   })
-}
+};

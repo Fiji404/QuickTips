@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('../header.css');
 @import url('../footer.css');
+@import url(../Theme.css);
 
 *, *::before, *::after {
     margin: 0;
@@ -26,7 +27,8 @@ html::-webkit-scrollbar-track {
     min-height: 100vh;
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(-45deg, #222, #444);
+    background-color: var(--bg);
+    transition: background-color 500ms ease;
     overflow: hidden;
 }
 
@@ -38,7 +40,8 @@ html::-webkit-scrollbar-track {
     height: 150px;
     -webkit-clip-path: circle(49.4% at 50% 51%);
     clip-path: circle(49.4% at 50% 51%);
-    background: rgba(255, 255, 255, 0.15);
+    /* background: rgba(255, 255, 255, 0.15); */
+    background-color: rgba(var(--card));
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
     animation: bouncing 10s infinite alternate ease;
@@ -48,13 +51,12 @@ html::-webkit-scrollbar-track {
     bottom: 20vh;
     left: 2%;
     animation: originate 2s 1s forwards, bouncing 10s 1.5s infinite alternate ease ;
-    background: rgba(255, 255, 255, 0);
     
 }
 
 @keyframes originate {
     to {
-        background: rgba( 255, 255, 255, 0.15 );
+        background: rgba(var(--card), var(--alpha));
     }
 }
 
@@ -98,14 +100,14 @@ html::-webkit-scrollbar-track {
 }
 
 .card__item {
-    background: rgba(255, 255, 255, 0.16);
+    background-color: var(--card-portfolio);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6.2px);
     border: 1px solid rgba(255, 255, 255, 0.404);
     padding: 20px;
-    transition: .23s;
+    transition: .23s, background-color 300ms;
     cursor: pointer;
     height: 100%;
     display: flex;
@@ -113,8 +115,8 @@ html::-webkit-scrollbar-track {
 }
 
 .card__item:hover {
-    background: rgba(255, 255, 255, 0.295);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgba(var(--card-portfolio), var(--card-alpha));
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(0);
 }
 

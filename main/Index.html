@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#636363" />
+        <meta name="theme-color" content="#444" />
         <meta name="keywords" content="web site language,languages on the web,web languages,css language, learning" />
         <meta name="description" content="This website is about learning quick tips for web languages" />
         <link rel="stylesheet" type="text/css" href="Style.css" />
@@ -13,18 +13,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet" />
         <link rel="icon" href="./Pictures/main-logo.png" />
-        <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3574570708287151"
-            crossorigin="anonymous"
-        ></script>
-        <script defer src="app.js"></script>
+        <script defer src="/scripts/app.js"></script>
+        <script defer src="/scripts/LightTheme.js"></script>
         <title>Quick Tips for Web languages</title>
     </head>
     <body>
-        <div class="root">
+        <div class="root dark">
+            <button class="theme-toggle">
+                <span class="dark-icon"><ion-icon name="moon-outline"></ion-icon></span>
+                <span class="light-icon"><ion-icon name="sunny-outline"></ion-icon></span>
+            </button>
             <nav class="main__navigation">
-                <img class="main__logo" src="./Pictures/main__logo.svg" />
+                <object class="main__logo" data="./Pictures/main__logo.svg" type="image/svg+xml"></object>
                 <div class="hamburger">
                     <div class="hamburger__prop prop1"></div>
                     <div class="hamburger__prop prop2"></div>
@@ -275,16 +275,16 @@
                     </div>
                 </div>
             </section>
-            <section class="accesbility-section" id="accesbility-section">
+            <section class="accesbility-section active" id="accesbility-section">
                 <div class="info-box-wrapper">
                     <div style="--info-box-delay: 0.5s" class="info-box">
-                        <div class="info-box__header">
-                            <h1>aspect-ratio Property</h1>
+                            <div class="info-box__header">
+                                <h1>aspect-ratio Property</h1>
+                            </div>
                             <span class="content-expander">
                                 <i class="fas fa-sort-down"></i>
                                 <i class="fas fa-sort-up"></i>
                             </span>
-                        </div>
                         <div class="info-box__content">
                             <h1>Supported browsers and their version</h1>
                             <div class="content-supported-browsers">
@@ -325,9 +325,12 @@
                     </div>
                     <div style="--info-box-delay: 1s" class="info-box">
                         <div class="info-box__header">
-                            <span class="content-expander"><i class="fas fa-sort-down"></i></span>
                             <h1>Flexbox tool</h1>
                         </div>
+                            <span class="content-expander">
+                                <i class="fas fa-sort-down"></i>
+                                <i class="fas fa-sort-up"></i>
+                            </span>
                         <div class="info-box__content">
                             <h1>Supported browsers and their version</h1>
                             <div class="content-supported-browsers">
@@ -366,9 +369,12 @@
                     </div>
                     <div style="--info-box-delay: 1.5s" class="info-box">
                         <div class="info-box__header">
-                            <span class="content-expander"><i class="fas fa-sort-down"></i></span>
                             <h1>GRID tool</h1>
                         </div>
+                        <span class="content-expander">
+                            <i class="fas fa-sort-down"></i>
+                            <i class="fas fa-sort-up"></i>
+                        </span>
                         <div class="info-box__content">
                             <h1>Supported browsers and their version without prefixes</h1>
                             <div class="content-supported-browsers">
@@ -407,9 +413,12 @@
                     </div>
                     <div style="--info-box-delay: 2s" class="info-box">
                         <div class="info-box__header">
-                            <span><i class="fas fa-sort-down"></i></span>
                             <h1>conic-gradient() function</h1>
                         </div>
+                        <span class="content-expander">
+                            <i class="fas fa-sort-down"></i>
+                            <i class="fas fa-sort-up"></i>
+                        </span>
                         <div class="info-box__content">
                             <h1>Supported browsers and their version without prefixes</h1>
                             <div class="content-supported-browsers">
@@ -451,9 +460,12 @@
                     </div>
                     <div style="--info-box-delay: 2.5s" class="info-box">
                         <div class="info-box__header">
-                            <span><i class="fas fa-sort-down"></i></span>
                             <h1>Transform-origin support</h1>
                         </div>
+                        <span class="content-expander">
+                            <i class="fas fa-sort-down"></i>
+                            <i class="fas fa-sort-up"></i>
+                        </span>
                         <div class="info-box__content">
                             <h1>Supported browsers and their version without prefixes</h1>
                             <div class="content-supported-browsers">
@@ -492,9 +504,12 @@
                     </div>
                     <div style="--info-box-delay: 3s" class="info-box">
                         <div class="info-box__header">
-                            <span><i class="fas fa-sort-down"></i></span>
                             <h1>gap for GRID</h1>
                         </div>
+                        <span class="content-expander">
+                            <i class="fas fa-sort-down"></i>
+                            <i class="fas fa-sort-up"></i>
+                        </span>
                         <div class="info-box__content">
                             <h1>Supported browsers and their version without prefixes</h1>
                             <div class="content-supported-browsers">
@@ -579,5 +594,7 @@
             </footer>
         </div>
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>

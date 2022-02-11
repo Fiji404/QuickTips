@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url('header.css');
 @import url('footer.css');
+@import url(Theme.css);
 
 * {
     margin: 0;
@@ -24,11 +25,12 @@ html::-webkit-scrollbar-track {
     scroll-behavior: smooth;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: rgb(36, 36, 36);
+    background-color: var(--bg);
     position: relative;
     font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
+    transition: background-color 500ms;
 }
 
 .main__content {
@@ -40,6 +42,7 @@ html::-webkit-scrollbar-track {
     gap: 25px;
     user-select: none;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .main__content > a {
@@ -48,13 +51,13 @@ html::-webkit-scrollbar-track {
 }
 
 .category__card {
-    background-color: rgb(0, 0, 0);
+    background-color: var(--card);
     background-size: 200% auto;
     border-radius: 20px;
     padding: 5%;
     max-width: 350px;
     min-width: 305px;
-    transition: 0.6s ease;
+    transition: 0.6s ease, background-color 800ms;
     cursor: pointer;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.589);
     position: relative;
@@ -64,7 +67,7 @@ html::-webkit-scrollbar-track {
 .category__card:hover,
 .category__card:focus {
     transform: translateY(-20px);
-    box-shadow: 0 0 25px 2px #000000;
+    box-shadow: 0 0 25px 2px #000;
 }
 
 .category__card:active {
@@ -76,11 +79,11 @@ html::-webkit-scrollbar-track {
     font-size: 2.1rem;
     letter-spacing: 2px;
     font-weight: 500;
-    color: #fff
+    color: var(--typography_header)
 }
 
 .category__card p {
-    color: rgb(170, 170, 170);
+    color: var(--typography_desc);
     font-size: 1.3rem;
 }
 
@@ -116,10 +119,10 @@ html::-webkit-scrollbar-track {
 
 .tips-container {
     display: none;
-    margin-top: 100px;
     padding: 3% 0;
-    background-color: rgb(58, 58, 58);
-    color: #fff;
+    background-color: var(--content-mutable);
+    min-height: 100vh;
+    transition: background-color 700ms;
 }
 
 .tips-container.active {
@@ -137,6 +140,7 @@ html::-webkit-scrollbar-track {
     font-family: "Mochiy Pop P One", sans-serif;
     letter-spacing: 1px;
     text-align: center;
+    color: var(--typography_header)
 }
 
 .tips__header > p {
@@ -144,17 +148,7 @@ html::-webkit-scrollbar-track {
     font-size: 30px;
     text-align: center;
     text-shadow: 0 0 15px rgb(0, 0, 0);
-}
-
-@keyframes textappear {
-    from {
-        background-color: rgba(223, 221, 224, 0.377);
-        color: rgb(0, 0, 0);
-    }
-    to {
-        background-color: rgb(58, 58, 58);
-        color: rgb(255, 255, 255);
-    }
+    color: var(--typography_desc)
 }
 
 .tips-content {
@@ -195,18 +189,18 @@ html::-webkit-scrollbar-track {
 }
 
 .category-tip button {
-    padding: .5rem 1.5rem;
+    padding: 1rem 1.5rem;
     cursor: pointer;
-    background-color: #222;
+    background-color: var(--buttons);
     border-radius: 5px;
     color: rgb(224, 224, 224);
     border: none;
     font-size: 20px;
-    transition: .3s ease;
+    transition: .3s ease, background-color 700ms;
     cursor: pointer;
     height: 100%;
     width: 100%;
-    box-shadow: 0 0 20px 0   rgba(255, 255, 255, 0.568);
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.568);
     min-height: 100px;
     max-width: 350px;
     font-size: 22px;
@@ -231,15 +225,16 @@ html::-webkit-scrollbar-track {
 }
 
 .tip__text {
-    background-color: rgb(221, 221, 221);
+    background-color: var(--typography_header);
     text-align: center;
     padding: 10px 5px;
     width: 100%;
     min-width: 300px;
-    color: rgb(0, 0, 0);
+    color: var(--nav-link-contrast);
     text-shadow: 0 0 10px #000;
-    font-size: 20px;
+    font-size: 22px;
     border-radius: 20px 20px 0 0;
+    transition: background-color 400ms, color 600ms;
 }
 
 .tip__iframe {
@@ -264,12 +259,14 @@ html::-webkit-scrollbar-track {
 }
 
 .accesbility-section {
-    margin-top: 100px;
     min-height: 100vh;
     display: none;
     flex-grow: 1;
-    background-image: linear-gradient(-45deg,#777777,#181818);
+    background-image: linear-gradient(-45deg, var(--typography_header), var(--nav-link-contrast));
+    background-size: 200% auto;
+    background-position: var(--position);
     padding: 50px 0;
+    transition: background-position 1s ease;
 }
 
 .accesbility-section.active {
@@ -303,11 +300,14 @@ html::-webkit-scrollbar-track {
 
 .info-box {
     opacity: 0;
-    padding: 20px;
-    background-color: #fff;
+    background-image: linear-gradient(45deg, var(--info), #b6b6b6);
+    background-size: 200% auto;
+    background-position: left;
     border-radius: 30px;
     width: 100%;
     transition: .3s;
+    user-select: none;
+    padding: 0 20px;
 }
 
 .info-box:hover,
@@ -319,9 +319,8 @@ html::-webkit-scrollbar-track {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     position: relative;
-    padding: 0 20px;
+    min-height: 100px;
 }
 
 .info-box__header h1 {
@@ -329,41 +328,44 @@ html::-webkit-scrollbar-track {
     letter-spacing: 2px;
     text-align: center;
     user-select: none;
+    display: inline-block;
+    color: var(--info-header);
 }
 
-.info-box__header span {
+.content-expander {
     margin-right: auto;
     position: absolute;
-    left: 0;
+    top: 30px;
 }
 
 .fa-sort-down,
 .fa-sort-up {
     cursor: pointer;
     font-size: 35px;
-    color: #444
+    color: var(--typography_header)
 }
 
 .fa-sort-up {
     display: none;
 }
 
-.info-box__header span.active .fa-sort-up {
-    display: inline;
-} 
-
-.info-box__header span.active .fa-sort-down {
+.content-expander.active .fa-sort-down {
     display: none;
 }
+
+.content-expander.active .fa-sort-up {
+    display: inline;
+} 
 
 .info-box__content {
     max-height: 0;
     overflow: hidden;
     border-radius: 15px;
     /* margin-top: 40px; */
-    background-color: rgb(39, 39, 39);
-    /* padding: 30px 10px; */
+    background-color: var(--info-content);
+    padding: 0 20px;
     transition: max-height .3s;
+    grid-area: content;
 }
 
 .info-box__content.active {
@@ -384,10 +386,12 @@ html::-webkit-scrollbar-track {
 .info-box__content > h1 {
     text-transform: uppercase;
     font-size: 30px;
-    color: #fff;
+    color: var(--typography_header);
     border-bottom: 2px solid rgb(146, 146, 146);
     text-align: center;
+    width: 100%;
     user-select: none;
+    padding: 20px 0;
 }
 
 .content-supported-browsers {
@@ -423,8 +427,8 @@ html::-webkit-scrollbar-track {
 }
 
 .browser-cell h1 {
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 4px rgba(219, 219, 219, 0.705);
+    color: var(--typography_header);
+    text-shadow: 0 0 3px var(--typography_header);
     letter-spacing: 2px;
     text-align: center;
 }
