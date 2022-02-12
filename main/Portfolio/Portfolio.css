@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('../header.css');
-@import url('../footer.css');
-@import url(../Theme.css);
+@import url('../components/header.css');
+@import url('../components/footer.css');
+@import url(../components/Theme.css);
 
 *, *::before, *::after {
     margin: 0;
@@ -40,23 +40,24 @@ html::-webkit-scrollbar-track {
     height: 150px;
     -webkit-clip-path: circle(49.4% at 50% 51%);
     clip-path: circle(49.4% at 50% 51%);
-    /* background: rgba(255, 255, 255, 0.15); */
-    background-color: rgba(var(--card));
+    background-color: var(--ball);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
     animation: bouncing 10s infinite alternate ease;
+    z-index: -1;
 }
 
 .root::before {
     bottom: 20vh;
     left: 2%;
-    animation: originate 2s 1s forwards, bouncing 10s 1.5s infinite alternate ease ;
+    animation: originate 2s 1s forwards, bouncing 10s 1.5s infinite alternate ease;
+    visibility: hidden;
     
 }
 
 @keyframes originate {
     to {
-        background: rgba(var(--card), var(--alpha));
+        visibility: visible;
     }
 }
 
@@ -115,8 +116,8 @@ html::-webkit-scrollbar-track {
 }
 
 .card__item:hover {
-    background-color: rgba(var(--card-portfolio), var(--card-alpha));
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    background-color: var(--card-portfolio-active);
+    box-shadow: 0 20px 30px var(--portfolio-shadow);
     backdrop-filter: blur(0);
 }
 
@@ -125,11 +126,12 @@ html::-webkit-scrollbar-track {
     margin-bottom: 18px;
     font-size: clamp(1.5rem, 2vw, 2rem);
     background: rgba(255, 255, 255, 0.2);
-    color: rgb(255, 255, 255);
+    color: var(--typography_header);
     border: 1px solid rgba(255, 255, 255, 0.568);
     border-radius: 10px;
     padding: 15px 0;
     line-height: 1.3;
+    transition: color 300ms;
 }
 
 .progress-bar {

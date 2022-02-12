@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-@import url('../header.css');
-@import url('../footer.css');
+@import url('../components/header.css');
+@import url('../components/footer.css');
+@import url(../components/Theme.css);
 
 *, ::after, ::before {
   margin: 0;
@@ -11,7 +12,8 @@
 .root {
   height: 100vh;
   overflow: hidden;
-  background-color: rgb(61, 61, 61);
+  background-color: var(--bg);
+  transition: background-color 500ms ease;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;

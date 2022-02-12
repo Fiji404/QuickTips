@@ -8,6 +8,7 @@
     --nav-link-contrast: #000;
     --alpha: 0.3;
     --card-portfolio: rgba(255, 255, 255, 0.16);
+    --card-portfolio-active: rgba(255, 255, 255, 0.27);
     --card-alpha: .2;
     --content-mutable: rgb(88, 88, 88);
     --buttons: rgba(0, 0, 0, 0.76);
@@ -15,6 +16,8 @@
     --info: rgba(0, 0, 0, 0.4);
     --info-header: #fff;
     --info-content: rgb(39, 39, 39);
+    --portfolio-shadow: rgba(0, 0, 0, .3);
+    --ball: rgb(87, 87, 87);
 }
 
 .light {
@@ -26,7 +29,8 @@
     --nav-link: #000;
     --nav-link-contrast: #fff;
     --alpha: 0.3;
-    --card-portfolio: rgba(46, 46, 46, 0.973);
+    --card-portfolio: rgba(134, 134, 134, 0.973);
+    --card-portfolio-active: rgba(134, 134, 134, 0.8);
     --card-alpha: .4;
     --content-mutable: rgb(219, 219, 219);
     --buttons: #222;
@@ -34,6 +38,8 @@
     --info: rgba(255, 255, 255, 0.7);
     --info-header: #000;
     --info-content: rgb(109, 109, 109);
+    --portfolio-shadow: rgba(0, 0, 0, .3);
+    --ball: rgb(235, 235, 235);
 }
 
 .theme-toggle {
@@ -51,22 +57,22 @@
 
 ion-icon[name="sunny-outline"] {
     font-size: 45px;
-    color: rgb(0, 0, 0)
+    color: rgb(255, 255, 255)
 }
 
 ion-icon[name="moon-outline"] {
     font-size: 45px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
-.light-icon {
-    display: none;
-}
-
-.theme-toggle.active .dark-icon {
+.dark-icon {
     display: none;
 }
 
 .theme-toggle.active .light-icon {
+    display: none;
+}
+
+.theme-toggle.active .dark-icon {
     display: inline;
 }

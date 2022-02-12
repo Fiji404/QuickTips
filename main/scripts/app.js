@@ -20,10 +20,16 @@ const infoBoxExpander = document.getElementsByClassName('content-expander');
 
 tipsToggle.addEventListener('click', () => {
     tipsContent.classList.toggle('active');
+    if (accesbilityContent.classList.contains('active')) {
+      accesbilityContent.classList.remove('active');
+    }
 });
 
 accesbilityToggle.addEventListener('click', () => {
-  accesbilityContent.classList.toggle('active')
+  accesbilityContent.classList.toggle('active');
+  if (tipsContent.classList.contains('active')) {
+    tipsContent.classList.remove('active');
+  }
 })
 
 asidebtn.addEventListener('click', function() {
@@ -102,12 +108,8 @@ for (let i = 0; i < infoBoxExpander.length; i++) {
     let contentBox = this.nextElementSibling;
     if (contentBox.style.maxHeight) {
       contentBox.style.maxHeight = null;
-      contentBox.style.margin = "0 0 0 0"
-      contentBox.style.padding = "0 20px 0 20px"
     } else {
       contentBox.style.maxHeight = contentBox.scrollHeight + "px";
-      contentBox.style.margin = "0 0 20px 0";
-      contentBox.style.padding = "0 20px 20px 20px"
     }
-  })
+  });
 };
