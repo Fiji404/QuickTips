@@ -12,7 +12,7 @@
 .root {
   height: 100vh;
   overflow: hidden;
-  background-color: var(--bg);
+  background-color: var(--bg-grey);
   transition: background-color 500ms ease;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -35,12 +35,12 @@
   animation: loginappear 2.2s ease;
   animation-iteration-count: 1;
   padding: 15px 0 10px 0;
-  background-color: #222;
+  background-color: var(--card-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0 0 120px -35px rgb(173, 173, 173);
+  box-shadow: 0 0 120px -35px var(--bx-shadow);
   border-radius: 20px;
 }
 
@@ -116,7 +116,7 @@
 
 .form--login h1 {
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--typography_header);
   text-shadow: 0 0 10px rgb(160, 160, 160);
   font-size: 33px;
   letter-spacing: 7px;
@@ -137,7 +137,7 @@
   font-size: 35px;
   border: 2px solid #9e8787;
   background-color: transparent;
-  color: #fff;
+  color: var(--typography_header);
   padding: 0 5px;
   outline: none;
   text-align: center;
@@ -148,7 +148,7 @@
 
 .login__input:focus {
   width: 80%;
-  border: 2px solid #fff;
+  border: 2px solid var(--typography_header);
 }
 
 .user-input:focus + .user-label,
@@ -213,7 +213,7 @@
 .password-label {
   position: absolute;
   pointer-events: none;
-  color: #fff;
+  color: var(--typography_header);
   transition: 0.45s ease;
   top: 50%;
   left: 50%;
@@ -242,10 +242,10 @@
   margin-bottom: 35px; 
   font-size: 20px;
   outline: none;
-  background: #5c5c5c;
+  background: #000;
   border: none;
   color: #fff;
-  border-radius: 22px;
+  border-radius: 1rem;
   transition: 0.4s ease;
   cursor: pointer;
   letter-spacing: 3px;
@@ -267,13 +267,14 @@
 
 .login-method {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: var(--typography_header);
   transition: 0.2s ease;
   font-size: 18px;
 }
 
 .login-method:hover {
-  color: rgba(255, 255, 255, 0.678);
+  color: var(--typography_header);
+  transform: scale(1.05);
 }
 
 @keyframes linkappear {
@@ -287,7 +288,8 @@
   width: min(90%, 550px);
   min-width: 300px;
   min-height: 550px;
-  background-color: rgb(36, 36, 36);
+  background-color: var(--dark-grey);
+  box-shadow: 0 0 125px -35px var(--bx-shadow);
   border-radius: 20px;
   justify-content: space-around;
   align-items: center;
@@ -315,7 +317,7 @@
 
 .main__input-field {
   border: none;
-  border-bottom: 3px solid rgb(255, 255, 255);
+  border-bottom: 3px solid var(--indicator);
   box-shadow: inset 0 3px 0 rgb(36, 36, 36);
   outline: none;
   padding: 0 10px;
@@ -368,7 +370,8 @@
   padding: 10px;
   outline: none;
   border: none;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--typography_header);
+  color: var(--card);
   text-transform: uppercase;
   font-size: 20px;
   border-radius: 16px;
@@ -378,6 +381,8 @@
 
 .input__date::-webkit-calendar-picker-indicator {
   cursor: pointer;
+  filter: invert(var(--invert));
+  
 }
 
 .register__gender-field {
@@ -412,7 +417,7 @@
 }
 
 .radio-caption {
-  color: #fff;
+  color: var(--typography_header);
   font-size: 20px;
   letter-spacing: 1px;
   cursor: pointer;
@@ -450,9 +455,9 @@
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
-  border-bottom: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid var(--typography_header);
   text-transform: uppercase;
   cursor: pointer;
-  color: #fff;
+  color: var(--typography_header);
   font-size: 18px;
 }

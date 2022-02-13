@@ -1,5 +1,6 @@
 .dark {
     --bg: #242424;
+    --bg-grey: rgb(61, 61, 61);
     --card: rgb(0, 0, 0); 
     --typography_header: #fff;
     --fade-white: rgb(138, 138, 138);
@@ -18,10 +19,16 @@
     --info-content: rgb(39, 39, 39);
     --portfolio-shadow: rgba(0, 0, 0, .3);
     --ball: rgb(87, 87, 87);
+    --bx-shadow: rgb(173, 173, 173);
+    --card-bg: #222;
+    --dark-grey: rgb(36, 36, 36);
+    --invert: 0;
+    --indicator: #fff;
 }
 
 .light {
     --bg: #fff;
+    --bg-grey: rgb(255, 255, 255);
     --card: rgb(255, 255, 255);
     --fade-white: rgb(134, 134, 134);
     --typography_header: rgb(0, 0, 0);
@@ -40,6 +47,11 @@
     --info-content: rgb(109, 109, 109);
     --portfolio-shadow: rgba(0, 0, 0, .3);
     --ball: rgb(235, 235, 235);
+    --bx-shadow: rgba(182, 182, 182, 0.808);
+    --card-bg: rgba(255, 255, 255, 0.815);
+    --dark-grey: rgba(255, 255, 255, 0.815);
+    --invert: 1;
+    --indicator: rgb(110, 110, 110);
 }
 
 .theme-toggle {
