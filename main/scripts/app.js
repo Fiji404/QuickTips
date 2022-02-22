@@ -38,7 +38,6 @@ asidebtn.addEventListener('click', function() {
 });
 
 hamburger.addEventListener('click', function() {
-    nav.classList.toggle('active');
     hamburger.classList.toggle('active');
 });
 

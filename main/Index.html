@@ -19,10 +19,6 @@
     </head>
     <body>
         <div class="root dark">
-            <button class="theme-toggle">
-                <span class="dark-icon"><ion-icon name="moon-outline"></ion-icon></span>
-                <span class="light-icon"><ion-icon name="sunny-outline"></ion-icon></span>
-            </button>
             <nav class="main__navigation">
                 <?xml version="1.0" standalone="no"?>
                 <svg class="main__logo" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 310" preserveAspectRatio="none">
@@ -73,26 +69,38 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                         />
                     </g>
                 </svg>
-                <div class="hamburger">
+                <input type="checkbox" id="themeToggle">
+                <label for="themeToggle" class="toggleButton">
+                    <div class="toggle__dot">
+                        <span class="moon">
+                            <ion-icon name="moon-outline"></ion-icon>
+                        </span>
+                        <span class="sun">
+                            <ion-icon name="sunny-outline"></ion-icon>
+                        </span>
+                    </div>
+                </label>
+                <input type="checkbox" id="navToggle">
+                <label for="navToggle" class="hamburger">
                     <div class="hamburger__prop prop1"></div>
                     <div class="hamburger__prop prop2"></div>
                     <div class="hamburger__prop prop3"></div>
-                </div>
+                </label>
                 <ul>
-                    <li class="list__item">
-                        <a style="--link-delay: 0.2s" class="home" href="index.html">Home</a>
+                    <li style="--link-delay: 0.2s" class="list__item">
+                        <a class="home" href="index.html">Home</a>
                     </li>
-                    <li class="list__item">
-                        <a style="--link-delay: 0.4s" class="aboutMe-link" href="#">About Site</a>
+                    <li style="--link-delay: 0.4s" class="list__item">
+                        <a class="aboutMe-link" href="#">About Site</a>
                     </li>
-                    <li class="list__item">
-                        <a style="--link-delay: 0.7s" href="./Portfolio/Portfolio.html">Portfolio</a>
+                    <li style="--link-delay: 0.6s" class="list__item">
+                        <a href="./Portfolio/Portfolio.html">Portfolio</a>
                     </li>
-                    <li class="list__item">
-                        <a style="--link-delay: 1s" href="#">More</a>
+                    <li style="--link-delay: 0.8s" class="list__item">
+                        <a href="#">More</a>
                     </li>
-                    <li class="list__item login">
-                        <a style="--link-delay: 1.2s" href="./Login/LoginForm.html">LOG IN</a>
+                    <li style="--link-delay: 1s" class="list__item login">
+                        <a href="./Login/LoginForm.html">LOG IN</a>
                     </li>
                 </ul>
             </nav>

@@ -176,7 +176,8 @@ html::-webkit-scrollbar-track {
 }
 
 .content__wrapper-categories {
-    width: min(90%, 1400px);
+    margin-top: 40px;
+    width: min(80%, 1400px);
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -189,7 +190,7 @@ html::-webkit-scrollbar-track {
 }
 
 .category-tip button {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.4rem;
     cursor: pointer;
     background-color: var(--buttons);
     border-radius: 5px;
