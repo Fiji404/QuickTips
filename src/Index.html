@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#444" />
+        <meta name="theme-color" content="#444444" />
         <meta name="keywords" content="web site language,languages on the web,web languages,css language, learning" />
         <meta name="description" content="This website is about learning quick tips for web languages" />
         <link rel="stylesheet" type="text/css" href="Style.css" />
@@ -80,8 +80,8 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                         </span>
                     </div>
                 </label>
-                <input type="checkbox" id="navToggle">
-                <label for="navToggle" class="hamburger">
+                <input aria-labelledby="navToggle" type="checkbox" id="navToggle">
+                <label name="navToggle" for="navToggle" class="hamburger">
                     <div class="hamburger__prop prop1"></div>
                     <div class="hamburger__prop prop2"></div>
                     <div class="hamburger__prop prop3"></div>
@@ -130,12 +130,12 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                     </div>
                 </a>
             </main>
-            <section id="tips-section">
+            <article id="tips-section">
                 <div class="tips-container">
-                    <div class="tips__header">
+                    <header class="tips__header">
                         <h1>Hello you choose a tips for css language, good choice here you are !</h1>
                         <p>Now select your category from you want to get a tip</p>
-                    </div>
+                    </header>
                     <div class="tips-content">
                         <span class="btn__tips--hide hide"><i class="fas fa-arrow-circle-left"></i></span>
                         <div class="content__wrapper-categories">
@@ -330,10 +330,10 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="accesbility-section" id="accesbility-section">
+            </article>
+            <article class="accesbility-section" id="accesbility-section">
                 <div class="info-box-wrapper">
-                    <div style="--info-box-delay: 0.5s" class="info-box">
+                    <section style="--info-box-delay: 0.5s" class="info-box">
                         <div class="info-box__header">
                             <h1>aspect-ratio Property</h1>
                         </div>
@@ -378,8 +378,8 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="--info-box-delay: 1s" class="info-box">
+                    </section>
+                    <section style="--info-box-delay: 1s" class="info-box">
                         <div class="info-box__header">
                             <h1>Flexbox tool</h1>
                         </div>
@@ -422,8 +422,8 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="--info-box-delay: 1.5s" class="info-box">
+                    </section>
+                    <section style="--info-box-delay: 1.5s" class="info-box">
                         <div class="info-box__header">
                             <h1>GRID tool</h1>
                         </div>
@@ -466,8 +466,8 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="--info-box-delay: 2s" class="info-box">
+                    </section>
+                    <section style="--info-box-delay: 2s" class="info-box">
                         <div class="info-box__header">
                             <h1>conic-gradient() function</h1>
                         </div>
@@ -513,8 +513,8 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="--info-box-delay: 2.5s" class="info-box">
+                    </section>
+                    <section style="--info-box-delay: 2.5s" class="info-box">
                         <div class="info-box__header">
                             <h1>Transform-origin support</h1>
                         </div>
@@ -557,8 +557,8 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="--info-box-delay: 3s" class="info-box">
+                    </section>
+                    <section style="--info-box-delay: 3s" class="info-box">
                         <div class="info-box__header">
                             <h1>gap for GRID</h1>
                         </div>
@@ -601,31 +601,31 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
+            </article>
             <aside class="aside">
                 <div class="aside__links">
-                    <a target="_blank" class="social-link" href="https://stackoverflow.com/users/16585264/fiji"
+                    <a target="_blank" aria-label="StackOverflow" class="social-link" href="https://stackoverflow.com/users/16585264/fiji"
                         ><i class="fab fa-stack-overflow"></i
                     ></a>
-                    <a target="_blank" class="social-link" href="https://github.com/Fiji404"
+                    <a aria-label="GitHub" target="_blank" class="social-link" href="https://github.com/Fiji404"
                         ><i class="fab fa-github"></i
                     ></a>
-                    <a
+                    <a aria-label="Reddit"
                         target="_blank"
                         class="social-link"
                         href="https://www.reddit.com/u/Fiji990?utm_medium=android_app&utm_source=share"
                         ><i class="fab fa-reddit-alien"></i
                     ></a>
                 </div>
-                <button class="aside-toggle">
+                <button aria-label="showLinks" class="aside-toggle">
                     <span class="aside__forward--arrow"><i class="fas fa-chevron-right"></i></span>
                     <span class="aside__back--arrow"><i class="fas fa-chevron-left"></i></span>
                 </button>
             </aside>
             <footer class="footer">
-                <button class="footer__toggle">
+                <button aria-label="showFooter" class="footer__toggle">
                     <span class="arrow-up"><i class="fas fa-arrow-up"></i></span>
                     <span class="arrow-down"><i class="fas fa-arrow-down"></i></span>
                 </button>
