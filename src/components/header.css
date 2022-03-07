@@ -1,116 +1,36 @@
-.main__logo {
-    max-width: 100%;
-    height: 150px;
-    animation: bounce 3s ease-in-out alternate infinite;
-    fill: var(--typography_header);
-    transition: fill 700ms ease;
-    flex-shrink: 0;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0px);
-    }
-    66% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-
-.main__navigation {
-    user-select: none;
+.navigation {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
     padding: 3% 0;
-    z-index: 1;
+    z-index: 1; 
     position: relative;
 }
-#themeToggle,
-#navToggle {
-    position: absolute;
-    left: -100px;
-    z-index: -2;
-}
 
-#themeToggle:checked + label .toggle__dot {
-    left: 50px;
-}
-
-.toggleButton {
-    width: 100px;
-    height: 50px;
-    border-radius: 50px;
-    border: 3px solid #444;
-    position: relative;
-    pointer-events: none;
+.navigation__logo {
+    height: 150px;
+    animation: logoBounce 1.65s ease-in alternate infinite;
+    fill: var(--typography_header);
+    transition: fill 700ms ease;
     flex-shrink: 0;
+    margin-right: 1rem;
 }
 
-.toggleButton > .toggle__dot {
-    cursor: pointer;
-    pointer-events: auto;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 200ms ease-in-out, transform 100ms ;
-    color: #fff;
-    overflow: hidden;
+@keyframes logoBounce {
+    to {
+        transform: translateY(-15px);
+    }
 }
 
-.toggleButton > .toggle__dot:active {
-    height: 24px;
-    transform: scaleX(1.2) translateY(-50%);
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(236, 236, 236);
-    color: rgb(0, 0, 0)
-}
-
-.toggle__dot.active .moon {
-    display: none;
-}
-
-.toggle__dot.active .sun {
-    display: inline;
-}
-
-.moon,
-.sun {
-    height: 30px;
-}
-
-.sun {
-    display: none;
-}
-
-ion-icon[name="moon-outline"],
-ion-icon[name="sunny-outline"] {
-    font-size: 30px;
-    color: inherit;
-}
-
-.main__navigation ul {
+.nav-list {
     min-width: 260px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 15px 30px;
 }
 
-.hamburger {
+.hamburger-menu {
     display: none;
     cursor: pointer;
     margin-right: 10px;
@@ -121,73 +41,71 @@ ion-icon[name="sunny-outline"] {
     width: 36px;
     background-color: var(--info-header);
     border-radius: 5px;
-    transition: .5s;
+    transition: 450ms;
 }
 
-.hamburger__prop ~ .hamburger__prop {
+.hamburger__prop:not(:first-child) {
     margin-top: 9px;
 }
 
-.hamburger.active .hamburger__prop {
+.hamburger-menu.active .hamburger__prop {
     background-color: #fff;
 }
 
-.hamburger.active .prop1 {
+.hamburger-menu.active .prop1 {
     transform: rotate(-45deg) translate(-19px, 13px);
 }
 
-.hamburger.active .prop2 {
+.hamburger-menu.active .prop2 {
     opacity: 0;
 } 
 
-.hamburger.active .prop3 {
+.hamburger-menu.active .prop3 {
     transform: rotate(45deg) translate(-5px, 0);
 }
 
-.main__navigation .list__item {
+.nav-list__item {
     list-style: none;
     cursor: pointer;
     border-radius: 23px;
 }
 
-.main__navigation .list__item a {
+.nav-list__link {
     display: inline-block;
     color: var(--nav-link);
     font-size: 17px;
-    width: 108px;
+    width: 110px;
     padding: 12px 0;
     white-space: nowrap;
     text-align: center;
-    transition: 0.5s;
+    transition: .5s;
     border: 2px dashed var(--nav-link);
     border-radius: 23px;
     position: relative;
     overflow: hidden;
-    outline: none;
     text-decoration: none;
 }
 
-.list__item a:not(.home):hover {
+.nav-list__link:not(.home):hover {
     color: var(--nav-link-contrast);
     border: 2px solid transparent;
 }
 
-.home {
-    width: 85px;
+.nav-list__link.home {
+    width: 95px;
     background-color: #000;
-    border-style: solid !important;
+    border-style: solid;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 23px;
-    color: #fff !important;
+    color: #fff;
 }
 
-.home:hover {
+.nav-list__link.home:hover {
     transform: translateY(-5px);
 }
 
-.list__item:nth-child(3) a::before,
-.list__item:nth-child(4) a::before {
+.portfolio::before,
+.more::before {
     content: "";
     position: absolute;
     right: 0;
@@ -200,18 +118,12 @@ ion-icon[name="sunny-outline"] {
     transition: 1s;
 }
 
-.list__item:nth-child(3):hover a::before,
-.list__item:nth-child(4):hover a::before {
-    width: 100%;
-}
-
-.list__item:nth-child(2) a::after,
-.list__item:nth-child(3) a::after {
+.about::after,
+.portfolio::after {
     content: "";
     position: absolute;
-    height: 150%;
+    height: 100%;
     width: 0;
-    border-radius: 23px;
     background-color: var(--nav-link);
     top: 50%;
     transform: translateY(-50%);
@@ -220,15 +132,16 @@ ion-icon[name="sunny-outline"] {
     transition: 0.65s;
 }
 
-.list__item:nth-child(3) a::after {
+.portfolio::after {
     transition: 1s;
 }
 
-.list__item:hover a::after {
+.nav-list__link:hover::after,
+.nav-list__link:hover::before {
     width: 100%;
 }
 
-.list__item:nth-child(4) a::before {
+.more::before {
     transition: .65s;
 }
 
@@ -236,17 +149,13 @@ ion-icon[name="sunny-outline"] {
     margin-left: 50px;
 }
 
-.login a:link {
+.nav-list__link.login {
     border: 2px solid var(--nav-link);
     width: 130px;
     letter-spacing: 3px;
 }
 
-.login a:hover {
-    border: 2px solid transparent;
-}
-
-.login a::before {
+.login::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -256,37 +165,42 @@ ion-icon[name="sunny-outline"] {
     height: 0;
     background-color: var(--nav-link);
     z-index: -1;
-    transition: 0.6s;
+    transition: 0.6s height;
 }
 
-.login a:hover::before {
+.login:hover::before {
     height: 100%;
 }
 
 @media screen and (max-width: 700px) {
-    .main__navigation {
+    .navigation {
         padding: 40px 0;
     }
 
-    .list__item a:not(.home):hover {
-        border: none
+    .footer {
+        flex-direction: column;
+        row-gap: 25px;
     }
 
-    #navToggle:checked + .hamburger .hamburger__prop {
+    .nav-list__link:not(.home):hover {
+        border: none;
+    }
+
+    #nav-toggle:checked + .hamburger-menu .hamburger__prop {
         background-color: #fff;
     }
 
-    #navToggle:checked ~ ul {
+    #nav-toggle:checked ~ .nav-list {
         height: 65vh;
     } 
 
-    #navToggle:checked ~ ul .list__item {
+    #nav-toggle:checked ~ .nav-list .nav-list__item {
         animation: ShowUp 1.5s forwards;
         animation-delay: calc(var(--link-delay) * 2.4);
         opacity: 0;
     }
 
-    .main__navigation ul {
+    .nav-list {
         position: absolute;
         flex-direction: column;
         left: 50%;
@@ -303,9 +217,8 @@ ion-icon[name="sunny-outline"] {
         row-gap: 15px;
     }
 
-    .main__navigation .list__item {
-        width: 50%;
-        transition: .3s;
+    .nav-list__item {
+        width: 40%;
     }
 
     @keyframes ShowUp {
@@ -322,25 +235,26 @@ ion-icon[name="sunny-outline"] {
         }
     }
 
-    .main__navigation .list__item a {
-        display: block;
+    .nav-list__link {
         border: none;
         width: 100%;
         padding: 20px 0;
-        border-radius: 0;
-        color: #fff;
+        border-radius: 5px;
     }
 
-    .home {
-        box-shadow: -10px 10px 15px 0 rgb(0, 0, 0);
+    .nav-list__link.home {
+        box-shadow: -15px 12px 15px 5px rgb(0, 0, 0);
         border-radius: 15px !important;
+        width: 100%;
     }
 
-    .login {
+    .nav-list__link.login {
+        width: 100%;
+        border: none;
         margin: 0;
     }
 
-    .hamburger {
+    .hamburger-menu {
         display: block;
         z-index: 1;
     }

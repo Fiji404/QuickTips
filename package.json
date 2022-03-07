@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/Fiji404/NewProject-QuickTips/issues"
   },
-  "homepage": "https://github.com/Fiji404/NewProject-QuickTips#readme",
-  "dependencies": {
-    "firebase": "^9.6.6",
-    "type": "module"
-  }
+  "homepage": "https://github.com/Fiji404/NewProject-QuickTips#readme"
 }

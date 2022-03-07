@@ -54,26 +54,74 @@
     --indicator: rgb(110, 110, 110);
 }
 
-.theme-toggle {
-    width: 50px;
+.button-theme {
+    width: 100px;
     height: 50px;
-    background-color: transparent;
-    border: none;
-    position: fixed;
-    right: 2%;
-    top: 2%;
+    border-radius: 50px;
+    border: 3px solid #444;
+    position: relative;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.button-theme__dot {
     cursor: pointer;
-    z-index: 5;
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease-in-out, transform 100ms ;
+    color: #fff;
+    overflow: hidden;
 }
 
-.dark-icon {
+.button-theme__sun {
     display: none;
 }
 
-.theme-toggle.active .light-icon {
-    display: none;
-}
-
-.theme-toggle.active .dark-icon {
+.button-theme__dot.active .button-theme__sun {
     display: inline;
+}
+
+.button-theme__dot.active .button-theme__moon {
+    display: none;
+}
+
+#themeToggle,
+#nav-toggle {
+    position: absolute;
+    left: -100px;
+    z-index: -1;
+}
+
+#themeToggle:checked + .button-theme .button-theme__dot {
+    left: 50px;
+}
+
+.button-theme__dot:active {
+    height: 24px;
+    transform: scaleX(1.2) translateY(-50%);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(236, 236, 236);
+    color: rgb(0, 0, 0)
+}
+
+.button-theme__moon,
+.button-theme__sun {
+    height: 30px;
+}
+
+ion-icon[name="moon-outline"],
+ion-icon[name="sunny-outline"] {
+    font-size: 30px;
+    color: inherit;
 }

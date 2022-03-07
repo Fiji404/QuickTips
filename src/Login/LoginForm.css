@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url('../components/header.css');
 @import url('../components/footer.css');
 @import url(../components/Theme.css);
@@ -9,80 +9,45 @@
   box-sizing: border-box;
 }
 
-.root {
+body {
   height: 100vh;
   overflow: hidden;
   background-color: var(--bg-grey);
   transition: background-color 500ms ease;
   font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
 }
 
-.main__forms-container {
+.container-forms {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
-  flex-grow: 1;
 }
 
-.form--login {
+
+.form-login {
   width: 90%;
   max-width: 500px;
   min-width: 300px;
-  animation: loginappear 2.2s ease;
-  animation-iteration-count: 1;
+  animation: loginAppear 2.2s ease;
   padding: 15px 0 10px 0;
   background-color: var(--card-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   box-shadow: 0 0 120px -35px var(--bx-shadow);
   border-radius: 20px;
+  outline: 2px solid var(--typography_header);
+  transition: transform 2s;
 }
 
-.login-content--hide {
-  opacity: 0;
-  animation: contenthide 1.2s ease 1.6s forwards;
-  animation-iteration-count: 1;
+.form-login.hide {
+  transform: translateX(100vw);
 }
 
-.login-content--hide.back {
-  animation: ShowReverse 1.2s ease 1.6s forwards;
+.form-login.back {
+  transform: translateX(0);
 }
 
-@keyframes ShowReverse {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes contenthide {
-  to {
-    opacity: 1;
-  }
-}
-
-.form--login.hide {
-  animation: loginhide 2s ease forwards;
-  position: absolute;
-  top: 0;
-}
-
-.form--login.back {
-  opacity: 1;
-}
-
-@keyframes loginhide {
-  to {
-    transform: translateX(100vw);
-  }
-}
-
-@keyframes loginappear {
+@keyframes loginAppear {
   0% {
     transform: translateY(100vh);
     min-width: 50px;
@@ -108,32 +73,37 @@
   }
 } 
 
-@keyframes hidecomponents {
-  from {
-    display: none;
+.form-content {
+  opacity: 0;
+  animation: contentHide 1.2s ease 1.8s forwards;
+}
+
+@keyframes contentHide {
+  to {
+    opacity: 1;
   }
 }
 
-.form--login h1 {
+.form-content__title {
   text-align: center;
+  font-weight: 600;
   color: var(--typography_header);
-  text-shadow: 0 0 10px rgb(160, 160, 160);
   font-size: 33px;
-  letter-spacing: 7px;
-  animation: hidecomponents 5s ease;
+  letter-spacing: 3px;
 }
 
-.user-data--user,
-.user-data--password {
+.form-content__user,
+.form-content__password {
   margin-top: 20px;
   display: flex;
   justify-content: center;
   position: relative;
   padding: 25px 0;
 }
+/* TODO */
 
-.login__input {
-  width: 70%;
+.form-login__input {
+  width: min(90%, 320px);
   font-size: 35px;
   border: 2px solid #9e8787;
   background-color: transparent;
@@ -146,8 +116,8 @@
   min-height: 60px;
 }
 
-.login__input:focus {
-  width: 80%;
+.form-login__input:focus {
+  width: 75%;
   border: 2px solid var(--typography_header);
 }
 
@@ -162,10 +132,6 @@
 .password-input:valid ~ .password-label {
   top: 10px;
   font-size: 24px;
-}
-
-.password-input.focused {
-  width: 65%;
 }
 
 .password-input.touched,
@@ -298,16 +264,12 @@
   transition: .5s;
   display: flex;
   top: 50%;
+  outline: 2px solid var(--typography_header);
+  transition: transform 2s ease;
 }
 
 .form--register.active {
-  animation: registerappear 1.8s ease-in-out 1s forwards;
-}
-
-@keyframes registerappear {
-  to {
-    transform: translateY(0);
-  }
+  transform: translateY(-90%);
 }
 
 .input-container {

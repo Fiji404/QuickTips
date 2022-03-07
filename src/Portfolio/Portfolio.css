@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('../components/header.css');
 @import url('../components/footer.css');
 @import url(../components/Theme.css);
@@ -8,11 +7,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
 }
 
 html::-webkit-scrollbar {
-    width: 0.8vw;
+    width: 1vw;
 }
 html::-webkit-scrollbar-thumb {
     background-color: rgb(49, 49, 49);
@@ -22,18 +20,16 @@ html::-webkit-scrollbar-track {
     background-color: rgb(167, 167, 167);
 }
 
-.root {
+body {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
-    position: relative;
-    z-index: 1;
     background-color: var(--bg);
     transition: background-color 500ms ease;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-.root::before,
-.root::after {
+body::before,
+body::after {
     content: '';
     position: fixed;
     width: 150px;
@@ -41,30 +37,10 @@ html::-webkit-scrollbar-track {
     -webkit-clip-path: circle(49.4% at 50% 51%);
     clip-path: circle(49.4% at 50% 51%);
     background-color: var(--ball);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border-radius: 10px;
     animation: bouncing 10s infinite alternate ease;
     z-index: -1;
-}
-
-.root::before {
-    bottom: 20vh;
-    left: 2%;
-    animation: originate 2s 1s forwards, bouncing 10s 1.5s infinite alternate ease;
-    visibility: hidden;
-    
-}
-
-@keyframes originate {
-    to {
-        visibility: visible;
-    }
-}
-
-.root::after {
-    top: 20vh;
-    right: 2%;
-    animation: bouncing 10s infinite alternate ease;
 }
 
 @keyframes bouncing {
@@ -80,27 +56,39 @@ html::-webkit-scrollbar-track {
     
 }
 
-@keyframes linkappear {
+body::before {
+    bottom: 20vh;
+    left: 2%;
+    animation: ballOriginate 1.5s 1s forwards, bouncing 10s 2.5s infinite alternate ease-in;
+    transform: scale(0);
+    
+}
+
+@keyframes ballOriginate {
     to {
-        transform: translateX(0);
-        opacity: 1;
+        transform: scale(1);
     }
 }
 
-.card-container {
-    margin: 0 auto;
-    width: min(85%, 1500px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 45px;
-    font-family: 'Press Start 2P', sans-serif;
+body::after {
+    top: 20vh;
+    right: 2%;
+    animation: bouncing 10s infinite alternate ease;
 }
 
-.card-container > a {
+.container-cards {
+    margin: 0 auto;
+    width: min(90%, 1500px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.container-cards > a {
     text-decoration: none;
 }
 
-.card__item {
+.portfolio-card {
     background-color: var(--card-portfolio);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -115,16 +103,16 @@ html::-webkit-scrollbar-track {
     flex-direction: column;
 }
 
-.card__item:hover {
+.portfolio-card:hover {
     background-color: var(--card-portfolio-active);
     box-shadow: 0 20px 30px var(--portfolio-shadow);
     backdrop-filter: blur(0);
 }
 
-.card__header {
+.portfolio-card__header {
     text-align: center;
     margin-bottom: 18px;
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(2.3rem, 2vw, 3rem);
     background: rgba(255, 255, 255, 0.2);
     color: var(--typography_header);
     border: 1px solid rgba(255, 255, 255, 0.568);
@@ -134,50 +122,36 @@ html::-webkit-scrollbar-track {
     transition: color 300ms;
 }
 
-.progress-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70px;
+.status-info {
+    padding: 20px 5px;
     background: rgba(255, 255, 255, 0.2);
     margin-bottom: 18px;
-    padding: 10px;
     border-radius: 7px;
 }
 
-.progress-status {
-    font-size: clamp(20px, 2vw, 28px);
-    text-transform: uppercase;
+.status-info__title {
+    font-size: clamp(2rem, 2vw, 3rem);
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     line-height: 1.4;
-    letter-spacing: 1px;
-    gap: 10px;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
-.completed {
-    color: #0f0;
-}
-
-.non-completed {
-    color: rgb(238, 255, 0)
-}
-
-.card__img {
+.portfolio-card__img {
     max-width: 100%;
+    height: 100%;
     border-radius: 13px;
     object-fit: cover;
     aspect-ratio: 16 / 9;
-    flex-grow: 1;
 }
 
 .fa-sync-alt,
 .fa-check {
     margin-left: 15px;
-    display: inline;
-    color: rgb(255, 255, 255);
+    color: rgb(3, 238, 54);
     font-size: 35px;
+}
+
+.fa-sync-alt {
+    color: yellow;
 }

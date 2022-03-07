@@ -8,14 +8,14 @@
         <link rel="icon" href="../Pictures/portfolio.svg" />
         <meta name="theme-color" content="#444444" />
         <script defer src="../scripts/LightTheme.js"></script>
+        <script defer src="../scripts/navigation.js"></script>
         <title>Portfolio Projects</title>
     </head>
-    <body>
-        <div class="root dark">
-            <nav class="main__navigation">
+    <body class="dark">
+            <nav class="navigation">
                 <?xml version="1.0" standalone="no"?>
                 <svg
-                    class="main__logo"
+                    class="navigation__logo"
                     version="1.0"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 250 310"
@@ -69,121 +69,111 @@ m231 -79 c-1 -47 -5 -115 -8 -152 l-6 -68 -48 0 c-27 0 -51 3 -53 8 -3 4 -8
                     </g>
                 </svg>
                 <input type="checkbox" id="themeToggle" />
-                <label for="themeToggle" class="toggleButton">
-                    <div class="toggle__dot">
-                        <span class="moon">
+                <label for="themeToggle" class="button-theme">
+                    <div class="button-theme__dot">
+                        <span class="button-theme__moon">
                             <ion-icon name="moon-outline"></ion-icon>
                         </span>
-                        <span class="sun">
+                        <span class="button-theme__sun">
                             <ion-icon name="sunny-outline"></ion-icon>
                         </span>
                     </div>
                 </label>
-                <input type="checkbox" id="navToggle" />
-                <label for="navToggle" class="hamburger">
-                    <div class="hamburger__prop prop1"></div>
-                    <div class="hamburger__prop prop2"></div>
-                    <div class="hamburger__prop prop3"></div>
+                <input type="checkbox" id="nav-toggle" />
+                <label name="navToggle" for="nav-toggle" class="hamburger-menu">
+                    <div aria-hidden="true" class="hamburger__prop prop1"></div>
+                    <div aria-hidden="true" class="hamburger__prop prop2"></div>
+                    <div aria-hidden="true" class="hamburger__prop prop3"></div>
                 </label>
-                <ul>
-                    <li style="--link-delay: 0.2s" class="list__item">
-                        <a class="home" href="../index.html">Home</a>
+                <ul class="nav-list">
+                    <li style="--link-delay: 0.2s" class="nav-list__item">
+                        <a class="nav-list__link home" href="../index.html">Home</a>
                     </li>
-                    <li style="--link-delay: 0.4s" class="list__item">
-                        <a class="aboutMe-link" href="#">About Site</a>
+                    <li style="--link-delay: 0.4s" class="nav-list__item">
+                        <a class="nav-list__link about" href="#">About Site</a>
                     </li>
-                    <li style="--link-delay: 0.6s" class="list__item">
-                        <a href="../Portfolio/Portfolio.html">Portfolio</a>
+                    <li style="--link-delay: 0.6s" class="nav-list__item">
+                        <a class="nav-list__link portfolio" href="../Portfolio/Portfolio.html">Portfolio</a>
                     </li>
-                    <li style="--link-delay: 0.8s" class="list__item">
-                        <a href="#">More</a>
+                    <li style="--link-delay: 0.8s" class="nav-list__item">
+                        <a class="nav-list__link more" href="#">More</a>
                     </li>
-                    <li style="--link-delay: 1s" class="list__item login">
-                        <a href="../Login/LoginForm.html">LOG IN</a>
+                    <li style="--link-delay: 1s" class="nav-list__item">
+                        <a class="nav-list__link login" href="../Login/LoginForm.html">LOG IN</a>
                     </li>
                 </ul>
             </nav>
-            <main class="card-container">
-                <a href="https://quicktips4you.netlify.app">
-                    <div class="card__item">
-                        <h1 class="card__header">Quick Tips Project</h1>
-                        <div class="progress-bar">
-                            <h3 class="progress-status completed">status: Completed<i class="fas fa-check"></i></h3>
+            <main class="container-cards">
+                <a target="_blank" href="https://quicktips4you.netlify.app">
+                    <div class="portfolio-card">
+                        <h1 class="portfolio-card__header">Quick Tips Project</h1>
+                        <div class="status-info">
+                            <h3 class="status-info__title completed">Status: Completed<i class="fas fa-check"></i></h3>
                         </div>
-                        <img class="card__img" src="../Pictures/Quick-tips.png" alt="Quick Tips.png" />
+                        <img class="portfolio-card__img" src="../Pictures/Quick-Tips.png" alt="Quick Tips site photo" />
                     </div>
                 </a>
                 <a href="#">
-                    <div class="card__item">
-                        <h1 class="card__header">Random Person App</h1>
-                        <div class="progress-bar">
-                            <h3 class="progress-status non-completed">
-                                status: progress<i class="fas fa-sync-alt"></i>
+                    <div class="portfolio-card">
+                        <h1 class="portfolio-card__header">Chat App</h1>
+                        <div class="status-info">
+                            <h3 class="status-info__title non-completed">
+                                Status: Progress<i class="fas fa-sync-alt"></i>
                             </h3>
                         </div>
-                        <img class="card__img" src="../Pictures/Comunication-app.png" alt="Random Person App.png" />
+                        <img class="portfolio-card__img" src="../Pictures/Comunication-app.png" alt="Chat App preview photo" />
                     </div>
                 </a>
             </main>
+            <aside class="aside">
+            <div class="aside-links">
+                <a
+                    target="_blank"
+                    aria-label="StackOverflow logo"
+                    class="aside-links__link"
+                    href="https://stackoverflow.com/users/16585264/fiji"
+                    ><i class="fab fa-stack-overflow"></i
+                ></a>
+                <a aria-label="GitHub logo" target="_blank" class="social-link" href="https://github.com/Fiji404"
+                    ><i class="fab fa-github"></i
+                ></a>
+                <a
+                    aria-label="Reddit logo"
+                    target="_blank"
+                    class="social-link"
+                    href="https://www.reddit.com/u/Fiji990?utm_medium=android_app&utm_source=share"
+                    ><i class="fab fa-reddit-alien"></i
+                ></a>
+            </div>
+            <button aria-label="showAside" class="aside-toggle">
+                <span class="aside-toggle__forward-arrow"><i class="fas fa-chevron-right"></i></span>
+                <span class="aside-toggle__back-arrow"><i class="fas fa-chevron-left"></i></span>
+            </button>
+        </aside>
             <footer class="footer">
-                <button class="footer__toggle">
-                    <span class="arrow-up"><i class="fas fa-arrow-up"></i></span>
-                    <span class="arrow-down"><i class="fas fa-arrow-down"></i></span>
+                <button aria-label="showFooter" class="footer-toggle">
+                    <span class="footer-toggle__up-arrow"><i class="fas fa-arrow-up"></i></span>
+                    <span class="footer-toggle__down-arrow"><i class="fas fa-arrow-down"></i></span>
                 </button>
-                <div class="footer__credentials">
+                <div class="credentials">
                     <div class="credential-info about-site">
-                        <h1>Project Repositiory</h1>
-                        <a target="_blank" href="https://github.com/Fiji404/Quick-Tips">Quick-Tips: Github</a>
+                        <h1 class="credential-info__title">Project Repositiory</h1>
+                        <a class="credential-info__link" target="_blank" href="https://github.com/Fiji404/Quick-Tips">Quick-Tips: Github</a>
                     </div>
                     <div class="credential-info">
-                        <h1>Codepen Examples</h1>
-                        <a target="_blank" href="https://codepen.io/collection/kNEQWm">CodePen</a>
+                        <h1 class="credential-info__title">Codepen Examples</h1>
+                        <a class="credential-info__link" target="_blank" href="https://codepen.io/collection/kNEQWm">CodePen</a>
                     </div>
                 </div>
-                <div class="content-right">
-                    <a target="_blank" href="https://tipply.pl/u/fijiwater">
-                        <img src="../Pictures/tipply.svg" alt="Tipply-logo" />
+                <div class="community-contents">
+                    <a aria-label="tipply donation" class="community-contents__link" target="_blank" href="https://tipply.pl/u/fijiwater">
+                        <img class="community-contents__img tipply" src="../Pictures/tipply.svg" alt="Tipply-logo" />
                     </a>
-                    <a target="_blank" href="https://discord.gg/eHMdR8JzmG">
-                        <img class="discord-logo" src="../Pictures/discord-logo.png" alt="Discord" />
+                    <a aria-label="discor server" class="community-contents__link" target="_blank" href="https://discord.gg/eHMdR8JzmG">
+                        <img class="community-contents__img discord" src="../Pictures/Discord.svg" alt="Discord" />
                     </a>
                 </div>
             </footer>
-        </div>
-        <script>
-            const aside = document.querySelector(".aside");
-            const nav = document.querySelector("nav > ul");
-            const asidebtn = document.querySelector(".aside-toggle");
-            const hamburger = document.querySelector(".hamburger");
-            const footerBtn = document.querySelector(".footer__toggle");
-            const footer = document.querySelector(".footer");
-            const HideArrowFooter = document.querySelector(".arrow-up");
-            const AboutSiteLink = document.querySelector(".aboutMe-link");
-            const AboutSiteBtn = document.querySelector(".about-site");
-
-            hamburger.addEventListener("click", function () {
-                nav.classList.toggle("active");
-                hamburger.classList.toggle("active");
-            });
-
-            footerBtn.addEventListener("click", () => {
-                footer.classList.toggle("active");
-                if (footer.classList.contains("active")) {
-                    HideArrowFooter.classList.add("active");
-                } else {
-                    HideArrowFooter.classList.remove("active");
-                }
-            });
-            AboutSiteLink.addEventListener("click", () => {
-                footer.classList.toggle("active");
-                AboutSiteBtn.classList.add("active");
-                if (footer.classList.contains("active")) {
-                    HideArrowFooter.classList.add("active");
-                } else {
-                    HideArrowFooter.classList.remove("active");
-                }
-            });
-        </script>
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
