@@ -7,15 +7,6 @@ const aboutSite = document.querySelector(".about");
 const aboutSiteBtn = document.querySelector(".about-site");
 const footerButton = document.querySelector(".footer-toggle");
 
-footerButton.addEventListener("click", () => {
-    aboutSiteBtn.classList.remove("active");
-    footer.classList.toggle("active");
-    if (footer.classList.contains("active")) {
-        openFooterIcon.classList.add("active");
-    } else {
-        openFooterIcon.classList.remove("active");
-    }
-});
 
 hamburgerMenu.addEventListener("click", function () {
     hamburgerMenu.classList.toggle("active");
@@ -34,4 +25,14 @@ aboutSite.addEventListener("click", () => {
 asideBtn.addEventListener("click", function () {
     aside.classList.toggle("active");
     asideBtn.classList.toggle("active");
+});
+    
+footerButton.addEventListener("click", () => {
+    aboutSiteBtn.classList.remove("active");
+    footer.classList.toggle("active");
+    if (footer.classList.contains("active")) {
+        openFooterIcon.classList.add("active");
+    } else {
+        openFooterIcon.classList.remove("active");
+    }
 });

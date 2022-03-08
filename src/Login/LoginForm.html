@@ -5,17 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/Pictures/login.png" />
-        <script defer src="login.js"></script>
         <script defer src="../scripts/LightTheme.js"></script>
         <script defer src="../scripts/navigation.js"></script>
         <script defer src="../scripts/login.js"></script>
         <link rel="stylesheet" type="text/css" href="LoginForm.css" />
+        <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
         <title>Log In</title>
     </head>
     <body class="dark">
         <nav class="navigation">
             <?xml version="1.0" standalone="no"?>
-            <a href="index.html" aria-label="Back to Home">
+            <a href="https://quicktips4you.netlify.com" aria-label="Back to Home">
                 <svg
                     class="navigation__logo"
                     version="1.0"
@@ -75,15 +75,15 @@
             <label for="themeToggle" class="button-theme">
                 <div class="button-theme__dot">
                     <span class="button-theme__moon">
-                        <ion-icon name="moon-outline"></ion-icon>
+                        <i class="fa-solid fa-moon fa-xl"></i>
                     </span>
                     <span class="button-theme__sun">
-                        <ion-icon name="sunny-outline"></ion-icon>
+                        <i class="fa-solid fa-sun fa-lg"></i>
                     </span>
                 </div>
             </label>
             <input aria-label="navButton" type="checkbox" id="nav-toggle" />
-            <label name="navToggle" for="navToggle" class="hamburger-menu">
+            <label name="navToggle" for="nav-toggle" class="hamburger-menu">
                 <div aria-hidden="true" class="hamburger__prop prop1"></div>
                 <div aria-hidden="true" class="hamburger__prop prop2"></div>
                 <div aria-hidden="true" class="hamburger__prop prop3"></div>
@@ -107,96 +107,91 @@
             </ul>
         </nav>
         <main class="container-forms">
-            <form autocomplete="off" name="login-form" class="form-login">
-                <div class="form-content">
-                    <h1 class="form-content__title">Log in to your account</h1>
-                    <!-- TODO -->
-                    <div class="form-content__user">
+            <form autocomplete="off" name="login-form" class="form-login" method="post">
+                <section class="form-content">
+                    <header>
+                        <h1 class="form-content__title">Log in to your account</h1>
+                    </header>
+                    <section class="form-content__user">
                         <input
-                            pattern="[A-Za-z 0-9]{4,12}"
-                            title="Field must contains 4 to 12 letters length and lower or uppercase characters, exlude numbers"
-                            class="form-login__input user-input"
-                            type="username"
-                            name="username"
-                            required
+                        pattern="[A-Za-z 0-9]{4,14}"
+                        title="Field must contains 4 to 14 letters length and lower or uppercase characters, exluding special symbols"
+                        class="form-login__input user-input"
+                        type="username"
+                        name="username"
+                        required
                         />
                         <label class="user-label" for="username"><i class="fas fa-user"></i>Username</label>
-                    </div>
-                    <div class="form-content__password">
+                    </section>
+                    <section class="form-content__password">
                         <input
-                            pattern="[A-z 0-9]{5,16}"
-                            title="field must contains 5 to 16 letters length and allow to use numbers"
-                            class="form-login__input password-input"
-                            type="password"
-                            name="password"
-                            required
+                        pattern="[A-Z-a 0-9]{8,16}"
+                        title="field must contains 8 to 16 letters length and can use numbers"
+                        class="form-login__input password-input"
+                        type="password"
+                        name="password"
+                        required
                         />
                         <label class="password-label" for="password"><i class="fas fa-lock"></i>Password</label>
                         <button type="button" class="password-toggle">
                             <img class="eye" src="../Pictures/eye-crossed-out.svg" />
                             <img class="eye hidden" src="../Pictures/eye.svg" />
                         </button>
-                    </div>
-                    <div class="login__fill-section">
-                        <button class="login__button--submit" type="submit">SUBMIT</button>
-                        <div class="login__other-options">
-                            <a class="login-method forgot" href="forgot-password.html">Forgot Password ?</a>
-                            <a class="login-method register-option" href="#">Register Now</a>
+                    </section>
+                    <section class="form-login__fill-section">
+                        <button class="form-login__submit" type="submit">SUBMIT</button>
+                        <div class="form-other">
+                            <a class="form-other__option" href="forgot-password.html">Forgot Password ?</a>
+                            <button type="button" class="form-other__option register-option">Register Now</button>
                         </div>
-                    </div>
-                </div>
+                    </section>
+                </section>
             </form>
-            <form autocomplete="dummy-no-auto-complete-fix" class="form--register" method="post" action="Index.html">
-                <div class="input-container">
+            <form autocomplete="off" class="form-register" method="post">
+                <header>
+                    <h1 class="form-register__title">Register Account</h1>
+                </header>
+                <section class="register-input-con">
                     <input
-                        autocomplete="dummy-no-auto-complete-fix"
-                        pattern="[A-Za-z]{3,15}"
-                        title="You can use only characters from 3 to 15, exluding numbers"
-                        type="text"
-                        placeholder="Name"
-                        class="main__input-field"
-                        type="text"
-                        name="Name"
-                        required
+                    pattern="[A-Za-z]{3,15}"
+                    title="You can enter only letters length from 3 to 15, exluding numbers"
+                    placeholder="Name"
+                    class="register-input-con__input"
+                    name="person-name"
+                    required
                     />
-                    <span class="main__input-idicator"></span>
-                </div>
-                <div class="input-container">
+                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                </section>
+                <section class="register-input-con">
                     <input
-                        pattern="[A-Za-z]{3,15}"
-                        title="You can use characters from 3 to 15, exluding numbers"
-                        placeholder="Last Name"
-                        class="main__input-field"
-                        type="text"
-                        name="LastName"
-                        required
+                    pattern="[A-Za-z]{3,15}"
+                    title="You can use letters length from 3 to 15, exluding numbers"
+                    placeholder="Last Name"
+                    class="register-input-con__input"
+                    name="last-name"
+                    required
                     />
-                    <span class="main__input-idicator"></span>
-                </div>
-                <div class="input-container">
+                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                </section>
+                <section class="register-input-con">
                     <input
-                        autocomplete="dummy-no-auto-complete-fix"
-                        placeholder="Email"
-                        class="main__input-field"
-                        type="email"
-                        required
+                    placeholder="Email"
+                    class="register-input-con__input"
+                    type="email"
+                    required
                     />
-                    <span class="main__input-idicator"></span>
-                </div>
-                <input class="input__date" type="date" required />
-                <div class="register__gender-field">
-                    <div>
-                        <input class="radio-field" id="male" name="gender" type="radio" />
-                        <label class="radio-caption" for="male">Male</label>
-                    </div>
-                    <div>
-                        <input class="radio-field" id="female" name="gender" type="radio" />
-                        <label class="radio-caption" for="female">Female</label>
-                    </div>
-                </div>
+                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                </section>
+                <input class="form-register__date" type="date" required />
+                <section>
+                    <input class="gender-choice__input" id="male" name="gender" type="radio" />
+                    <label class="gender-choice__caption" for="male">Male</label>
+                    <input class="gender-choice__input" id="female" name="gender" type="radio" />
+                    <label class="gender-choice__caption" for="female">Female</label>
+                </section>
                 <div class="submit-section">
                     <button class="register__submit-button" type="submit">SUBMIT</button>
-                    <a class="register__btn--back">Back</a>
+                    <button class="register__btn--back">Back</button>
                 </div>
             </form>
         </main>
@@ -225,32 +220,6 @@
                 <span class="aside-toggle__back-arrow"><i class="fas fa-chevron-left"></i></span>
             </button>
         </aside>
-        <footer class="footer">
-            <button aria-label="showFooter" class="footer-toggle">
-                <span class="footer-toggle__up-arrow"><i class="fas fa-arrow-up"></i></span>
-                <span class="footer-toggle__down-arrow"><i class="fas fa-arrow-down"></i></span>
-            </button>
-            <div class="credentials">
-                <div class="credential-info about-site">
-                    <h1 class="credential-info__title">Project Repositiory</h1>
-                    <a class="credential-info__link" target="_blank" href="https://github.com/Fiji404/Quick-Tips">Quick-Tips: Github</a>
-                </div>
-                <div class="credential-info">
-                    <h1 class="credential-info__title">Codepen Examples</h1>
-                    <a class="credential-info__link" target="_blank" href="https://codepen.io/collection/kNEQWm">CodePen</a>
-                </div>
-            </div>
-            <div class="community-contents">
-                <a class="community-contents__link" aria-label="tipply donation" target="_blank" href="https://tipply.pl/u/fijiwater">
-                    <img class="community-contents__img tipply" src="../Pictures/tipply.svg" alt="Tipply-logo" />
-                </a>
-                <a aria-label="discord server" class="community-contents__link" target="_blank" href="https://discord.gg/eHMdR8JzmG">
-                    <img class="community-contents__img discord" src="../Pictures/Discord.svg" alt="discord-logo" />
-                </a>
-            </div>
-        </footer>
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>

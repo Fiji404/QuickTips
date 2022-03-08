@@ -95,29 +95,31 @@ body {
 .form-content__user,
 .form-content__password {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
   position: relative;
   padding: 25px 0;
 }
-/* TODO */
 
 .form-login__input {
-  width: min(90%, 320px);
+  margin: 0 auto;
+  display: block;
+  width: 75%;
+  max-width: 330px;
   font-size: 35px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   border: 2px solid #9e8787;
   background-color: transparent;
   color: var(--typography_header);
   padding: 0 5px;
-  outline: none;
   text-align: center;
   border-radius: 25px;
   transition: .5s;
   min-height: 60px;
+  outline: none;
 }
 
 .form-login__input:focus {
-  width: 75%;
+  width: 90%;
   border: 2px solid var(--typography_header);
 }
 
@@ -128,33 +130,24 @@ body {
   font-size: 24px;
 }
 
-.user-input:valid ~ .user-label,
-.password-input:valid ~ .password-label {
-  top: 10px;
-  font-size: 24px;
-}
-
-.password-input.touched,
-.user-input.touched {
-  border: 2px solid rgb(255,0,0);
-}
-
-.login__input:valid {
+.form-login__input:valid {
   border: 2px solid rgb(72, 255, 0);
-  width: 65%;
   transition: 0.3s;
+}
+
+.form-login__input:focus:invalid {
+  border: 2px solid rgb(206, 9, 9);
 }
 
 .password-toggle {
   display: none;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   right: 5px;
-  outline: none;
   border: none;
   height: 45px;
   width: 45px;
-  transform: translateY(-50%);
   cursor: pointer;
   background: transparent;
 }
@@ -184,9 +177,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  letter-spacing: 2px;
   font-size: 20px;
   white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .fa-user,
@@ -195,35 +189,40 @@ body {
   margin-right: 5px;
 }
 
-.login__fill-section {
+.form-login__fill-section {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 30px;
 }
 
-.login__button--submit {
-  width: 180px;
-  height: 55px;
+.form-login__submit {
+  padding: .8rem 2.5rem;
   margin-bottom: 35px; 
-  font-size: 20px;
-  outline: none;
-  background: #000;
+  font-size: 21px;
+  background: rgba(0, 0, 0, 0.61);
   border: none;
   color: #fff;
   border-radius: 1rem;
-  transition: 0.4s ease;
+  transition: 0.4s ease, outline 0s;
   cursor: pointer;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
-.login__button--submit:hover {
+.form-login__submit:focus {
+  outline: 2px solid var(--typography_header);
+}
+
+.form-login__submit:hover {
   background-color: #222;
   transform: scale(.93);
-  text-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 13px #fff;
+  outline: 2px solid var(--typography_header);
 }
 
-.login__other-options {
+.form-other {
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -231,80 +230,85 @@ body {
   white-space: nowrap;
 }
 
-.login-method {
+.form-other__option {
   text-decoration: none;
   color: var(--typography_header);
-  transition: 0.2s ease;
-  font-size: 18px;
+  transition: 200ms ease-in;
+  font-size: 19px;
+  font-weight: 500;
 }
 
-.login-method:hover {
+.register-option {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins';
+}
+
+.form-other__option:hover {
   color: var(--typography_header);
   transform: scale(1.05);
 }
 
-@keyframes linkappear {
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.form--register {
+.form-register {
   width: min(90%, 550px);
   min-width: 300px;
   min-height: 550px;
   background-color: var(--dark-grey);
   box-shadow: 0 0 125px -35px var(--bx-shadow);
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex-direction: column;
   transform: translateY(100vh);
-  transition: .5s;
-  display: flex;
-  top: 50%;
   outline: 2px solid var(--typography_header);
   transition: transform 2s ease;
 }
 
-.form--register.active {
+.form-register.active {
   transform: translateY(-90%);
 }
 
-.input-container {
+.form-register__title {
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.register-input-con {
   width: min(80%, 400px);
   position: relative;
 }
 
-.main__input-field {
+.register-input-con__input {
+  font-family: 'Poppins', sans-serif;
   border: none;
   border-bottom: 3px solid var(--indicator);
   box-shadow: inset 0 3px 0 rgb(36, 36, 36);
-  outline: none;
   padding: 0 10px;
   width: 100%;
-  height: 45px;
+  min-height: 45px;
   font-size: 26px;
   background-color: rgb(17, 17, 17);
   color: #fff;
   text-align: center;
   transition: box-shadow .4s ease;
   border-radius: 5px 5px 2px 2px;
+  outline: none;
 }
 
-.main__input-field::placeholder {
+.register-input-con__input::placeholder {
   color: #fff;
   text-transform: uppercase;
-  font-size: 21px;
-  letter-spacing: 2px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-.main__input-field:focus {
+.register-input-con__input:focus {
   box-shadow: none;
 }
 
-.main__input-idicator {
+.register-input-con__idicator {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -312,61 +316,46 @@ body {
   width: 0;
   height: 3px;
   background-color: rgb(0, 183, 255);
-  transition: .4s ease;
+  transition: width 400ms ease;
   border-radius: 0 0 2px 2px;
 }
 
-.main__input-field:focus + .main__input-idicator,
-.main__input-field:valid + .main__input-idicator {
+.register-input-con__input:focus + .register-input-con__idicator,
+.register-input-con__input:valid + .register-input-con__idicator {
   width: 100%;
 }
 
-.main__input-field:invalid + .main__input-idicator  {
+.register-input-con__input:invalid + .register-input-con__idicator  {
   background-color: #f00;
 }
 
-.input__date {
+.form-register__date {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   width: min(65%, 400px);
   min-width: 200px;
-  min-height: 45px;
   padding: 10px;
-  outline: none;
   border: none;
   background-color: var(--typography_header);
   color: var(--card);
   text-transform: uppercase;
   font-size: 20px;
-  border-radius: 16px;
+  border-radius: 1rem;
   text-align: center;
-  cursor: pointer;
 }
 
-.input__date::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  filter: invert(var(--invert));
-  
-}
-
-.register__gender-field {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-}
-
-.radio-field {
+.gender-choice__input {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
   background-color: rgb(0, 0, 0);
   border-radius: 50%;
-  vertical-align: middle;
-  margin: 0 3px 5px 0;
-  outline: none;
   position: relative;
+  vertical-align: middle;
+  margin-bottom: 6px;
 }
 
-.radio-field:checked::after {
+.gender-choice__input:checked::after {
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -378,34 +367,35 @@ body {
   background-color: rgb(0, 183, 255);
 }
 
-.radio-caption {
+.gender-choice__caption {
   color: var(--typography_header);
   font-size: 20px;
-  letter-spacing: 1px;
+  font-weight: 500;
   cursor: pointer;
+  margin-right: 20px;
+  margin-left: 5px;
 }
 
 .submit-section {
   width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .register__submit-button {
-  width: 170px;
-  height: 50px;
+  display: block;
+  margin: 0 auto;
+  padding: .6rem 2rem;
   background-color: rgb(26, 26, 26);
   color: #fff;
-  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
   letter-spacing: 2px;
   border: 2px solid rgb(0, 0, 0);
-  outline: none;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   border-radius: 10px;
-  transition: .2s;
+  transition: transform 200ms;
 }
 
 .register__submit-button:active {
@@ -417,9 +407,14 @@ body {
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Poppins';
   border-bottom: 2px solid var(--typography_header);
   text-transform: uppercase;
   cursor: pointer;
   color: var(--typography_header);
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }

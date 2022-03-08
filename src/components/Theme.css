@@ -114,14 +114,3 @@
     border: 2px solid rgb(236, 236, 236);
     color: rgb(0, 0, 0)
 }
-
-.button-theme__moon,
-.button-theme__sun {
-    height: 30px;
-}
-
-ion-icon[name="moon-outline"],
-ion-icon[name="sunny-outline"] {
-    font-size: 30px;
-    color: inherit;
-}

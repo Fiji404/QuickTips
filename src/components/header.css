@@ -72,7 +72,7 @@
 
 .nav-list__link {
     display: inline-block;
-    color: var(--nav-link);
+    color: var(--typography_header);
     font-size: 17px;
     width: 110px;
     padding: 12px 0;
@@ -195,9 +195,14 @@
     } 
 
     #nav-toggle:checked ~ .nav-list .nav-list__item {
+        color: #fff !important;
         animation: ShowUp 1.5s forwards;
         animation-delay: calc(var(--link-delay) * 2.4);
         opacity: 0;
+    }
+
+    #nav-toggle:checked ~ .nav-list .nav-list__link {
+        color: #fff ;
     }
 
     .nav-list {
@@ -222,14 +227,11 @@
     }
 
     @keyframes ShowUp {
-        0% {
+        from {
             opacity: 0;
             transform: translateY(20px);
         }
-        50% {
-            opacity: .5;
-        }
-        100% {
+        to {
             opacity: 1;
             transform: translateY(0);
         }

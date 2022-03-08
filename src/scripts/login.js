@@ -1,42 +1,20 @@
 const usernameInput = document.querySelector(".user-input");
 const passwordInput = document.querySelector(".password-input");
-const userlabel = document.querySelector(".user-label");
-const passwordlabel = document.querySelector(".password-label");
+const userLabel = document.querySelector(".user-label");
+const passwordLabel = document.querySelector(".password-label");
 const passwordIcon = document.querySelector(".password-toggle");
 const registerChoice = document.querySelector(".register-option");
-const registerForm = document.querySelector(".form--register");
 const loginForm = document.querySelector(".form-login");
+const registerForm = document.querySelector(".form-register");
 const registerbackBtn = document.querySelector(".register__btn--back");
 
-usernameInput.addEventListener(
-    "blur",
-    () => {
-        usernameInput.classList.add("touched");
-    },
-    true
-);
+usernameInput.addEventListener("blur", () => {
+        userLabel.classList.toggle("lift", usernameInput.value);
+    }, true);
 
-passwordInput.addEventListener(
-    "blur",
-    () => {
-        passwordInput.classList.add("touched");
-    },
-    true
-);
-usernameInput.addEventListener(
-    "blur",
-    function () {
-        userlabel.classList.toggle("lift", usernameInput.value);
-    },
-    true
-);
-passwordInput.addEventListener(
-    "blur",
-    function () {
-        passwordlabel.classList.toggle("change", passwordInput.value);
-    },
-    true
-);
+passwordInput.addEventListener('blur', () => {
+        passwordLabel.classList.toggle("change", passwordInput.value);
+    }, true);
 
 passwordIcon.addEventListener("click", () => {
     if (passwordInput.type === "password") {
@@ -53,10 +31,10 @@ passwordInput.addEventListener("input", ({ target: { value } }) => {
     passwordInput.classList.toggle("focused", !!value);
 });
 
-registerChoice.addEventListener("click", function () {
+registerChoice.addEventListener("click", () => {
     loginForm.classList.add("hide");
     registerForm.classList.add("active");
-    loginForm.classList.remove('back')
+    loginForm.classList.remove("back");
 });
 
 registerbackBtn.addEventListener("click", () => {
