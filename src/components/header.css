@@ -184,6 +184,7 @@
 
     .nav-list__link:not(.home):hover {
         border: none;
+        color: var(--card) !important;
     }
 
     #nav-toggle:checked + .hamburger-menu .hamburger__prop {
