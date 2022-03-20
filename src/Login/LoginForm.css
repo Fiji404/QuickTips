@@ -11,7 +11,7 @@
 
 body {
   height: 100vh;
-  overflow: hidden visible;
+  overflow: hidden;
   background-color: var(--bg-grey);
   transition: background-color 500ms ease;
   font-family: "Poppins", sans-serif;
@@ -278,6 +278,71 @@ body {
   transform: scale(1.05);
 }
 
+.form-register_error,
+.form-register_success,
+.form-login_success,
+.form-login_error {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 180px;
+  width: min(80%, 800px);
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(255, 116, 116);
+  z-index: 2;
+  border-radius: 20px;
+  border: 1px solid #f00;
+  cursor: pointer;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.fa-xmark {
+  color: #f00;
+  vertical-align: middle;
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.form-register_success,
+.form-login_success {
+  background-color: rgb(11, 194, 81);
+  border: none;
+  color: #222;
+}
+
+.form-register_error.active,
+.form-login_error.active {
+  animation: errorPopUp 1.1s ease forwards, errorBlinking .6s ease infinite alternate;
+
+}
+
+.form-register_success.active,
+.form-login_success.active {
+  animation: errorPopUp 1.1s ease forwards;
+}
+
+@keyframes errorPopUp {
+  from {
+    transform: translate(-50%, -100px) scale(.3);
+  }
+  to {
+    transform: translate(-50%, 0) scale(1);
+    visibility: visible;
+  }
+}
+
+@keyframes errorBlinking {
+  to {
+    background-color: rgb(255, 181, 181);
+  }
+}
+
 .form-register {
   width: min(90%, 550px);
   min-width: 300px;
@@ -291,8 +356,9 @@ body {
   align-items: center;
   transform: translateY(100vh);
   outline: 2px solid var(--typography_header);
+  gap: 25px;
   transition: transform 2s ease;
-  padding: 0 10px;
+  padding: 20px;
 }
 
 .form-register.active {
@@ -313,6 +379,7 @@ body {
   font-family: 'Poppins', sans-serif;
   border: none;
   border-bottom: 3px solid var(--indicator);
+  flex-grow: 1;
   box-shadow: inset 0 3px 0 rgb(36, 36, 36);
   padding: 0 10px;
   width: 100%;
@@ -354,7 +421,7 @@ body {
   width: 100%;
 }
 
-.register-input-con__input:invalid + .register-input-con__idicator  {
+.register-input-con__input:not(.password):invalid + .register-input-con__idicator  {
   background-color: #f00;
 }
 

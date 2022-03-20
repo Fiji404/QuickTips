@@ -145,8 +145,69 @@
     transition: .65s;
 }
 
-.login {
+.login-item {
     margin-left: 50px;
+}
+
+.login-item.hidden {
+    display: none;
+}
+
+.userLoggedIn {
+    background-color: #272727;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    user-select: none;
+    display: none;
+}
+
+.userLoggedIn.active {
+    display: flex;
+}
+
+.fa-angle-down,
+.fa-angle-up {
+    font-size: 25px;
+    color: #fff;
+}
+
+.fa-angle-up {
+    display: none;
+}
+
+.userLoggedIn__icon.active .fa-angle-up {
+    display: inline;
+}
+
+.userLoggedIn__icon.active .fa-angle-down {
+    display: none;
+}
+
+
+.userLoggedIn__title {
+    color: #fff;
+}
+
+.userLoggedIn_logout {
+    background-color: #fff;
+    border: none;
+    padding: .8rem 1.4rem;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+
+.userLoggedIn_logout.active {
+    display: inline-block;
 }
 
 .nav-list__link.login {

@@ -8,7 +8,8 @@
         <script defer src="../scripts/LightTheme.js"></script>
         <script defer src="../scripts/navigation.js"></script>
         <script defer src="../scripts/login.js"></script>
-        <link rel="stylesheet" type="text/css" href="LoginForm.css" />
+        <script type="module" defer src="../scripts/auth.js"></script>
+        <link rel="stylesheet" href="LoginForm.css" />
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
         <title>Log In</title>
     </head>
@@ -101,33 +102,49 @@
                 <li style="--link-delay: 0.8s" class="nav-list__item">
                     <a class="nav-list__link more" href="#">More</a>
                 </li>
-                <li style="--link-delay: 1s" class="nav-list__item">
+                <li style="--link-delay: 1s" class="nav-list__item login-item">
                     <a class="nav-list__link login" href="../Login/LoginForm.html">LOG IN</a>
+                </li>
+                <li class="nav-list__item userLoggedIn" >
+                    <h1 class="userLoggedIn__title"></h1>
+                    <span class="userLoggedIn__icon">
+                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </span>
+                    <button class="userLoggedIn_logout" type="button">logout</button>
                 </li>
             </ul>
         </nav>
         <main class="container-forms">
-            <form autocomplete="off" name="login-form" class="form-login" method="post">
+            <div class="form-login_success">
+                <h1>You successfuly logged in</h1>
+            </div>
+            <div class="form-login_error">
+                <h1>You can't log in</h1>
+                <pre aria-label="error-message" class="error-code"></pre>
+            </div>
+            <form autocomplete="off" class="form-login">
                 <section class="form-content">
                     <header>
                         <h1 class="form-content__title">Log in to your account</h1>
                     </header>
                     <section class="form-content__user">
                         <input
-                        pattern="[A-Za-z 0-9]{4,14}"
                         title="Field must contains 4 to 14 letters length and lower or uppercase characters, exluding special symbols"
                         class="form-login__input user-input"
-                        type="username"
-                        name="username"
+                        id="form-login__email"
+                        type="email"
+                        name="email"
                         required
                         />
-                        <label class="user-label" for="username"><i class="fas fa-user"></i>Username</label>
+                        <label class="user-label" for="username"><i class="fas fa-user"></i>Email</label>
                     </section>
                     <section class="form-content__password">
                         <input
                         pattern="[A-Za-z 0-9]{8,16}"
                         title="field must contains 8 to 16 letters length and can use numbers"
                         class="form-login__input password-input"
+                        id="form-login__password"
                         type="password"
                         name="password"
                         required
@@ -139,7 +156,7 @@
                         </button>
                     </section>
                     <section class="form-login__fill-section">
-                        <button class="form-login__submit" type="submit">SUBMIT</button>
+                        <button class="form-login__submit" type="button">SUBMIT</button>
                         <div class="form-other">
                             <a class="form-other__option" href="forgot-password.html">Forgot Password ?</a>
                             <button type="button" class="form-other__option register-option">Register Now</button>
@@ -147,42 +164,68 @@
                     </section>
                 </section>
             </form>
-            <form autocomplete="off" class="form-register" method="post">
+            <div class="form-register_success">
+                <h1>Your account is created</h1>
+                <h3>Account is currently in the database and will not be made public</h3>
+            </div>
+            <div class="form-register_error">
+                <h1>ERROR <i class="fa-solid fa-xmark"></i></h1>
+                <h3>We couldn't create your account, please try later</h3>
+                <pre aria-label="error-message" class="error-code"></pre>
+            </div>
+            <form onsubmit="passwordTheSame()" autocomplete="off" class="form-register">
                 <header>
                     <h1 class="form-content__title">Register Account</h1>
                 </header>
                 <section class="register-input-con">
                     <input
-                    pattern="[A-Za-z]{3,15}"
-                    title="You can enter only letters length from 3 to 15, exluding numbers"
-                    placeholder="Name"
-                    class="register-input-con__input"
-                    name="person-name"
-                    required
+                        pattern="^[A-Za-z ^0-9]{4,15}"
+                        title="You can enter only characters length from 3 to 15"
+                        placeholder="Username"
+                        class="register-input-con__input"
+                        id="form-register__username"
+                        name="user-name"
+                        required
                     />
                     <span aria-hidden="true" class="register-input-con__idicator"></span>
                 </section>
                 <section class="register-input-con">
                     <input
-                    pattern="[A-Za-z]{3,15}"
-                    title="You can use letters length from 3 to 15, exluding numbers"
-                    placeholder="Last Name"
-                    class="register-input-con__input"
-                    name="last-name"
-                    required
+                        pattern="^[A-Za-z ^0-9]{8,18}"
+                        title="You can use characters length from 8 to 15"
+                        placeholder="Password"
+                        class="register-input-con__input password"
+                        id="form-register__password"
+                        name="password"
+                        type="password"
+                        required
                     />
                     <span aria-hidden="true" class="register-input-con__idicator"></span>
                 </section>
                 <section class="register-input-con">
                     <input
-                    placeholder="Email"
-                    class="register-input-con__input"
-                    type="email"
-                    required
+                        pattern="^[A-Za-z 0-9]{8,18}"
+                        title="You can use characters length from 8 to 15"
+                        placeholder="Repeat password"
+                        class="register-input-con__input password"
+                        id="form-register__password-repeat"
+                        name="password"
+                        type="password"
+                        required
                     />
                     <span aria-hidden="true" class="register-input-con__idicator"></span>
                 </section>
-                <input class="form-register__date" type="date" required />
+                <section class="register-input-con">
+                    <input
+                        placeholder="Email"
+                        class="register-input-con__input"
+                        id="form-register__email"
+                        type="email"
+                        required
+                    />
+                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                </section>
+                <input max="2010-01-01" class="form-register__date" type="date" required />
                 <section>
                     <input class="gender-choice__input" id="male" name="gender" type="radio" />
                     <label class="gender-choice__caption" for="male">Male</label>
@@ -221,5 +264,15 @@
             </button>
         </aside>
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+        <script>
+            function passwordTheSame() {
+                const userPassword = document.querySelector("#form-register__password").value;
+                const userPasswordRepeat = document.querySelector("#form-register__password-repeat").value;
+                const passwordValid = document.querySelector('.register-input-con__idicator');
+                if (userPassword != userPasswordRepeat) {
+                    // alert('password is not the same');
+                }
+            }
+        </script>
     </body>
 </html>
