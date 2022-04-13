@@ -104,8 +104,7 @@
     transform: translateY(-5px);
 }
 
-.portfolio::before,
-.more::before {
+.portfolio::before {
     content: "";
     position: absolute;
     right: 0;
@@ -139,14 +138,6 @@
 .nav-list__link:hover::after,
 .nav-list__link:hover::before {
     width: 100%;
-}
-
-.more::before {
-    transition: .65s;
-}
-
-.login-item {
-    margin-left: 50px;
 }
 
 .login-item.hidden {

@@ -7,6 +7,7 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
@@ -20,6 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
+const analytics = getAnalytics(app);
 
 const signUpForm = document.querySelector(".form-register");
 
@@ -43,7 +45,7 @@ signUpForm.addEventListener("submit", (e) => {
         .then((userCredential) => {
             signUpForm.reset();
             const user = userCredential.user;
-            set(ref(database, "users/" + userUsername), {
+            set(ref(database, "users/" + user.uid), {
                 username: userUsername,
                 password: userPassword,
                 email: userEmail,
@@ -78,11 +80,11 @@ loginSubmit.addEventListener("click", () => {
     successPopUp.addEventListener("click", () => {
         successPopUp.classList.remove("active");
     });
-    signInWithEmailAndPassword(auth, userEmail, user.uid)
+    signInWithEmailAndPassword(auth, userEmail, userUsername)
         .then((userCredential) => {
             const user = userCredential.user;
             const date = new Date();
-            update(ref(database, "users/" + user.uid), {
+            update(ref(database, "users/" + userUsername), {
                 last_login: date,
             });
             successPopUp.classList.add("active");
@@ -113,12 +115,13 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         loginLink.classList.add("hidden");
         userButton.classList.add('active');
-        userLoggedUsername.textContent = user.uid;
-        // const user = ref(database, 'users/' + userUsername);
-        // onValue(user, (snapshot) => {
-        //     const data = snapshot.val();
-        //     console.log(data)
-        // })
+        // userLoggedUsername.textContent = user.uid;
+        const getUser = ref(database, 'users/' + userUsername);
+        onValue(getUser, (snapshot) => {
+            const data = snapshot.val();
+            console.log(data)
+            userLoggedUsername = data.email;
+        })
         
 
         // ...
@@ -140,3 +143,7 @@ logoutButton.addEventListener("click", () => {
             // An error happened.
         });
 });
+
+
+
+

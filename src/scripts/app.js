@@ -24,7 +24,6 @@ accessibilityToggle.addEventListener('click', () => {
 containerCategory.addEventListener('click', (e) => {
   tipsCards.forEach((el) => {
       if (el.classList.contains('active')) return;
-      el.classList.add('hide');
     });
 });
 

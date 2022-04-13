@@ -289,7 +289,7 @@ body {
   flex-direction: column;
   min-height: 180px;
   width: min(80%, 800px);
-  position: fixed;
+  position: absolute;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
