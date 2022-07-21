@@ -1,0 +1,18 @@
+{
+  "name": "quick-tips",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fiji404/NewProject-QuickTips.git"
+  },
+  "keywords": [],
+  "author": "Fiji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fiji404/NewProject-QuickTips/issues"
+  },
+  "homepage": "https://github.com/Fiji404/NewProject-QuickTips#readme"
+}

@@ -4,25 +4,24 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#672cab" />
         <meta
             name="keywords"
-            content="web languages,site, languages for web, web languages, css language, javascript, html, learning, quick, tips"
+            content="web languages, site, languages for web, web languages, css language, javascript, html, learning, quick, tips, programming, developer"
         />
-        <meta name="description" content="Website created for provide quick tips for Web Technologies" />
+        <meta name="description" content="Website used to give nice and quick tips for web pages" />
         <meta name="robots" content="index, follow" />
         <link rel="stylesheet" type="text/css" href="styles.css" />
         <link rel="icon" href="./Pictures/main-logo.png" />
         <script defer src="./scripts/app.js"></script>
-        <script defer src="./scripts/lightTheme.js"></script>
+        <script defer src="./scripts/themeOption.js"></script>
         <script defer src="./scripts/navigation.js"></script>
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
         <title>Quick tips for Web languages</title>
     </head>
     <body class="dark">
         <nav class="navigation">
+            <a href="./index.html" aria-label="Return to home">
             <?xml version="1.0" standalone="no"?>
-            <a href="index.html" aria-label="Back to Home">
                 <svg
                     class="navigation__logo"
                     version="1.0"
@@ -78,18 +77,10 @@
                     </g>
                 </svg>
             </a>
-            <input type="checkbox" id="themeToggle" />
-            <label for="themeToggle" class="button-theme">
-                <div class="button-theme__dot">
-                    <span class="button-theme__moon">
-                        <i class="fa-solid fa-moon fa-xl"></i>
-                    </span>
-                    <span class="button-theme__sun">
-                        <i class="fa-solid fa-sun fa-lg"></i>
-                    </span>
-                </div>
-            </label>
-            <input aria-label="navButton" type="checkbox" id="nav-toggle" />
+            <button class="theme-toggle-btn">
+               <div class="theme-toggle-btn__dot"></div>
+            </button>
+            <!-- <input aria-label="navButton" type="checkbox" id="nav-toggle" /> -->
             <label name="navToggle" for="nav-toggle" class="hamburger-menu">
                 <div aria-hidden="true" class="hamburger__prop prop1"></div>
                 <div aria-hidden="true" class="hamburger__prop prop2"></div>
@@ -113,7 +104,7 @@
         <main class="main">
             <a class="tips--toggle" href="#tips-section">
                 <section class="main-card">
-                    <img class="light-bulb" src="./Pictures/LightBulb.svg" alt="LightBulb.svg" />
+                    <img class="light-bulb" src="/assets/images/LightBulb.svg" alt="LightBulb.svg" />
                     <h1 class="main-card__title">Tips for CSS & HTML languages</h1>
                     <p class="main-card__desc">
                         This section provides a lot of useful properties and tricks in CSS & HTML which we can use on
@@ -781,7 +772,6 @@
                     <img class="community-contents__img tipply" src="./Pictures/tipply.svg" alt="Tipply-logo" />
                 </a>
                 <a
-                    aria-label="discord server"
                     class="community-contents__link"
                     target="_blank"
                     href="https://discord.gg/cZcKm7DdzD"

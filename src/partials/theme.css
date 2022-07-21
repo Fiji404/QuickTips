@@ -54,63 +54,39 @@
     --indicator: rgb(110, 110, 110);
 }
 
-.button-theme {
-    width: 100px;
+.theme-toggle-btn {
+    width: 6.4rem;
     height: 50px;
-    border-radius: 50px;
+    border-radius: 2rem;
     border: 3px solid #444;
     position: relative;
-    pointer-events: none;
-    flex-shrink: 0;
+    background-color: transparent;
 }
 
-.button-theme__dot {
-    cursor: pointer;
-    pointer-events: auto;
+.theme-toggle-btn__dot {
     position: absolute;
+    left: .25rem;
     top: 50%;
-    transform: translateY(-50%);
-    left: 5px;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background-color: #444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 200ms ease-in-out, transform 100ms ;
-    color: #fff;
-    overflow: hidden;
+    background-image: url('/assets/images/moon.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 55%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: height 200ms ease, left 400ms;
+    z-index: 1;
 }
 
-.button-theme__sun {
-    display: none;
+.theme-toggle-btn__dot:active {
+    height: 20px;
+    border-radius: 1rem;
 }
 
-.button-theme__dot.active .button-theme__sun {
-    display: inline;
-}
-
-.button-theme__dot.active .button-theme__moon {
-    display: none;
-}
-
-#themeToggle,
-#nav-toggle {
-    position: absolute;
-    left: -100px;
-    z-index: -1;
-}
-
-#themeToggle:checked + .button-theme .button-theme__dot {
-    left: 50px;
-}
-
-.button-theme__dot:active {
-    height: 24px;
-    transform: scaleX(1.2) translateY(-50%);
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(236, 236, 236);
-    color: rgb(0, 0, 0)
+.theme-toggle-btn__dot.active {
+    background-image: url('/assets/images/sun.svg');
+    left: 3.4rem;
 }
