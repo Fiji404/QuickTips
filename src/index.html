@@ -8,20 +8,19 @@
             name="keywords"
             content="web languages, site, languages for web, web languages, css language, javascript, html, learning, quick, tips, programming, developer"
         />
-        <meta name="description" content="Website used to give nice and quick tips for web pages" />
+        <meta name="description" content="Website used to give nice and quick tips for web developers" />
         <meta name="robots" content="index, follow" />
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <link rel="icon" href="./Pictures/main-logo.png" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="/assets/images/main-logo.png" />
         <script defer src="./scripts/app.js"></script>
         <script defer src="./scripts/themeOption.js"></script>
-        <script defer src="./scripts/navigation.js"></script>
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
         <title>Quick tips for Web languages</title>
     </head>
     <body class="dark">
         <nav class="navigation">
             <a href="./index.html" aria-label="Return to home">
-            <?xml version="1.0" standalone="no"?>
+                <?xml version="1.0" standalone="no"?>
                 <svg
                     class="navigation__logo"
                     version="1.0"
@@ -77,27 +76,26 @@
                     </g>
                 </svg>
             </a>
-            <button class="theme-toggle-btn">
-               <div class="theme-toggle-btn__dot"></div>
+            <button aria-label="Button for toggle light or dark theme" class="theme-toggle-btn">
+                <div class="theme-toggle-btn__dot"></div>
             </button>
-            <!-- <input aria-label="navButton" type="checkbox" id="nav-toggle" /> -->
-            <label name="navToggle" for="nav-toggle" class="hamburger-menu">
-                <div aria-hidden="true" class="hamburger__prop prop1"></div>
-                <div aria-hidden="true" class="hamburger__prop prop2"></div>
-                <div aria-hidden="true" class="hamburger__prop prop3"></div>
-            </label>
+            <button aria-label="Button for showing or collapsing navigation bar" class="nav-toggle-btn">
+                <span class="nav-toggle-btn__hamburger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+                <span class="nav-toggle-btn__cross-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </button>
             <ul class="nav-list">
-                <li style="--link-delay: 0.2s" class="nav-list__item">
-                    <a class="nav-list__link home" href="index.html">Home</a>
+                <li style="--delay: 300ms" class="nav-list__item">
+                    <a class="nav-list__link" href="./index.html">Home</a>
                 </li>
-                <li style="--link-delay: 0.4s" class="nav-list__item">
-                    <a class="nav-list__link about" href="#">About Site</a>
+                <li style="--delay: 600ms" class="nav-list__item">
+                    <a class="nav-list__link" href="./Portfolio/Portfolio.html">Portfolio</a>
                 </li>
-                <li style="--link-delay: 0.6s" class="nav-list__item">
-                    <a class="nav-list__link portfolio" href="./Portfolio/Portfolio.html">Portfolio</a>
-                </li>
-                <li style="--link-delay: 1s" class="nav-list__item">
-                    <a class="nav-list__link login" href="./Login/LoginForm.html">LOG IN</a>
+                <li style="--delay: 900ms" class="nav-list__item">
+                    <a class="nav-list__link" href="./Login/LoginForm.html">Log In</a>
                 </li>
             </ul>
         </nav>
@@ -771,11 +769,7 @@
                 >
                     <img class="community-contents__img tipply" src="./Pictures/tipply.svg" alt="Tipply-logo" />
                 </a>
-                <a
-                    class="community-contents__link"
-                    target="_blank"
-                    href="https://discord.gg/cZcKm7DdzD"
-                >
+                <a class="community-contents__link" target="_blank" href="https://discord.gg/cZcKm7DdzD">
                     <img class="community-contents__img discord" src="./Pictures/Discord.svg" alt="discord-logo" />
                 </a>
             </div>

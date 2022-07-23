@@ -24,6 +24,8 @@
     --dark-grey: rgb(36, 36, 36);
     --invert: 0;
     --indicator: #fff;
+    --underline: rgb(147 147 147 / 44%);
+    --underline-active: rgba(255, 255, 255, 0.836);
 }
 
 .light {
@@ -52,6 +54,8 @@
     --dark-grey: rgba(255, 255, 255, 0.815);
     --invert: 1;
     --indicator: rgb(110, 110, 110);
+    --underline: rgba(95, 95, 95, 0.562);
+    --underline-active: rgb(59, 59, 59);
 }
 
 .theme-toggle-btn {

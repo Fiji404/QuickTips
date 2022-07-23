@@ -37,6 +37,19 @@ body {
     background-color: var(--bg);
     font-family: "Poppins", sans-serif;
     transition: background-color 500ms;
+    position: relative;
+}
+
+body.disabled {
+    overflow: hidden;
+}
+
+body.disabled::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.89);
 }
 
 .main {
