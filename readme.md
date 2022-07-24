@@ -1,8 +1,13 @@
 # Quick tips and tricks for web developers creating web pages.
 
-## All tips are stored in codepen platform
+### All tips are stored on codepen platform
 
-[![N](https://upload.wikimedia.org/wikipedia/commons/9/9a/CodePen_logo.png)](https://codepen.io/)
+[![N](https://www.imaginarycloud.com/blog/content/images/2020/06/codepen_logo.png)](https://codepen.io/)
 
-When you see incorrectly provided information or bugs, please send report on issues section. The project will be supported for you. Thanks and bye !
-Live Preview you can check there --> https://quicktips4you.netlify.app
+Website URL: https://quicktips4you.netlify.app
+
+## Support
+
+When you see incorrectly provided informations or bugs, please send report on [github issues](https://github.com/Fiji404/Quick-Tips/issues) section.
+Thanks 💖
+
