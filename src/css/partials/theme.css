@@ -8,10 +8,9 @@
     --nav-link: rgb(255, 255, 255);
     --nav-link-contrast: #000;
     --alpha: 0.3;
-    --card-portfolio: rgba(255, 255, 255, 0.16);
-    --card-portfolio-active: rgba(255, 255, 255, 0.27);
+    --card-portfolio: rgb(34, 34, 34);
     --card-alpha: .2;
-    --content-mutable: rgb(88, 88, 88);
+    --content-mutable: rgb(63, 63, 63);
     --buttons: rgba(0, 0, 0, 0.76);
     --position: left;
     --info: rgba(0, 0, 0, 0.4);
@@ -29,6 +28,7 @@
     --card-shadow: rgba(0, 0, 0, 0.589);
     --darker-white: rgb(75, 75, 75);
     --footer-clr: rgb(65, 65, 65);
+    --nav-btn: rgb(147 147 147 / 44%);
 }
 
 .light {
@@ -41,10 +41,9 @@
     --nav-link: #000;
     --nav-link-contrast: #fff;
     --alpha: 0.3;
-    --card-portfolio: rgba(134, 134, 134, 0.973);
-    --card-portfolio-active: rgba(134, 134, 134, 0.8);
+    --card-portfolio: rgb(245, 245, 245);
     --card-alpha: .4;
-    --content-mutable: rgb(219, 219, 219);
+    --content-mutable: rgb(245, 245, 245);
     --buttons: #222;
     --position: center;
     --info: rgba(255, 255, 255, 0.7);
@@ -61,6 +60,19 @@
     --underline: rgba(95, 95, 95, 0.562);
     --underline-active: rgb(59, 59, 59);
     --darker-white: rgb(221, 221, 221);
+    --nav-btn: rgb(241, 241, 241);
+}
+
+body.disabled {
+    overflow: hidden;
+}
+
+body.disabled::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.932);
 }
 
 .theme-toggle-btn {
@@ -80,7 +92,7 @@
     height: 38px;
     border-radius: 50%;
     background-color: #444;
-    background-image: url('/assets/images/moon.svg');
+    background-image: url('/src/assets/images/moon.svg');
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: 50% 55%;
@@ -96,6 +108,6 @@
 }
 
 .theme-toggle-btn__dot.active {
-    background-image: url('/assets/images/sun.svg');
+    background-image: url('/src/assets/images/sun.svg');
     left: 3.4rem;
 }

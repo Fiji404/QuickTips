@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-@import url('../components/header.css');
-@import url('../components/footer.css');
-@import url(../components/Theme.css);
+@import url('./partials/navigation.css');
+@import url('./partials/footer.css');
+@import url(./partials/theme.css);
 
 *, ::after, ::before {
   margin: 0;

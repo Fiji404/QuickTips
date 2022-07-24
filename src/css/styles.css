@@ -40,18 +40,6 @@ body {
     justify-content: space-between;
 }
 
-body.disabled {
-    overflow: hidden;
-}
-
-body.disabled::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.89);
-}
-
 .main {
     max-width: 90%;
     margin: 6rem auto;
@@ -116,10 +104,11 @@ body.disabled::before {
 
 .tips-section {
     display: none;
-    padding: 3% 0;
+    padding-block: 2.5rem;
     background-color: var(--content-mutable);
     min-height: 100vh;
     transition: background-color 700ms;
+    border-top: 2px solid var(--darker-white)
 }
 
 .tips-section.active {
@@ -128,7 +117,6 @@ body.disabled::before {
 
 .tips-section.active .card-tip {
     animation: tipOriginate 1.5s ease-in-out calc(var(--tipCard-delay) * 0.5) forwards;
-    animation-iteration-count: 1;
 }
 
 @keyframes tipOriginate {
@@ -145,12 +133,12 @@ body.disabled::before {
     }
 }
 
-.header-intro {
-    max-width: 85%;
-    margin: 0 auto;
+.tips-section__intro {
+    max-width: 90%;
+    margin-inline: auto;
 }
 
-.header-intro__title {
+.tips-section__intro-title {
     font-size: 45px;
     font-weight: 900;
     text-align: center;

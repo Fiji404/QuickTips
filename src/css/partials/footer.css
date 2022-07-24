@@ -41,14 +41,14 @@
 .card-project-info {
     background-color: var(--card);
     border: 2px solid var(--darker-white);
-    padding: .6rem;
-    border-radius: .4rem;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
     transition: transform 150ms ease-in, filter 200ms;
 }
 
 .card-project-info:hover {
     transform: scale(1.02);
-    filter: invert(.05);
+    filter: invert(0.05);
 }
 
 .card-project-info__title {
@@ -66,12 +66,23 @@
 }
 
 .socials__links {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.socials__links > * {
+    border: 2px solid var(--darker-white);
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    transition: background-color 150ms;
+    display: flex;
+}
+
+.socials__links > *:hover {
+    background-color: var(--darker-white);
 }
 
 .socials__img_tipply {
