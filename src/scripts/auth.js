@@ -1,22 +1,22 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    onAuthStateChanged,
-    signOut
-} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+// import {
+//     getAuth,
+//     createUserWithEmailAndPassword,
+//     signInWithEmailAndPassword,
+//     onAuthStateChanged,
+//     signOut
+// } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+// import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
-    authDomain: "quick-tips-app.firebaseapp.com",
-    projectId: "quick-tips-app",
-    storageBucket: "quick-tips-app.appspot.com",
-    messagingSenderId: "867547460819",
-    appId: "1:867547460819:web:ab8854d60ad3627e191026",
-};
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
+//     authDomain: "quick-tips-app.firebaseapp.com",
+//     projectId: "quick-tips-app",
+//     storageBucket: "quick-tips-app.appspot.com",
+//     messagingSenderId: "867547460819",
+//     appId: "1:867547460819:web:ab8854d60ad3627e191026",
+// };
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
