@@ -11,7 +11,7 @@
         <meta name="description" content="Website used to give nice and quick tips for web developers" />
         <meta name="robots" content="index, follow" />
         <link rel="stylesheet" href="styles.css" />
-        <link rel="icon" href="/assets/images/main-logo.png" />
+        <link rel="icon" href="/assets/images/app-logo.png" />
         <script defer src="./scripts/app.js"></script>
         <script defer src="./scripts/themeOption.js"></script>
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
@@ -100,31 +100,36 @@
             </ul>
         </nav>
         <main class="main">
-            <a class="tips--toggle" href="#tips-section">
-                <section class="main-card">
-                    <img class="light-bulb" src="/assets/images/LightBulb.svg" alt="LightBulb.svg" />
-                    <h1 class="main-card__title">Tips for CSS & HTML languages</h1>
-                    <p class="main-card__desc">
-                        This section provides a lot of useful properties and tricks in CSS & HTML which we can use on
-                        own webiste
+            <a class="main__section-link" data-destination="tips-section" href="#tips-section">
+                <section class="card-info">
+                    <header>
+                        <i class="fa-solid fa-code"></i>
+                        <h2 class="card-info__title">HTML & CSS languages</h2>
+                    </header>
+                    <p class="card-info__desc">
+                        In this section you see a lot of useful properties and tricks in HTML & CSS which you can use on webistes.
                     </p>
                 </section>
             </a>
-            <a class="availability_toggle" href="#availability-section">
-                <section class="main-card accesbility">
-                    <i class="fas fa-universal-access"></i>
-                    <h1 class="main-card__title">Availability Informations</h1>
-                    <p class="main-card__desc">
-                        Availability provides which properties we can use on webiste and its support by browsers
+            <a class="main__section-link" data-destination="availability-section" href="#availability-section">
+                <section class="card-info accesbility">
+                    <header>
+                        <i class="fa-solid fa-question"></i>
+                        <h2 class="card-info__title">Availability informations</h2>
+                    </header>
+                    <p class="card-info__desc">
+                        Availability show you statistics about properties and their support by browsers.
                     </p>
                 </section>
             </a>
             <a class="upcoming--toggle" href="#experimental">
-                <section class="main-card">
-                    <i class="fas fa-flask"></i>
-                    <h1 class="main-card__title">Upcoming features</h1>
-                    <p class="main-card__desc">
-                        This section provides properties which is experimental and which are not yet introduced
+                <section class="card-info">
+                    <header>
+                        <i class="fas fa-flask"></i>
+                        <h2 class="card-info__title">Upcoming features</h1>
+                    </header>
+                    <p class="card-info__desc">
+                        This section show you upcoming experimental and not yet introduced fetures on websites.
                     </p>
                 </section>
             </a>
@@ -716,63 +721,41 @@
                 </section>
             </div>
         </article>
-        <aside class="aside">
-            <div class="aside-links">
-                <a
-                    target="_blank"
-                    aria-label="StackOverflow logo"
-                    class="aside-links__link"
-                    href="https://stackoverflow.com/users/16585264/fiji"
-                    ><i class="fab fa-stack-overflow"></i
-                ></a>
-                <a aria-label="GitHub logo" target="_blank" class="social-link" href="https://github.com/Fiji404"
-                    ><i class="fab fa-github"></i
-                ></a>
-                <a
-                    aria-label="Reddit logo"
-                    target="_blank"
-                    class="social-link"
-                    href="https://www.reddit.com/u/Fiji990?utm_medium=android_app&utm_source=share"
-                    ><i class="fab fa-reddit-alien"></i
-                ></a>
-            </div>
-            <button aria-label="showAside" class="aside-toggle">
-                <span class="aside-toggle__forward-arrow"><i class="fas fa-chevron-right"></i></span>
-                <span class="aside-toggle__back-arrow"><i class="fas fa-chevron-left"></i></span>
-            </button>
-        </aside>
         <footer class="footer">
-            <button aria-label="showFooter" class="footer-toggle">
-                <span class="footer-toggle__up-arrow"><i class="fas fa-arrow-up"></i></span>
-                <span class="footer-toggle__down-arrow"><i class="fas fa-arrow-down"></i></span>
-            </button>
-            <div class="credentials">
-                <div class="credential-info about-site">
-                    <h1 class="credential-info__title">Project Repositiory</h1>
-                    <a class="credential-info__link" target="_blank" href="https://github.com/Fiji404/Quick-Tips"
-                        >Quick-Tips: Github</a
-                    >
+            <section class="project-info">
+                <header>
+                    <h2 class="project-info__title">Project info</h2>
+                </header>
+                <div class="info-cards">
+                        <a target="_blank" href="https://github.com/Fiji404/Quick-Tips">
+                            <div class="card-project-info">
+                                <h2 class="card-project-info__title">Github Repositiory <i class="fa-brands fa-github"></i></h2>
+                            </div>
+                        </a>
+                    <a target="_blank" href="https://codepen.io/collection/kNEQWm">
+                        <div class="card-project-info">
+                            <h2 class="card-project-info__title">Codepen Files <i class="fa-brands fa-codepen"></i></h2>
+                        </div>
+                    </a>
                 </div>
-                <div class="credential-info">
-                    <h1 class="credential-info__title">Codepen Files</h1>
-                    <a class="credential-info__link" target="_blank" href="https://codepen.io/collection/kNEQWm"
-                        >CodePen</a
+            </section>
+            <section class="socials">
+                <header>
+                    <h2 class="socials__title">Socials</h2>
+                </header>
+                <div class="socials__links">
+                    <a
+                        class="socials__link"
+                        target="_blank"
+                        href="https://tipply.pl/u/fijiwater"
                     >
+                        <img class="socials__img socials__img_tipply" src="/assets/images/tipply.svg" alt="Tipply logo" />
+                    </a>
+                    <a class="socials__link" target="_blank" href="https://discord.gg/cZcKm7DdzD">
+                        <img class="socials__img socials__img_discord" src="/assets/images/discord.svg" alt="Discord logo" />
+                    </a>
                 </div>
-            </div>
-            <div class="community-contents">
-                <a
-                    aria-label="tipply donation"
-                    class="community-contents__link"
-                    target="_blank"
-                    href="https://tipply.pl/u/fijiwater"
-                >
-                    <img class="community-contents__img tipply" src="./Pictures/tipply.svg" alt="Tipply-logo" />
-                </a>
-                <a class="community-contents__link" target="_blank" href="https://discord.gg/cZcKm7DdzD">
-                    <img class="community-contents__img discord" src="./Pictures/Discord.svg" alt="discord-logo" />
-                </a>
-            </div>
+            </section>
         </footer>
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

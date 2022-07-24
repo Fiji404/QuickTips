@@ -2,7 +2,7 @@
     --bg: #242424;
     --bg-grey: rgb(61, 61, 61);
     --card: rgb(0, 0, 0); 
-    --typography_header: #fff;
+    --typography_header: rgb(255, 255, 255);
     --fade-white: rgb(138, 138, 138);
     --typography_desc: rgb(190, 190, 190);
     --nav-link: rgb(255, 255, 255);
@@ -26,6 +26,9 @@
     --indicator: #fff;
     --underline: rgb(147 147 147 / 44%);
     --underline-active: rgba(255, 255, 255, 0.836);
+    --card-shadow: rgba(0, 0, 0, 0.589);
+    --darker-white: rgb(75, 75, 75);
+    --footer-clr: rgb(65, 65, 65);
 }
 
 .light {
@@ -50,12 +53,14 @@
     --portfolio-shadow: rgba(0, 0, 0, .3);
     --ball: rgb(235, 235, 235);
     --bx-shadow: rgba(182, 182, 182, 0.808);
+    --card-shadow: rgb(216, 216, 216);
     --card-bg: rgba(255, 255, 255, 0.815);
     --dark-grey: rgba(255, 255, 255, 0.815);
     --invert: 1;
     --indicator: rgb(110, 110, 110);
     --underline: rgba(95, 95, 95, 0.562);
     --underline-active: rgb(59, 59, 59);
+    --darker-white: rgb(221, 221, 221);
 }
 
 .theme-toggle-btn {

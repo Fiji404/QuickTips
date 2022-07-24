@@ -1,24 +1,15 @@
-const tipsToggle = document.querySelector('.tips--toggle');
-const tipsContent = document.querySelector('.tips-section');
-const accessibilityToggle = document.querySelector('.availability_toggle');
-const accessibilityContent = document.querySelector('.availability-section');
+const sectionLinks = [...document.querySelectorAll('.main__section-link')];
 const tipsCards = document.querySelectorAll('.card-tip');
 const containerCategory = document.querySelector('.container-tips');
 const hideTip = document.querySelector('.tip-card_hide');
 const infoBoxExpander = document.querySelectorAll('.availability-content_expander');
 
-tipsToggle.addEventListener('click', () => {
-    tipsContent.classList.toggle('active');
-    if (accessibilityContent.classList.contains('active')) {
-        accessibilityContent.classList.remove('active');
-    }
-});
-
-accessibilityToggle.addEventListener('click', () => {
-    accessibilityContent.classList.toggle('active');
-    if (tipsContent.classList.contains('active')) {
-        tipsContent.classList.remove('active');
-    }
+sectionLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const linkDestination = link.dataset.destination;
+        const sectionDestinationElement = document.querySelector(`.${linkDestination}`);
+        sectionDestinationElement.classList.toggle('active');
+    });
 });
 
 containerCategory.addEventListener('click', e => {

@@ -54,6 +54,7 @@
 
 .nav-toggle-btn.active .nav-toggle-btn__cross-icon {
     display: initial;
+    color: #fff
 }
 
 .nav-list {
@@ -97,11 +98,6 @@
 }
 
 @media (max-width: 700px) {
-    .footer {
-        flex-direction: column;
-        row-gap: 25px;
-    }
-
     .nav-list {
         position: fixed;
         top: 50%;
@@ -113,7 +109,6 @@
         justify-content: space-around;
         z-index: 3;
     }
-
     .nav-list li:nth-child(2) {
         margin: 0;
     }
@@ -140,7 +135,6 @@
             opacity: 1;
         }
     }
-
     .nav-toggle-btn {
         display: flex;
         z-index: 3;
