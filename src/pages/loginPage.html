@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- <link rel="icon" href="/Pictures/login.png" /> -->
+        <link rel="icon" href="../assets/images/login.svg" />
         <script defer src="../scripts/themeOption.js"></script>
-        <script defer src="../scripts/login.js"></script>
+        <script defer src="../scripts/loginPage.js"></script>
         <script type="module" defer src="../scripts/auth.js"></script>
         <link rel="stylesheet" href="../css/loginPage.css" />
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
@@ -94,155 +94,58 @@
                 </li>
             </ul>
         </nav>
-        <main class="container-forms">
-            <div class="form-login_success">
-                <h1>You successfuly logged in</h1>
-            </div>
-            <div class="form-login_error">
-                <h1>You can't log in</h1>
-                <pre aria-label="error-message" class="error-code"></pre>
-            </div>
-            <form autocomplete="off" class="form-login">
-                <section class="form-content">
-                    <header>
-                        <h1 class="form-content__title">Log in to your account</h1>
-                    </header>
-                    <section class="form-content__user">
-                        <input
-                        title="Field must contains 4 to 14 letters length and lower or uppercase characters, exluding special symbols"
-                        class="form-login__input user-input"
-                        id="form-login__email"
-                        type="email"
-                        name="email"
-                        required
-                        />
-                        <label class="user-label" for="username"><i class="fas fa-user"></i>Email</label>
-                    </section>
-                    <section class="form-content__password">
-                        <input
-                        pattern="[A-Za-z 0-9]{8,16}"
-                        title="field must contains 8 to 16 letters length and can use numbers"
-                        class="form-login__input password-input"
-                        id="form-login__password"
-                        type="password"
-                        name="password"
-                        required
-                        />
-                        <label class="password-label" for="password"><i class="fas fa-lock"></i>Password</label>
-                        <button type="button" class="password-toggle">
-                            <img class="eye" src="../assets/images/eye-crossed-out.svg" />
-                            <img class="eye hidden" src="../assets/images/eye.svg" />
-                        </button>
-                    </section>
-                    <section class="form-login__fill-section">
-                        <button class="form-login__submit" type="button">SUBMIT</button>
-                        <div class="form-other">
-                            <a class="form-other__option" href="./forgot-password.html">Forgot Password ?</a>
-                            <button type="button" class="form-other__option register-option">Register Now</button>
-                        </div>
-                    </section>
-                </section>
-            </form>
-            <div class="form-register_success">
-                <h1>Your account is created</h1>
-                <h3>Account is currently in the database and will not be made public</h3>
-            </div>
-            <div class="form-register_error">
-                <h1>ERROR <i class="fa-solid fa-xmark"></i></h1>
-                <h3>We couldn't create your account, please try later</h3>
-                <pre aria-label="error-message" class="error-code"></pre>
-            </div>
-            <form onsubmit="sumbitCheck()" autocomplete="off" class="form-register">
+        <main>
+            <form class="login-form">
                 <header>
-                    <h1 class="form-content__title">Register Account</h1>
+                    <h1 class="login-form__title">Log in to your account</h1>
                 </header>
-                <section class="register-input-con">
-                    <input
-                        pattern="^[A-Za-z].{4,15}"
-                        title="You can enter only characters length from 4 to 15"
-                        placeholder="Username"
-                        class="register-input-con__input"
-                        id="form-register__username"
-                        name="user-name"
-                        required
-                    />
-                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                <section class="email-section">
+                    <label class="email-section__label" for="email-section__email-input"
+                        >Email</label
+                    >
+                    <div class="login-form__input-wrapper">
+                        <span class="login-form__input-icon"><i class="fas fa-user"></i></span>
+                        <input
+                            title="Field must contains 4 to 14 letters length and lower or uppercase characters, exluding special symbols"
+                            class="login-form__input login-form__input-email"
+                            id="email-section__email-input"
+                            type="email"
+                            name="email"
+                            required
+                        />
+                    </div>
                 </section>
-                <section class="register-input-con">
-                    <input
-                        pattern="^[A-Za-z \d+].{8,18}"
-                        title="You can use characters length from 8 to 15"
-                        placeholder="Password"
-                        class="register-input-con__input password"
-                        id="form-register__password"
-                        name="password"
-                        type="password"
-                        required
-                    />
-                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                <section class="password-section">
+                    <label class="password-section__label" for="password-section__password-input"
+                        >Password</label
+                    >
+                    <div class="login-form__input-wrapper">
+                        <span class="login-form__input-icon"><i class="fas fa-lock"></i></span>
+                        <input
+                            pattern="[A-Za-z 0-9]{8,16}"
+                            title="field must contains 8 to 16 letters length and can use numbers"
+                            class="login-form__input login-form__input-password"
+                            id="password-section__password-input"
+                            type="password"
+                            name="password"
+                            required
+                        />
+                    </div>
+                    <button type="button" class="password-toggle">
+                        <span class="password-toggle__eye-icon"><i class="fa-solid fa-eye"></i></span>
+                        <!-- <img class="eye" src="../assets/images/eye-crossed-out.svg" /> -->
+                        <!-- <img class="eye hidden" src="../assets/images/eye.svg" /> -->
+                    </button>
                 </section>
-                <section class="register-input-con">
-                    <input
-                        pattern="^[A-Za-z].{8,18}"
-                        title="You can use characters length from 8 to 15"
-                        placeholder="Repeat password"
-                        class="register-input-con__input password"
-                        id="form-register__password-repeat"
-                        name="password"
-                        type="password"
-                        required
-                    />
-                    <span aria-hidden="true" class="register-input-con__idicator"></span>
+                <section class="submit-section">
+                    <button class="form-login__submit">Login</button>
+                    <div class="form-other">
+                        <a class="form-other__option" href="./forgot-password.html">Forgot Password ?</a>
+                        <button type="button" class="form-other__option register-option">Register Now</button>
+                    </div>
                 </section>
-                <section class="register-input-con">
-                    <input
-                        placeholder="Email"
-                        class="register-input-con__input"
-                        id="form-register__email"
-                        type="email"
-                        required
-                    />
-                    <span aria-hidden="true" class="register-input-con__idicator"></span>
-                </section>
-                <input max="2010-01-01" class="form-register__date" type="date" required />
-                <section>
-                    <input class="gender-choice__input" id="male" name="gender" type="radio" />
-                    <label class="gender-choice__caption" for="male">Male</label>
-                    <input class="gender-choice__input" id="female" name="gender" type="radio" />
-                    <label class="gender-choice__caption" for="female">Female</label>
-                </section>
-                <div class="submit-section">
-                    <button class="register__submit-button" type="submit">SUBMIT</button>
-                    <button type="button" class="register__btn--back">Back</button>
-                </div>
             </form>
         </main>
-        <aside class="aside">
-            <div class="aside-links">
-                <a
-                    target="_blank"
-                    aria-label="StackOverflow logo"
-                    class="aside-links__link"
-                    href="https://stackoverflow.com/users/16585264/fiji"
-                    ><i class="fab fa-stack-overflow"></i
-                ></a>
-                <a aria-label="GitHub logo" target="_blank" class="social-link" href="https://github.com/Fiji404"
-                    ><i class="fab fa-github"></i
-                ></a>
-                <a
-                    aria-label="Reddit logo"
-                    target="_blank"
-                    class="social-link"
-                    href="https://www.reddit.com/u/Fiji990?utm_medium=android_app&utm_source=share"
-                    ><i class="fab fa-reddit-alien"></i
-                ></a>
-            </div>
-            <button aria-label="showAside" class="aside-toggle">
-                <span class="aside-toggle__forward-arrow"><i class="fas fa-chevron-right"></i></span>
-                <span class="aside-toggle__back-arrow"><i class="fas fa-chevron-left"></i></span>
-            </button>
-        </aside>
-        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
         <script>
             function sumbitCheck(e) {
                 e.preventDefault();
@@ -250,12 +153,11 @@
                 passwordTheSame();
             }
             function passwordTheSame() {
-                const userPassword = document.querySelector("#form-register__password").value;
-                const userPasswordRepeat = document.querySelector("#form-register__password-repeat").value;
-                const formRegister = document.querySelector('.form-register')
+                const userPassword = document.querySelector('#form-register__password').value;
+                const userPasswordRepeat = document.querySelector('#form-register__password-repeat').value;
+                const formRegister = document.querySelector('.form-register');
                 if (userPassword != userPasswordRepeat) {
                     alert('password is not the same');
-                    
                 }
             }
         </script>

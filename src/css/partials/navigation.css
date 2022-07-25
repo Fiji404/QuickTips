@@ -108,10 +108,12 @@
         align-items: center;
         justify-content: space-around;
         z-index: 3;
+        pointer-events: none;
     }
     .nav-list li:nth-child(2) {
         margin: 0;
     }
+    
     .nav-list__link {
         font-size: 2rem;
     }

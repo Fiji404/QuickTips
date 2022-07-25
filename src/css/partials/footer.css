@@ -79,6 +79,8 @@
     padding: 0.4rem 0.8rem;
     transition: background-color 150ms;
     display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .socials__links > *:hover {

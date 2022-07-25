@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="sumbitCheck()" autocomplete="off" class="form-register">
+        <header>
+            <h1 class="form-content__title">Register Account</h1>
+        </header>
+        <section class="register-input-con">
+            <input
+                pattern="^[A-Za-z].{4,15}"
+                title="You can enter only characters length from 4 to 15"
+                placeholder="Username"
+                class="register-input-con__input"
+                id="form-register__username"
+                name="user-name"
+                required
+            />
+            <span aria-hidden="true" class="register-input-con__idicator"></span>
+        </section>
+        <section class="register-input-con">
+            <input
+                pattern="^[A-Za-z \d+].{8,18}"
+                title="You can use characters length from 8 to 15"
+                placeholder="Password"
+                class="register-input-con__input password"
+                id="form-register__password"
+                name="password"
+                type="password"
+                required
+            />
+            <span aria-hidden="true" class="register-input-con__idicator"></span>
+        </section>
+        <section class="register-input-con">
+            <input
+                pattern="^[A-Za-z].{8,18}"
+                title="You can use characters length from 8 to 15"
+                placeholder="Repeat password"
+                class="register-input-con__input password"
+                id="form-register__password-repeat"
+                name="password"
+                type="password"
+                required
+            />
+            <span aria-hidden="true" class="register-input-con__idicator"></span>
+        </section>
+        <section class="register-input-con">
+            <input
+                placeholder="Email"
+                class="register-input-con__input"
+                id="form-register__email"
+                type="email"
+                required
+            />
+            <span aria-hidden="true" class="register-input-con__idicator"></span>
+        </section>
+        <input max="2010-01-01" class="form-register__date" type="date" required />
+        <section>
+            <input class="gender-choice__input" id="male" name="gender" type="radio" />
+            <label class="gender-choice__caption" for="male">Male</label>
+            <input class="gender-choice__input" id="female" name="gender" type="radio" />
+            <label class="gender-choice__caption" for="female">Female</label>
+        </section>
+        <div class="submit-section">
+            <button class="register__submit-button" type="submit">SUBMIT</button>
+            <button type="button" class="register__btn--back">Back</button>
+        </div>
+    </form>
+    <div class="form-register_success">
+        <h1>Your account is created</h1>
+        <h3>Account is currently in the database and will not be made public</h3>
+    </div>
+    <div class="form-register_error">
+        <h1>ERROR <i class="fa-solid fa-xmark"></i></h1>
+        <h3>We couldn't create your account, please try later</h3>
+        <pre aria-label="error-message" class="error-code"></pre>
+    </div>
+</body>
+</html>
