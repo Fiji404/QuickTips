@@ -94,4 +94,5 @@
 
 .socials__img_discord {
     max-width: 200px;
+    object-fit: contain;
 }

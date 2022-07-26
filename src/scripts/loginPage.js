@@ -1,36 +1,29 @@
-const usernameInput = document.querySelector('.user-input');
-const passwordInput = document.querySelector('.password-input');
-const userLabel = document.querySelector('.user-label');
-const passwordLabel = document.querySelector('.password-label');
-const passwordIcon = document.querySelector('.password-toggle');
+'use strict';
 
-usernameInput.addEventListener(
-    'blur',
-    () => {
-        userLabel.classList.toggle('lift', usernameInput.value);
-    },
-    true
-);
+const formInputElements = document.querySelectorAll('.login-form__input');
+const passwordShowBtn = document.querySelector('.password-section__show-password-btn');
+const passwordInputElement = document.querySelector('.login-form__input-password');
 
-passwordInput.addEventListener(
-    'blur',
-    () => {
-        passwordLabel.classList.toggle('change', passwordInput.value);
-    },
-    true
-);
-
-passwordIcon.addEventListener('click', () => {
-    if (passwordInput.type === 'password') {
-        passwordInput.setAttribute('type', 'text');
-        passwordIcon.classList.add('active');
+passwordShowBtn.addEventListener('click', () => {
+    passwordShowBtn.classList.toggle('active');
+    if (passwordInputElement.type === 'password') {
+        passwordInputElement.type = 'text';
+        passwordShowBtn.classList.add('active');
     } else {
-        passwordInput.setAttribute('type', 'password');
-        passwordIcon.classList.remove('active');
+        passwordInputElement.type = 'password';
     }
 });
 
-passwordInput.addEventListener('input', ({ target: { value } }) => {
-    passwordIcon.classList.toggle('visible', !!value);
-    passwordInput.classList.toggle('focused', !!value);
+passwordInputElement.addEventListener('input', ({ target: { value } }) => {
+    passwordShowBtn.classList.toggle('visible', !!value);
+});
+
+formInputElements.forEach(input => {
+    const parentElement = input.closest('.login-form__input-wrapper');
+    input.addEventListener('focus', () => {
+        parentElement.classList.toggle('focused');
+    });
+    input.addEventListener('blur', () => {
+        parentElement.classList.remove('focused');
+    });
 });

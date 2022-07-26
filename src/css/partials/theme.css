@@ -29,6 +29,8 @@
     --darker-white: rgb(75, 75, 75);
     --footer-clr: rgb(65, 65, 65);
     --nav-btn: rgb(147 147 147 / 44%);
+    --border-indicator: rgb(216, 216, 216);
+    --darker-black-white: rgb(36, 36, 36);
 }
 
 .light {
@@ -61,6 +63,8 @@
     --underline-active: rgb(59, 59, 59);
     --darker-white: rgb(221, 221, 221);
     --nav-btn: rgb(241, 241, 241);
+    --border-indicator: rgb(71, 71, 71);
+    --darker-black-white: rgb(255, 255, 255);
 }
 
 body.disabled {

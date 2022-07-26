@@ -107,10 +107,11 @@
                         <span class="login-form__input-icon"><i class="fas fa-user"></i></span>
                         <input
                             title="Field must contains 4 to 14 letters length and lower or uppercase characters, exluding special symbols"
-                            class="login-form__input login-form__input-email"
+                            class="login-form__input"
                             id="email-section__email-input"
                             type="email"
                             name="email"
+                            placeholder="Write your email address"
                             required
                         />
                     </div>
@@ -128,20 +129,20 @@
                             id="password-section__password-input"
                             type="password"
                             name="password"
+                            placeholder="Write your password"
                             required
                         />
+                        <button type="button" class="password-section__show-password-btn">
+                            <span class="password-section__icon password-section__eye-icon"><i class="fa-solid fa-eye"></i></span>
+                            <span class="password-section__crossed-eye-icon"><i class="fa-solid fa-eye-slash"></i></span>
+                        </button>
                     </div>
-                    <button type="button" class="password-toggle">
-                        <span class="password-toggle__eye-icon"><i class="fa-solid fa-eye"></i></span>
-                        <!-- <img class="eye" src="../assets/images/eye-crossed-out.svg" /> -->
-                        <!-- <img class="eye hidden" src="../assets/images/eye.svg" /> -->
-                    </button>
                 </section>
                 <section class="submit-section">
-                    <button class="form-login__submit">Login</button>
-                    <div class="form-other">
-                        <a class="form-other__option" href="./forgot-password.html">Forgot Password ?</a>
-                        <button type="button" class="form-other__option register-option">Register Now</button>
+                    <button class="form-login__submit">Log in</button>
+                    <div class="other-options">
+                        <a class="other-options__link" href="./forgot-password.html">forgot password ?</a>
+                        <a href="#" class="other-options__link">register now</a>
                     </div>
                 </section>
             </form>
