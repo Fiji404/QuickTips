@@ -1,69 +1,27 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-// import {
-//     getAuth,
-//     createUserWithEmailAndPassword,
-//     signInWithEmailAndPassword,
-//     onAuthStateChanged,
-//     signOut
-// } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-// import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
-//     authDomain: "quick-tips-app.firebaseapp.com",
-//     projectId: "quick-tips-app",
-//     storageBucket: "quick-tips-app.appspot.com",
-//     messagingSenderId: "867547460819",
-//     appId: "1:867547460819:web:ab8854d60ad3627e191026",
-// };
+const firebaseConfig = {
+    apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
+    authDomain: "quick-tips-app.firebaseapp.com",
+    projectId: "quick-tips-app",
+    storageBucket: "quick-tips-app.appspot.com",
+    messagingSenderId: "867547460819",
+    appId: "1:867547460819:web:ab8854d60ad3627e191026",
+};
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 const analytics = getAnalytics(app);
-
-const signUpForm = document.querySelector(".form-register");
-
-const userUsername = document.querySelector("#form-register__username").value;
-signUpForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const userPassword = document.querySelector("#form-register__password").value;
-    const userEmail = document.querySelector("#form-register__email").value;
-    const ageUser = document.querySelector(".form-register__date").value;
-    const errorPopUp = document.querySelector(".form-register_error");
-    const errorText = document.querySelector(".error-code");
-    const successPopUp = document.querySelector(".form-register_success");
-    errorPopUp.addEventListener("click", () => {
-        errorPopUp.classList.remove("active");
-    });
-
-    successPopUp.addEventListener("click", () => {
-        successPopUp.classList.remove("active");
-    });
-    createUserWithEmailAndPassword(auth, userEmail, userPassword)
-        .then((userCredential) => {
-            signUpForm.reset();
-            const user = userCredential.user;
-            set(ref(database, "users/" + user.uid), {
-                username: userUsername,
-                password: userPassword,
-                email: userEmail,
-                age: ageUser,
-            });
-
-            successPopUp.classList.add("active");
-            if (errorPopUp.classList.contains("active")) {
-                errorPopUp.classList.remove("active");
-            }
-        })
-        .catch((error) => {
-            // const errorMessage = error.message;
-            const errorCode = error.code;
-            errorPopUp.classList.add("active");
-            errorText.textContent = `Error Code: ${errorCode}`;
-        });
-});
 
 const loginSubmit = document.querySelector(".form-login__submit");
 

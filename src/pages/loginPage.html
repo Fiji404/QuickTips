@@ -100,9 +100,7 @@
                     <h1 class="login-form__title">Log in to your account</h1>
                 </header>
                 <section class="email-section">
-                    <label class="email-section__label" for="email-section__email-input"
-                        >Email</label
-                    >
+                    <label class="email-section__label" for="email-section__email-input">Email</label>
                     <div class="login-form__input-wrapper">
                         <span class="login-form__input-icon"><i class="fas fa-user"></i></span>
                         <input
@@ -117,9 +115,7 @@
                     </div>
                 </section>
                 <section class="password-section">
-                    <label class="password-section__label" for="password-section__password-input"
-                        >Password</label
-                    >
+                    <label class="password-section__label" for="password-section__password-input">Password</label>
                     <div class="login-form__input-wrapper">
                         <span class="login-form__input-icon"><i class="fas fa-lock"></i></span>
                         <input
@@ -133,8 +129,12 @@
                             required
                         />
                         <button type="button" class="password-section__show-password-btn">
-                            <span class="password-section__icon password-section__eye-icon"><i class="fa-solid fa-eye"></i></span>
-                            <span class="password-section__crossed-eye-icon"><i class="fa-solid fa-eye-slash"></i></span>
+                            <span class="password-section__icon password-section__eye-icon"
+                                ><i class="fa-solid fa-eye"></i
+                            ></span>
+                            <span class="password-section__icon password-section__crossed-eye-icon"
+                                ><i class="fa-solid fa-eye-slash"></i
+                            ></span>
                         </button>
                     </div>
                 </section>
@@ -142,25 +142,10 @@
                     <button class="form-login__submit">Log in</button>
                     <div class="other-options">
                         <a class="other-options__link" href="./forgot-password.html">forgot password ?</a>
-                        <a href="#" class="other-options__link">register now</a>
+                        <a href="registerPage.html" class="other-options__link">register now</a>
                     </div>
                 </section>
             </form>
         </main>
-        <script>
-            function sumbitCheck(e) {
-                e.preventDefault();
-                return false;
-                passwordTheSame();
-            }
-            function passwordTheSame() {
-                const userPassword = document.querySelector('#form-register__password').value;
-                const userPasswordRepeat = document.querySelector('#form-register__password-repeat').value;
-                const formRegister = document.querySelector('.form-register');
-                if (userPassword != userPasswordRepeat) {
-                    alert('password is not the same');
-                }
-            }
-        </script>
     </body>
 </html>

@@ -1,171 +1,90 @@
-.form-register {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import '../css/partials/theme.css';
+@import '../css/partials/navigation.css';
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-grey);
+    transition: background-color 500ms ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.register-form {
     width: min(90%, 550px);
-    min-width: 300px;
     min-height: 550px;
-    background-color: var(--dark-grey);
-    box-shadow: 0 0 125px -35px var(--bx-shadow);
-    border-radius: 20px;
+    margin-inline: auto;
+    background-color: var(--darker-black-white);
+    box-shadow: 0 0 25px var(--darker-white);
+    border: 2px solid var(--darker-white);
+    border-radius: 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    transform: translateY(100vh);
-    outline: 2px solid var(--typography_header);
     gap: 25px;
-    transition: transform 2s ease;
-    padding: 20px;
+    padding: 1.7rem;
 }
 
-.form-register.active {
-    transform: translateY(-90%);
-}
-
-.form-register__title {
-    color: #fff;
+.register-form__title {
+    color: var(--typography_header);
     letter-spacing: 1px;
 }
 
-.register-input-con {
-    width: min(80%, 400px);
-    position: relative;
+.input-container {
+    width: min(90%, 400px);
 }
 
-.register-input-con__input {
+.input-container__label {
+    display: inline-block;
+    color: var(--typography_header);
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: .3rem;
+}
+
+.input-container__input {
     font-family: 'Poppins', sans-serif;
     border: none;
-    border-bottom: 3px solid var(--indicator);
-    flex-grow: 1;
-    box-shadow: inset 0 3px 0 rgb(36, 36, 36);
-    padding: 0 10px;
+    border: 2px solid var(--darker-white);
     width: 100%;
     min-height: 45px;
-    font-size: 26px;
-    background-color: rgb(17, 17, 17);
-    color: #fff;
-    text-align: center;
-    transition: box-shadow 0.4s ease;
-    border-radius: 5px 5px 2px 2px;
-    outline: none;
-}
-
-.register-input-con__input::placeholder {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-.register-input-con__input:focus {
-    box-shadow: none;
-}
-
-.register-input-con__idicator {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background-color: rgb(0, 183, 255);
-    transition: width 400ms ease;
-    border-radius: 0 0 2px 2px;
-}
-
-.register-input-con__input:focus + .register-input-con__idicator,
-.register-input-con__input:valid + .register-input-con__idicator {
-    width: 100%;
-}
-
-.register-input-con__input:not(.password):invalid + .register-input-con__idicator {
-    background-color: #f00;
-}
-
-.form-register__date {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    width: min(65%, 400px);
-    min-width: 200px;
-    padding: 10px;
-    border: none;
-    background-color: var(--typography_header);
-    color: var(--card);
-    text-transform: uppercase;
-    font-size: 20px;
-    border-radius: 1rem;
-    text-align: center;
-}
-
-.gender-choice__input {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 50%;
-    position: relative;
-    vertical-align: middle;
-    margin-bottom: 6px;
-}
-
-.gender-choice__input:checked::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background-color: rgb(0, 183, 255);
-}
-
-.gender-choice__caption {
+    font-size: 1.75rem;
+    background-color: var(--card);
     color: var(--typography_header);
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-right: 20px;
-    margin-left: 5px;
+    text-align: center;
+    outline: none;
+    border-radius: 0.2rem;
 }
 
-.submit-section {
-    width: 100%;
-    position: relative;
+.input-container__input:focus {
+    border-color: var(--outline)
 }
 
-.register__submit-button {
-    display: block;
-    margin: 0 auto;
+.register-form__register-button {
     padding: 0.6rem 2rem;
-    background-color: rgb(26, 26, 26);
-    color: #fff;
+    background-color: var(--card);
+    color: var(--typography_header);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 22px;
     letter-spacing: 2px;
-    border: 2px solid rgb(0, 0, 0);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--darker-white);
     cursor: pointer;
     border-radius: 10px;
-    transition: transform 200ms;
+    transition: filter 200ms, box-shadow 150ms;
+    text-transform: capitalize;
 }
 
-.register__submit-button:active {
-    transform: scale(0.9);
-}
-
-.register__btn--back {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-    border: none;
-    background-color: transparent;
-    font-family: 'Poppins';
-    border-bottom: 2px solid var(--typography_header);
-    text-transform: uppercase;
-    cursor: pointer;
-    color: var(--typography_header);
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
+.register-form__register-button:hover {
+    filter: invert(0.04);
+    box-shadow: 0 0 15px var(--darker-white);
 }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import url('./partials/navigation.css');
-@import url(./partials/theme.css);
+@import './partials/navigation.css';
+@import './partials/theme.css';
 
 *,
 ::after,
@@ -65,7 +65,7 @@ body {
     align-items: center;
     font-size: 1.4rem;
     border-radius: .4rem 0 0 .4rem;
-    color: var(--typography_header)
+    color: var(--typography_header);
 }
 
 .login-form__input {
