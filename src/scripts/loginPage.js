@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getDatabase, ref, update, get } from 'firebase/database';
+import { createStatusHeadingElement, createStatusModalElement } from './statusModal';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU',
@@ -35,11 +36,11 @@ resetPasswordForm.addEventListener('submit', () => {
     const email = document.querySelector('.reset-password-form__email-input').value;
     sendPasswordResetEmail(auth, email)
         .then(() => {
-            alert('Password reset email sent')
+            createStatusModalElement(true, 'Reset password');
         })
-        .catch((error) => {
-            alert(error.message);
-        })
+        .catch(error => {
+            createStatusModalElement(false, 'Reset password', error.code);
+        });
 });
 
 passwordShowBtn.addEventListener('click', () => {
