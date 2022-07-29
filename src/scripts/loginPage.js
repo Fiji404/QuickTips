@@ -1,6 +1,6 @@
 'use strict';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getDatabase, ref, update, get } from 'firebase/database';
 
 const firebaseConfig = {
@@ -18,6 +18,29 @@ const auth = getAuth();
 const formInputElements = document.querySelectorAll('.login-form__input');
 const passwordShowBtn = document.querySelector('.password-section__show-password-btn');
 const passwordInputElement = document.querySelector('.login-form__input-password');
+const resetPasswordForm = document.querySelector('.reset-password-form');
+const resetPasswordModal = document.querySelector('.reset-password-intro');
+const showResetPasswordModalBtn = document.querySelector('.other-options__reset-password-btn');
+const closeResetPasswordModalBtn = document.querySelector('.reset-password-intro__close-modal');
+
+showResetPasswordModalBtn.addEventListener('click', () => {
+    resetPasswordModal.showModal();
+});
+
+closeResetPasswordModalBtn.addEventListener('click', () => {
+    resetPasswordModal.close();
+});
+
+resetPasswordForm.addEventListener('submit', () => {
+    const email = document.querySelector('.reset-password-form__email-input').value;
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            alert('Password reset email sent')
+        })
+        .catch((error) => {
+            alert(error.message);
+        })
+});
 
 passwordShowBtn.addEventListener('click', () => {
     passwordShowBtn.classList.toggle('active');
@@ -52,7 +75,7 @@ loginForm.addEventListener('submit', e => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput)
         .then(userCredential => {
             const user = userCredential.username;
-            const date = new Intl.DateTimeFormat('pl-PL', { dateStyle: 'long' }).format();
+            const date = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format();
             console.log(user);
             update(DB, 'users/' + user, {
                 lastTimeLogin: date,

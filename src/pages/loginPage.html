@@ -94,6 +94,20 @@
             </ul>
         </nav>
         <main>
+            <dialog class="reset-password-intro">
+                <header>
+                    <button class="reset-password-intro__close-modal"><i class="fa-solid fa-xmark"></i></button>
+                    <h1 class="reset-password-intro__title">You forgot your password ?</h1>
+                    <p class="reset-password-intro__desc">If you've forgotten your password, use the form below to request a link to change it.</p>
+                </header>
+                <form method="dialog" class="reset-password-form">
+                    <label class="reset-password-form__input-label" for="reset-password-form__email-input">Email</label>
+                    <input id="reset-password-form__email-input" class="reset-password-form__email-input" type="email" required />
+                    <button type="submit" class="reset-password-form__submit-btn">
+                        reset password
+                    </button>
+                </form>
+            </dialog>
             <form class="login-form">
                 <header>
                     <h1 class="login-form__title">Log in to your account</h1>
@@ -128,9 +142,7 @@
                             required
                         />
                         <button type="button" class="password-section__show-password-btn">
-                            <span class="password-section__icon password-section__eye-icon"
-                                ><i class="fa-solid fa-eye"></i
-                            ></span>
+                            <span class="password-section__icon password-section__eye-icon"><i class="fa-solid fa-eye"></i></span>
                             <span class="password-section__icon password-section__crossed-eye-icon"
                                 ><i class="fa-solid fa-eye-slash"></i
                             ></span>
@@ -140,7 +152,7 @@
                 <section class="submit-section">
                     <button class="form-login__submit">Log in</button>
                     <div class="other-options">
-                        <a class="other-options__link" href="passwordReset.html">forgot password ?</a>
+                        <button type="button" class="other-options__reset-password-btn">forgot password ?</button>
                         <a href="registerPage.html" class="other-options__link">register now</a>
                     </div>
                 </section>
