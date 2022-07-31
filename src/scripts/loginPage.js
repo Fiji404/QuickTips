@@ -2,7 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getDatabase, ref, update, get } from 'firebase/database';
-import { createStatusHeadingElement, createStatusModalElement } from './statusModal';
+import { createStatusModalElement } from './statusModal';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU',
@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 const DB = ref(getDatabase());
 const auth = getAuth();
 
+const loginForm = document.querySelector('.login-form');
 const formInputElements = document.querySelectorAll('.login-form__input');
 const passwordShowBtn = document.querySelector('.password-section__show-password-btn');
 const passwordInputElement = document.querySelector('.login-form__input-password');
@@ -67,66 +68,21 @@ formInputElements.forEach(input => {
     });
 });
 
-const loginForm = document.querySelector('.login-form');
-
 loginForm.addEventListener('submit', e => {
     e.preventDefault();
     const emailInput = document.getElementById('email-section__email-input').value;
     const passwordInput = document.getElementById('password-section__password-input').value;
     signInWithEmailAndPassword(auth, emailInput, passwordInput)
-        .then(userCredential => {
-            const user = userCredential.username;
-            const date = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format();
+        .then(credentials => {
+            const user = credentials.user;
             console.log(user);
-            update(DB, 'users/' + user, {
-                lastTimeLogin: date,
+            update(DB, 'users/' + user.uid, {
+                lastTimeLogin: new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(),
             });
+            if (auth.currentUser) signOut(auth);
+            createStatusModalElement(true, 'Login');
         })
         .catch(error => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            createStatusModalElement(false, 'Login', error.code);
         });
 });
-
-// const logoutButton = document.querySelector('.userLoggedIn_logout');
-// const userLoggedUsername = document.querySelector('.userLoggedIn__title');
-// const loginLink = document.querySelector('.login-item');
-// const userButton = document.querySelector('.userLoggedIn');
-// const user = auth.currentUser;
-// onAuthStateChanged(auth, user => {
-//     const logoutIcon = document.querySelector('.userLoggedIn__icon');
-//     userButton.addEventListener('click', () => {
-//         logoutButton.classList.toggle('active');
-//         logoutIcon.classList.toggle('active');
-//     });
-
-//     if (user) {
-//         loginLink.classList.add('hidden');
-//         userButton.classList.add('active');
-//         // userLoggedUsername.textContent = user.uid;
-//         const getUser = ref(database, 'users/' + userUsername);
-//         onValue(getUser, snapshot => {
-//             const data = snapshot.val();
-//             console.log(data);
-//             userLoggedUsername = data.email;
-//         });
-
-//         // ...
-//     } else {
-//         // User is signed out
-//         // ...
-//     }
-// });
-
-// logoutButton.addEventListener('click', () => {
-//     signOut(auth)
-//         .then(() => {
-//             alert('signout success');
-//             userLoggedUsername.textContent = '';
-//             loginLink.classList.remove('hidden');
-//             userButton.classList.remove('active');
-//         })
-//         .catch(error => {
-//             // An error happened.
-//         });
-// });

@@ -37,6 +37,7 @@ body {
 .register-form__title {
     color: var(--typography_header);
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .input-container {

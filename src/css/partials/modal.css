@@ -3,7 +3,7 @@
     top: 1rem;
     left: 50%;
     transform: translate(-50%, -150%);
-    padding: 1rem 2rem;
+    padding: 1rem;
     background-color: #222;
     border: 2px solid var(--darker-white);
     color: #fff;
@@ -13,8 +13,9 @@
     transition: 200ms;
     cursor: pointer;
     animation: modalShow 500ms ease-in-out forwards;
-    z-index: 2;
+    z-index: 4;
     text-align: center;
+    width: min(95%, 800px);
 }
 
 @keyframes modalShow {

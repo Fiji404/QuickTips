@@ -60,6 +60,7 @@
 .nav-list {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1.6rem;
     list-style: none;
@@ -90,6 +91,55 @@
     pointer-events: none;
     transition: bottom 400ms, background-color 250ms;
     border-radius: 1rem;
+}
+
+.user-panel {
+    text-align: center;
+    position: relative;
+    padding: .4rem 1rem;
+    border: 2px solid var(--darker-white);
+    background-color: var(--bg);
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: filter 150ms;
+}
+
+.user-panel__user-name {
+    user-select: none;
+    color: var(--typography_header);
+}
+
+.user-panel__logout-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0;
+    border: none;
+    background-color: var(--card);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: .4rem 1rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    color: var(--typography_header);
+    cursor: pointer;
+    border: 2px solid var(--darker-white);
+    text-transform: capitalize;
+    transition: filter 150ms;
+    transition: transform 200ms;
+}
+
+.user-panel__logout-btn.visible {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translate(-50%, 110%);
+}
+
+.user-panel__logout-btn:hover,
+.user-panel:hover {
+    filter: invert(0.05)
 }
 
 .nav-list__link:hover::before {
@@ -156,3 +206,5 @@
         display: none;
     }
 }
+
+

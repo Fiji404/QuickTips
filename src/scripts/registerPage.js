@@ -1,6 +1,6 @@
 'use strict';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth';
 import { getDatabase, set, ref, update, onValue, child } from 'firebase/database';
 import { createStatusHeadingElement, createStatusModalElement } from './statusModal';
 
@@ -32,8 +32,6 @@ registerForm.addEventListener('submit', ev => {
                 const user = userCredential.user;
                 set(ref(db, 'users/' + user.uid), {
                     username: usernameInput,
-                    password: passwordInput,
-                    email: emailInput,
                     accountCreationDate: new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeStyle: 'short' }).format(),
                 });
                 registerForm.reset();
@@ -44,3 +42,5 @@ registerForm.addEventListener('submit', ev => {
             });
     }
 });
+
+

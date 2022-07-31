@@ -8,6 +8,7 @@
         <script defer src="../scripts/themeOption.js"></script>
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
         <script type="module" defer src="../scripts/registerPage.js"></script>
+        <script type="module" defer src="../scripts/loginState.js"></script>
         <title>Register Account</title>
     </head>
     <body class="dark">
@@ -87,7 +88,7 @@
                 <li style="--delay: 600ms" class="nav-list__item">
                     <a class="nav-list__link" href="./portfolio.html">Portfolio</a>
                 </li>
-                <li style="--delay: 900ms" class="nav-list__item">
+                <li style="--delay: 900ms" class="nav-list__item nav-list__item_login">
                     <a class="nav-list__link" href="./loginPage.html">Log In</a>
                 </li>
             </ul>
@@ -109,8 +110,6 @@
             <section class="input-container">
                 <label class="input-container__label" for="register-form__password">password</label>
                 <input
-                    pattern="^[A-Za-z \d+].{8,18}"
-                    title="You can use characters length from 8 to 15"
                     class="input-container__input input-container__input_password"
                     id="register-form__password"
                     type="password"
@@ -120,8 +119,6 @@
             <section class="input-container">
                 <label class="input-container__label" for="register-form__password-repeat">repeat password</label>
                 <input
-                    pattern="^[A-Za-z].{8,18}"
-                    title="You can use characters length from 8 to 15"
                     class="input-container__input input-container__input_password-repeat"
                     id="register-form__password-repeat"
                     type="password"
