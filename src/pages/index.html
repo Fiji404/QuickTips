@@ -12,9 +12,12 @@
         <meta name="robots" content="index, follow" />
         <link rel="stylesheet" href="../css/styles.css" />
         <link rel="icon" href="../assets/images/app-logo.png" />
-        <script defer src="../scripts/app.js"></script>
-        <script defer src="../scripts/themeOption.js"></script>
+        <script type="module" defer src="../scripts/app.js">module;</script>
+        <script type="module" defer src="../scripts/themeOption.js">module;</script>
+        
+        <script defer type="module" src="../scripts/auth/loginStatus.js"></script>
         <script src="https://kit.fontawesome.com/753d009a2f.js" crossorigin="anonymous"></script>
+
         <title>Quick tips for Web languages</title>
     </head>
     <body class="dark">
@@ -94,41 +97,41 @@
                 <li style="--delay: 600ms" class="nav-list__item">
                     <a class="nav-list__link" href="./portfolio.html">Portfolio</a>
                 </li>
-                <li style="--delay: 900ms" class="nav-list__item">
+                <li style="--delay: 900ms" class="nav-list__item nav-list__item_login">
                     <a class="nav-list__link" href="./loginPage.html">Log In</a>
                 </li>
             </ul>
         </nav>
-        <main class="main">
-            <a class="main__section-link" data-destination="tips-section" href="#tips-section">
-                <section class="card-info">
+        <main class="available-tips-intro">
+            <a class="available-tips-intro__tip-section_link" href="#tips-section">
+                <section class="tip-section-info">
                     <header>
                         <i class="fa-solid fa-code"></i>
-                        <h2 class="card-info__title">HTML & CSS languages</h2>
+                        <h2 class="tip-section-info__title">HTML & CSS languages</h2>
                     </header>
-                    <p class="card-info__desc">
+                    <p class="tip-section-info__desc">
                         In this section you see a lot of useful properties and tricks in HTML & CSS which you can use on webistes.
                     </p>
                 </section>
             </a>
-            <a class="main__section-link" data-destination="availability-section" href="#availability-section">
-                <section class="card-info accesbility">
+            <a class="available-tips-intro__tip-section_link" href="#javascript-section">
+                <section class="tip-section-info">
                     <header>
-                        <i class="fa-solid fa-question"></i>
-                        <h2 class="card-info__title">Availability informations</h2>
+                        <i class="fa-brands fa-square-js"></i>
+                        <h2 class="tip-section-info__title">Javascript cheatsheet</h2>
                     </header>
-                    <p class="card-info__desc">
-                        Availability show you statistics about properties and their support by browsers.
+                    <p class="tip-section-info__desc">
+                        In this section you can find a lot of informations about Javascript language like data types, operators etc.
                     </p>
                 </section>
             </a>
-            <a class="upcoming--toggle" href="#experimental">
-                <section class="card-info">
+            <a class="available-tips-intro__tip-section_link" href="#upcoming-features">
+                <section class="tip-section-info">
                     <header>
                         <i class="fas fa-flask"></i>
-                        <h2 class="card-info__title">Upcoming features</h1>
+                        <h2 class="tip-section-info__title">Upcoming features</h1>
                     </header>
-                    <p class="card-info__desc">
+                    <p class="tip-section-info__desc">
                         This section show you upcoming experimental and not yet introduced fetures on websites.
                     </p>
                 </section>
@@ -450,276 +453,8 @@
                 </article>
             </article>
         </article>
-        <article class="availability-section" id="availability-section">
-            <div class="availability-content">
-                <section style="--availability-item-delay: 0.5s" class="availability-item">
-                    <header class="availability-item__header">
-                        <h1 class="availability-item__title">aspect-ratio property</h1>
-                    </header>
-                    <span class="availability-content_expander">
-                        <i class="fas fa-sort-down"></i>
-                        <i class="fas fa-sort-up"></i>
-                    </span>
-                    <div class="availability-info">
-                        <h1 class="availability-info__title">Supported browsers and their version</h1>
-                        <div class="browsers-container">
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Firefox</h1>
-                                <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
-                                <h3 class="browser-cell__version">89</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Chrome</h1>
-                                <i style="color: yellow" class="fab fa-chrome"></i>
-                                <h3 class="browser-cell__version">88</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Edge</h1>
-                                <i style="color: #0d559e" class="fab fa-edge"></i>
-                                <h3 class="browser-cell__version">88</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Internet Explorer</h1>
-                                <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
-                                <h3 class="browser-cell__version not-supported">Not Supported</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Opera</h1>
-                                <i style="color: #ff1429" class="fab fa-opera"></i>
-                                <h3 class="browser-cell__version">74</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Safari</h1>
-                                <i style="color: #2290ee" class="fab fa-safari"></i>
-                                <h3 class="browser-cell__version">15</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="--availability-item-delay: 1s" class="availability-item">
-                    <header class="availability-item__header">
-                        <h1 class="availability-item__title">Flexbox tool</h1>
-                    </header>
-                    <span class="availability-content_expander">
-                        <i class="fas fa-sort-down"></i>
-                        <i class="fas fa-sort-up"></i>
-                    </span>
-                    <div class="availability-info">
-                        <h1 class="availability-info__title">Supported browsers and their version</h1>
-                        <div class="browsers-container">
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Firefox</h1>
-                                <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
-                                <h3 class="browser-cell__version">28</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Chrome</h1>
-                                <i style="color: yellow" class="fab fa-chrome"></i>
-                                <h3 class="browser-cell__version">29</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Edge</h1>
-                                <i style="color: #0d559e" class="fab fa-edge"></i>
-                                <h3 class="browser-cell__version">12</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Internet Explorer</h1>
-                                <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
-                                <h3 class="browser-cell__version not-supported">Not Supported</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Opera</h1>
-                                <i style="color: #ff1429" class="fab fa-opera"></i>
-                                <h3 class="browser-cell__version">17</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Safari</h1>
-                                <i style="color: #2290ee" class="fab fa-safari"></i>
-                                <h3 class="browser-cell__version">9</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="--availability-item-delay: 1.5s" class="availability-item">
-                    <header class="availability-item__header">
-                        <h1 class="availability-item__title">GRID tool</h1>
-                    </header>
-                    <span class="availability-content_expander">
-                        <i class="fas fa-sort-down"></i>
-                        <i class="fas fa-sort-up"></i>
-                    </span>
-                    <div class="availability-info">
-                        <h1 class="availability-info__title">Supported browsers and their version without prefixes</h1>
-                        <div class="browsers-container">
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Firefox</h1>
-                                <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
-                                <h3 class="browser-cell__version">54</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Chrome</h1>
-                                <i style="color: yellow" class="fab fa-chrome"></i>
-                                <h3 class="browser-cell__version">58</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Edge</h1>
-                                <i style="color: #0d559e" class="fab fa-edge"></i>
-                                <h3 class="browser-cell__version">16</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Internet Explorer</h1>
-                                <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
-                                <h3 class="browser-cell__version not-supported">Not Supported</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Opera</h1>
-                                <i style="color: #ff1429" class="fab fa-opera"></i>
-                                <h3 class="browser-cell__version">44</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Safari</h1>
-                                <i style="color: #2290ee" class="fab fa-safari"></i>
-                                <h3 class="browser-cell__version">10.1</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="--availability-item-delay: 2s" class="availability-item">
-                    <header class="availability-item__header">
-                        <h1 class="availability-item__title">conic-gradient() function</h1>
-                    </header>
-                    <span class="availability-content_expander">
-                        <i class="fas fa-sort-down"></i>
-                        <i class="fas fa-sort-up"></i>
-                    </span>
-                    <div class="availability-info">
-                        <h1 class="availability-info__title">Supported browsers and their version without prefixes</h1>
-                        <div class="browsers-container">
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Firefox</h1>
-                                <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
-                                <h3 class="browser-cell__version">83</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Chrome</h1>
-
-                                <i style="color: yellow" class="fab fa-chrome"></i>
-                                <h3 class="browser-cell__version">69</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Edge</h1>
-
-                                <i style="color: #0d559e" class="fab fa-edge"></i>
-                                <h3 class="browser-cell__version">79</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Internet Explorer</h1>
-
-                                <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
-                                <h3 class="browser-cell__version not-supported">Not Supported</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Opera</h1>
-                                <i style="color: #ff1429" class="fab fa-opera"></i>
-                                <h3 class="browser-cell__version">56</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Safari</h1>
-                                <i style="color: #2290ee" class="fab fa-safari"></i>
-                                <h3 class="browser-cell__version">12.1</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="--availability-item-delay: 2.5s" class="availability-item">
-                    <header class="availability-item__header">
-                        <h1 class="availability-item__title">Transform-origin support</h1>
-                    </header>
-                    <span class="availability-content_expander">
-                        <i class="fas fa-sort-down"></i>
-                        <i class="fas fa-sort-up"></i>
-                    </span>
-                    <div class="availability-info">
-                        <h1 class="availability-info__title">Supported browsers and their version without prefixes</h1>
-                        <div class="browsers-container">
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Firefox</h1>
-                                <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
-                                <h3 class="browser-cell__version">16</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Chrome</h1>
-                                <i style="color: yellow" class="fab fa-chrome"></i>
-                                <h3 class="browser-cell__version">36</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Edge</h1>
-                                <i style="color: #0d559e" class="fab fa-edge"></i>
-                                <h3 class="browser-cell__version">12</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Internet Explorer</h1>
-                                <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
-                                <h3 class="browser-cell__version">10</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Opera</h1>
-                                <i style="color: #ff1429" class="fab fa-opera"></i>
-                                <h3 class="browser-cell__version">23</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Safari</h1>
-                                <i style="color: #2290ee" class="fab fa-safari"></i>
-                                <h3 class="browser-cell__version">9</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="--availability-item-delay: 3s" class="availability-item">
-                    <header class="availability-item__header">
-                        <h1 class="availability-item__title">gap for GRID</h1>
-                    </header>
-                    <span class="availability-content_expander">
-                        <i class="fas fa-sort-down"></i>
-                        <i class="fas fa-sort-up"></i>
-                    </span>
-                    <div class="availability-info">
-                        <h1 class="availability-info__title">Supported browsers and their version without prefixes</h1>
-                        <div class="browsers-container">
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Firefox</h1>
-                                <i style="color: #ff5233" class="fab fa-firefox-browser"></i>
-                                <h3 class="browser-cell__version">61</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Chrome</h1>
-                                <i style="color: yellow" class="fab fa-chrome"></i>
-                                <h3 class="browser-cell__version">66</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Edge</h1>
-                                <i style="color: #0d559e" class="fab fa-edge"></i>
-                                <h3 class="browser-cell__version">16</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Internet Explorer</h1>
-                                <i style="color: #18bcee" class="fab fa-internet-explorer"></i>
-                                <h3 class="browser-cell__version not-supported">Not Supported</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Opera</h1>
-                                <i style="color: #ff1429" class="fab fa-opera"></i>
-                                <h3 class="browser-cell__version">53</h3>
-                            </div>
-                            <div class="browser-cell">
-                                <h1 class="browser-cell__title">Safari</h1>
-                                <i style="color: #2290ee" class="fab fa-safari"></i>
-                                <h3 class="browser-cell__version">12</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        <article class="javascript-section" id="javascript-section">
+            
         </article>
         <footer class="footer">
             <section class="project-info">

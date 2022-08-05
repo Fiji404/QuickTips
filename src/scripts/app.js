@@ -1,53 +1,38 @@
-const sectionLinks = [...document.querySelectorAll('.main__section-link')];
-const tipsCards = document.querySelectorAll('.card-tip');
-const containerCategory = document.querySelector('.container-tips');
-const hideTip = document.querySelector('.tip-card_hide');
-const infoBoxExpander = document.querySelectorAll('.availability-content_expander');
+const pageSectionLinks = document.querySelector('.available-tips-intro');
+const pageSections = [...document.querySelectorAll('.tips-section, .javascript-section')];
+const tipsContainer = document.querySelector('.container-tips');
+const returnToAllTipsBtn = document.querySelector('.tip-card_hide');
+const tipCards = document.querySelectorAll('.card-tip');
 
-sectionLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        const linkDestination = link.dataset.destination;
-        const sectionDestinationElement = document.querySelector(`.${linkDestination}`);
-        sectionDestinationElement.classList.toggle('active');
-    });
-});
-
-containerCategory.addEventListener('click', e => {
-    tipsCards.forEach(el => {
-        if (el.classList.contains('active')) return;
-    });
-});
-
-tipsCards.forEach(el => {
-    el.addEventListener('click', () => {
-        el.classList.add('active');
-
-        tipsCards.forEach(element => {
-            if (element.classList.contains('active')) {
-                hideTip.classList.add('visible');
-                return;
-            }
-            element.classList.add('hide');
-        });
-    });
-});
-
-hideTip.addEventListener('click', () => {
-    tipsCards.forEach(el => {
-        el.classList.remove('hide');
-        el.classList.remove('active');
-        hideTip.classList.remove('visible');
-    });
-});
-
-infoBoxExpander.forEach(element => {
-    element.addEventListener('click', () => {
-        element.classList.toggle('active');
-        const infoExpand = element.nextElementSibling;
-        if (infoExpand.style.maxHeight) {
-            infoExpand.style.maxHeight = null;
-        } else {
-            infoExpand.style.maxHeight = `${infoExpand.scrollHeight}px`;
+pageSectionLinks.addEventListener('click', ({ target, currentTarget }) => {
+    if (target !== currentTarget) {
+        const targetSectionElement = document.querySelector(target.closest('a').getAttribute('href'));
+        if (pageSections.some(el => el.classList.contains('active'))) {
+            pageSections.forEach(el => el.classList.remove('active'));
         }
+        targetSectionElement.classList.toggle('active');
+        targetSectionElement.scrollIntoView({
+            behavior: 'smooth',
+        });
+    }
+});
+
+tipsContainer.addEventListener('click', e => {
+    if (e.target.matches('.card-tip__button')) {
+        const tipCard = e.target.closest('.card-tip');
+        tipCard.classList.toggle('active');
+        tipCards.forEach(el => {
+            if (el !== tipCard) {
+                el.classList.add('tip-card_hide');
+            }
+        });
+        returnToAllTipsBtn.classList.add('active');
+    }
+});
+
+returnToAllTipsBtn.addEventListener('click', () => {
+    tipCards.forEach(el => {
+        el.classList.remove('tip-card_hide', 'active');
     });
+    returnToAllTipsBtn.classList.remove('active');
 });

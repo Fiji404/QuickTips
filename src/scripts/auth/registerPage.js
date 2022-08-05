@@ -1,8 +1,7 @@
-'use strict';
-import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, set, ref, update, onValue, child } from 'firebase/database';
-import { createStatusHeadingElement, createStatusModalElement } from './statusModal';
+import { createStatusModalElement } from './utils/statusModal';
+import { createUserDashboard } from './utils/userDashboard';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU',
@@ -15,7 +14,6 @@ const firebaseConfig = {
     measurementId: 'G-TWB6CE3N9N',
 };
 
-const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getDatabase();
 const registerForm = document.querySelector('.register-form');
@@ -29,6 +27,7 @@ registerForm.addEventListener('submit', ev => {
     if (passwordInput === repeatPasswordInput && passwordInput && repeatPasswordInput) {
         createUserWithEmailAndPassword(auth, emailInput, passwordInput)
             .then(userCredential => {
+                createUserDashboard(usernameInput)
                 const user = userCredential.user;
                 set(ref(db, 'users/' + user.uid), {
                     username: usernameInput,
@@ -42,5 +41,3 @@ registerForm.addEventListener('submit', ev => {
             });
     }
 });
-
-

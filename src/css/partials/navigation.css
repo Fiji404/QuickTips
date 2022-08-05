@@ -113,7 +113,7 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
     pointer-events: none;
     opacity: 0;
     border: none;
@@ -127,8 +127,7 @@
     cursor: pointer;
     border: 2px solid var(--darker-white);
     text-transform: capitalize;
-    transition: filter 150ms;
-    transition: transform 200ms;
+    transition: filter 150ms, transform 200ms;
 }
 
 .user-panel__logout-btn.visible {

@@ -1,18 +1,18 @@
-'use strict';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getDatabase, ref, update, get } from 'firebase/database';
-import { createStatusModalElement } from './statusModal';
+import { createStatusModalElement } from './utils/statusModal';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU',
-    authDomain: 'quick-tips-app.firebaseapp.com',
-    projectId: 'quick-tips-app',
-    messagingSenderId: '867547460819',
-    appId: '1:867547460819:web:ab8854d60ad3627e191026',
+    apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
+    authDomain: "quick-tips-app.firebaseapp.com",
+    databaseURL: "https://quick-tips-app-default-rtdb.firebaseio.com",
+    projectId: "quick-tips-app",
+    appId: "1:867547460819:web:ab8854d60ad3627e191026",
+    measurementId: "G-TWB6CE3N9N"
 };
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 const DB = ref(getDatabase());
 const auth = getAuth();
 
@@ -81,6 +81,7 @@ loginForm.addEventListener('submit', e => {
             });
             if (auth.currentUser) signOut(auth);
             createStatusModalElement(true, 'Login');
+            e.reset();
         })
         .catch(error => {
             createStatusModalElement(false, 'Login', error.code);

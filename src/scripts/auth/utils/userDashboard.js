@@ -1,7 +1,20 @@
+import { initializeApp } from 'firebase/app';
 import { getAuth, signOut } from 'firebase/auth';
 
 const navList = document.querySelector('.nav-list');
 const loginLinkClone = document.querySelector('.nav-list__item_login').cloneNode(true);
+
+const firebaseConfig = {
+    apiKey: 'AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU',
+    authDomain: 'quick-tips-app.firebaseapp.com',
+    databaseURL: 'https://quick-tips-app-default-rtdb.firebaseio.com',
+    projectId: 'quick-tips-app',
+    storageBucket: 'quick-tips-app.appspot.com',
+    messagingSenderId: '867547460819',
+    appId: '1:867547460819:web:ab8854d60ad3627e191026',
+    measurementId: 'G-TWB6CE3N9N',
+};
+initializeApp(firebaseConfig)
 const auth = getAuth();
 
 const userDashboard = username => {
