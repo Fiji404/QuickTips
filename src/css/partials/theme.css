@@ -66,6 +66,7 @@
     --nav-btn: rgb(241, 241, 241);
     --border-indicator: rgb(71, 71, 71);
     --darker-black-white: rgb(255, 255, 255);
+    --dark-grey: rgb(212, 212, 212);
 }
 
 body.disabled {

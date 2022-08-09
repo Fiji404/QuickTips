@@ -121,7 +121,7 @@ body {
 
 @keyframes tipOriginate {
     50% {
-        opacity: .7;
+        opacity: 0.7;
         transform: scale(0.8);
     }
     to {
@@ -190,7 +190,6 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center;
     gap: 2rem;
 }
 
@@ -198,7 +197,8 @@ body {
     display: none;
 }
 
-.card-tip__button {
+.card-tip__button,
+.card-tip__add-tip-btn {
     font-family: 'Poppins', sans-serif;
     padding: 1rem 1.4rem;
     background-color: var(--darker-black-white);
@@ -210,8 +210,127 @@ body {
     height: 100%;
     min-height: 120px;
     max-width: 400px;
-    font-size: 22px;
+    width: 100%;
+    font-size: 1.4rem;
     letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.card-tip__add-tip-btn {
+    text-transform: capitalize;
+    width: 100%;
+    color: var(--typography_header);
+    border: 2px solid var(--darker-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.4rem;
+}
+
+.card-tip__add-tip-btn > i {
+    font-size: 2.5rem;
+}
+
+.card-tip__add-tip-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(0.95);
+}
+
+.add-tip-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    width: min(90%, 600px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+    border: 2px solid var(--darker-white);
+    background-color: var(--card);
+    border-radius: 0.4rem;
+}
+
+.add-tip-modal_cancel-action {
+    display: block;
+    margin-left: auto;
+    font-size: 2rem;
+    color: var(--typography_header);
+    cursor: pointer;
+    border: 2px solid var(--darker-white);
+    background-color: var(--card);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+}
+
+.add-tip-modal_cancel-action:hover {
+    filter: invert(0.04);
+}
+
+.add-tip-modal__title {
+    color: var(--typography_header);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.add-tip-form,
+.add-tip-form__input-container {
+    margin-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.add-tip-form__input-container {
+    margin-top: 0;
+    gap: 0;
+}
+
+.add-tip-form__input-label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.add-tip-form__input {
+    display: block;
+    width: 100%;
+    min-height: 45px;
+    border: 2px solid var(--darker-white);
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    padding-inline: 0.4rem;
+}
+
+.add-tip-form__input:focus {
+    outline: 2px solid rgb(16, 167, 255);
+}
+
+.add-tip-form__submit {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    margin-inline: auto;
+    padding: 0.4rem 1rem;
+    background-color: var(--darker-black-white);
+    border-radius: 0.4rem;
+    border: 2px solid var(--darker-white);
+    color: var(--typography_header);
+    transition: transform 300ms, border-color 200ms, filter 200ms;
+    cursor: pointer;
+    max-width: 400px;
+    font-size: 1.8rem;
+    text-transform: capitalize;
     font-weight: 500;
 }
 
@@ -221,7 +340,8 @@ body {
     border-color: var(--typography_header);
 }
 
-.card-tip__button:active {
+.card-tip__button:active,
+.add-tip-form__submit:hover {
     filter: invert(0.04);
 }
 
