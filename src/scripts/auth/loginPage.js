@@ -1,18 +1,7 @@
-import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from 'firebase/auth';
-import { getDatabase, ref, update, get } from 'firebase/database';
+import { getDatabase, ref, update, get, child } from 'firebase/database';
 import { createStatusModalElement } from './utils/statusModal';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCc1rgGJxFGcZTJL7AADjy2exF1-aN3-wU",
-    authDomain: "quick-tips-app.firebaseapp.com",
-    databaseURL: "https://quick-tips-app-default-rtdb.firebaseio.com",
-    projectId: "quick-tips-app",
-    appId: "1:867547460819:web:ab8854d60ad3627e191026",
-    measurementId: "G-TWB6CE3N9N"
-};
-
-// const app = initializeApp(firebaseConfig);
 const DB = ref(getDatabase());
 const auth = getAuth();
 
@@ -75,13 +64,10 @@ loginForm.addEventListener('submit', e => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput)
         .then(credentials => {
             const user = credentials.user;
-            console.log(user);
-            update(DB, 'users/' + user.uid, {
-                lastTimeLogin: new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(),
+            update(child(DB, 'users/' + user.uid), {
+                lastTimeLogin: new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeStyle: 'short' }).format(),
             });
-            if (auth.currentUser) signOut(auth);
             createStatusModalElement(true, 'Login');
-            e.reset();
         })
         .catch(error => {
             createStatusModalElement(false, 'Login', error.code);

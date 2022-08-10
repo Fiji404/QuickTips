@@ -1,7 +1,7 @@
 import { getDatabase, ref, get, set, child } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-const pageSectionLinks = document.querySelector('.available-tips-intro');
+const sectionLinks = document.querySelector('.available-tips-intro');
 const pageSections = [...document.querySelectorAll('.tips-section, .javascript-section')];
 const tipsContainer = document.querySelector('.container-tips');
 const returnToAllTipsBtn = document.querySelector('.tip-card_hide');
@@ -43,7 +43,7 @@ const getTipsFromDB = () => {
     });
 };
 
-pageSectionLinks.addEventListener('click', ({ target, currentTarget }) => {
+sectionLinks.addEventListener('click', ({ target, currentTarget }) => {
     if (target !== currentTarget) {
         const targetSectionElement = document.querySelector(target.closest('a').getAttribute('href'));
         if (pageSections.some(el => el.classList.contains('active'))) {

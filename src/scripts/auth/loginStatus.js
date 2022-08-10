@@ -8,7 +8,7 @@ const auth = getAuth();
 const db = ref(getDatabase());
 
 onAuthStateChanged(auth, user => {
-    if (!user) return;
+    // if (!user) return;
 
     get(child(db, `users/${user.uid}`))
         .then(user => {
