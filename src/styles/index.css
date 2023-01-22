@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    body {
+        background-image: url('./background.png');
+        background-attachment: fixed;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .nav-item {
+        @apply sm:hidden;
+    }
+    .nav-link {
+        --hover-state: rgba(255, 255, 255, 0.1);
+        @apply text-white px-4 py-2 rounded-md inline-block hover:bg-[var(--hover-state)] backdrop-blur-lg transition-colors;
+        background-color: rgba(217, 217, 217, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 1.5rem;
+        font-family: 'Poppins';
+    }
+    .nav-toggle-btn {
+        @apply bg-[#d9d9d914] px-3 py-2 flex items-center aspect-square rounded-md border border-[#d9d9d91c] hover:bg-[#ffffff1a] transition-colors;
+    }
+    .nav-theme-btn {
+        @apply text-white p-0 rounded-md;
+        font-size: 2rem;
+        width: 55px;
+        aspect-ratio: 1 / 1;
+    }
+    .main-page-content {
+        @apply flex items-center justify-center flex-col flex-grow gap-20;
+    }
+    .cards-con {
+        @apply flex justify-center items-center gap-6 mx-auto flex-wrap;
+        width: min(95%, 1100px);
+    }
+    .welcome-card {
+        @apply max-w-sm bg-gradient-to-br p-7 rounded-md border flex-grow cursor-pointer hover:brightness-125 transition-all;
+        min-width: 200px !important;
+    }
+    .welcome-card__header {
+        @apply flex flex-col items-center gap-2;
+    }
+    .welcome-card__title {
+        @apply text-white font-medium text-3xl text-center;
+    }
+    .section-separator {
+        height: 3px;
+        width: 60%;
+        background-image: linear-gradient(to right, #18b56b00, #18b56c36, #f0da4f34, #d70af634, #d70af600);
+    }
+    .footer {
+        @apply flex justify-center gap-6 mx-auto flex-wrap;
+        width: min(90%, 1000px);
+    }
+    .footer-link {
+        @apply text-white capitalize flex items-center justify-center gap-2 text-2xl border-2 bg-[#ffffff0a] border-[#ffffff21] rounded-md py-4 px-10 hover:bg-[#ffffff10] flex-grow transition-colors;
+        min-width: 150px;
+    }
+}
